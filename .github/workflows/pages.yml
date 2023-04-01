@@ -34,6 +34,11 @@ jobs:
         hugo-version: latest
         extended: true
 
+    - name: Setup Pagefind
+      uses: jaxxstorm/action-install-gh-release@v1.10.0
+      with:
+        repo: CloudCannon/pagefind
+
     - name: Checkout
       uses: actions/checkout@v3
       with:
@@ -44,6 +49,9 @@ jobs:
 
     - name: Build
       run: hugo --minify --environment production
+
+    - name: Index site with Pagefind
+      run: pagefind --source public
 
     - name: Upload site artifact
       uses: actions/upload-pages-artifact@v1

@@ -1,0 +1,17 @@
+{{ define "content" }}
+<div id="search-results"></div>
+<script id="search-result-template" type="text/x-js-template">
+  <article id="result-${key}">
+    <h4><a href="${url}">${title}</a></h4>
+    <p>${snippet}</p>
+    ${ isset tags }<p>Tags: ${tags}</p>${ end }
+    ${ isset categories }<p>Categories: ${categories}</p>${ end }
+  </article>
+</script>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.6.2"></script>
+<script src="https://cdn.jsdelivr.net/npm/mark.js@8.11.1/dist/mark.min.js" integrity="sha256-IdYuEFP3WJ/mNlzM18Y20Xgav3h5pgXYzl8fW4GnuPo=" crossorigin="anonymous"></script>
+{{ partial "script" "search" }}
+{{ end }}

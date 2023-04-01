@@ -15,6 +15,7 @@
 public/
 resources/
 _site/
+jsconfig.json
 .hugo_build.lock
 *.log
 
