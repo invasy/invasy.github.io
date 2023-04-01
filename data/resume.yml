@@ -1,0 +1,340 @@
+basics:
+  name: Vasiliy Polyakov
+  label: Senior Software Engineer
+  email: job@invasy.dev
+  phone: ""
+  url: https://invasy.dev/
+  summary: |-
+    - Software engineer (C++/Qt, Scala, Python) with over a decade of experience in enterprise services development.
+    - Development automation specialist with a vast CI/CD and DevOps expertise.
+    - Passionate about concurrency, efficiency, and performance.
+    - Collaborated with remote distributed teams in different software development stages.
+    - Constantly improving skills with new technologies and instruments.
+    - GNU/Linux and FOSS enthusiast.
+  location:
+    postalCode: ""
+    countryCode: RU
+    region: ""
+    city: Perm
+    address: ""
+  profiles:
+  - network: Telegram
+    username: invasy
+    url: https://t.me/invasy
+  - network: GitHub
+    username: invasy
+    url: https://github.com/invasy
+  - network: LinkedIn
+    username: invasy
+    url: https://www.linkedin.com/in/invasy/
+  - network: LeetCode
+    username: invasy
+    url: https://leetcode.com/invasy/
+work:
+- startDate: 2021-12-01
+  endDate: 2022-09-30
+  position: Lead Software Engineer (Scala)
+  name: M.Video-Eldorardo
+  url: https://www.mvideoeldorado.ru/
+  location: Moscow, Russia (remote)
+  description: >-
+    _M.Video-Eldorado Group_ is Russia's leading e-commerce and consumer electronics retailer
+    with gross merchandise value over $10 billion. M.Video-Eldorado Group is also one of the largest
+    and most technologically advanced retailers with distributed services all across Russia.
+  summary: |-
+    **Tech stack**: Scala, Akka, Lagom, Cassandra, Elastic Stack, SAP, GitLab CI, Kubernetes.
+  highlights:
+  - Analyzed requirements and implemented architecture for new microservices.
+  - Collaborated with agile team, managed to enhance service robustness.
+  - Facilitated internal developers meetings to share ideas and knowledge.
+- startDate: 2019-01-09
+  endDate: 2021-12-31
+  position: Senior Software Engineer (C++)
+  name: Rostelecom IT
+  url: https://www.rt.ru/
+  location: Perm, Russia
+  description: >-
+    _PJSC «Rostelecom»_ is Russia's largest integrated provider of digital services and solutions.
+    Rostelecom is an unquestionable technical leader on the market of innovative telecommunications services
+    for electronic government, cybersecurity, data center and cloud-based services, biometrics, healthcare,
+    education, house maintenance and utility services.
+  summary: |-
+    **Tech stack**: C++, Qt, CEF, Scala, Oracle, GitLabCI, Tomcat, OpenShift, JMeter, Gatling.
+  highlights:
+  - Developed high performance event-driven payment service.
+  - Boosted service performance by redesigning event queues.
+  - Organized and implemented CI/CD pipelines to decrease deployment time from days to minutes.
+  - Initiated migration to blue-green deployment along with extensive load testing.
+  - Planned tasks and facilitated meetings with distributed agile team.
+  - Redesigned documentation and knowledge base structure, saved hours of searching.
+- startDate: 2018-05-10
+  endDate: 2018-12-31
+  position: Research Engineer
+  name: Perm State University
+  url: https://www.psu.ru/
+  location: Perm, Russia
+  description: >-
+    _SC «UEC-Aviadvigatel»_ is a design bureau which develops gas turbine engines for aviation
+    and aeroderivative IGTs and gensets. Member of United Engine Corporation (UEC).
+  summary: |-
+    **Tech stack**: C++, Fortran 90, CUDA, OpenMP, OpenMPI, OpenHPC, RHEL, Ganglia.
+  highlights:
+  - Participated in research and development project for _UEC-Aviadvigatel_ funded by Russian Foundation for Basic Research.
+  - Project result is a turbine engine computational aerodynamics model based on a proprietary numerical solver of Navier-Stokes equations.
+- startDate: 2017-12-01
+  endDate: 2018-05-04
+  position: Software Engineer (C++)
+  name: Stream (MTS)
+  url: https://mts.ru/
+  location: Perm, Russia
+  description: >-
+    _MTS_ is a Russia's digital ecosystem and largest mobile operator that provides a wide range
+    of digital-first services to help enrich the modern 21st-century lifestyle. The company offers a full range
+    of solutions for consumers and business customers across wireless and wireline connectivity; over-the-top,
+    linear, and satellite television; digital-first banking and financial services; as well as unified
+    communications, cloud computing and IoT.
+  summary: |-
+    **Tech stack**: C++, STL, Boost, CMake.
+  highlights:
+  - Developed in-house high performance service using C++, STL, Boost, Qt that allowed clients
+    to commit payment transactions and view fiscal data.
+  - Optimized event matching algorithms to decrease server load by 21% on average.
+- startDate: 2012-10-01
+  endDate: 2017-12-01
+  position: Chief of Laboratory and Research Engineer
+  name: Perm State University
+  url: https://www.psu.ru/
+  location: Perm, Russia
+  description: ""
+  summary: >-
+    **Tech stack**: C++, Fortran90, OpenMP, OpenMPI CUDA, Hadoop, Perl, Ruby on Rails, Redmine, RHEL.
+  highlights:
+  - Researched and developed HPC applications (fluid mechanics, aerodynamics, linguistics).
+  - Tasks, projects, and people management.
+  - HPC clusters administration and maintenance.
+  - Popularization of science, public lectures, science events and festivals.
+education:
+- startDate: 2007-09-01
+  endDate: 2013-06-30
+  studyType: BS
+  area: Applied mathematics and informatics
+  institution: Perm State University
+  url: https://www.psu.ru/
+  score: ""
+  courses: []
+skills:
+- name: C++
+  level: Expert
+  keywords:
+  - language
+- name: Scala
+  level: Expert
+  keywords:
+  - language
+- name: Python
+  level: Expert
+  keywords:
+  - language
+- name: STL
+  level: Expert
+  keywords:
+  - cpp
+  - library
+- name: Boost
+  level: Advanced
+  keywords:
+  - cpp
+  - library
+- name: Qt
+  level: Expert
+  keywords:
+  - cpp
+  - library
+  - framework
+- name: CEF
+  level: Advanced
+  keywords:
+  - cpp
+  - framework
+- name: Akka
+  level: Expert
+  keywords:
+  - scala
+  - library
+- name: Cats
+  level: Advanced
+  keywords:
+  - scala
+  - library
+- name: Lagom
+  level: Advanced
+  keywords:
+  - scala
+  - framework
+- name: Django
+  level: Expert
+  keywords:
+  - python
+  - framework
+- name: Flask
+  level: Expert
+  keywords:
+  - python
+  - framework
+- name: Keras
+  level: Advanced
+  keywords:
+  - python
+  - library
+  - framework
+- name: asyncio
+  level: Expert
+  keywords:
+  - python
+  - library
+- name: aiohttp
+  level: Expert
+  keywords:
+  - python
+  - library
+- name: MySQL
+  level: Advanced
+  keywords:
+  - db
+- name: PostgreSQL
+  level: Advanced
+  keywords:
+  - db
+- name: SQLite
+  level: Advanced
+  keywords:
+  - db
+- name: Cassandra
+  level: Advanced
+  keywords:
+  - db
+- name: Elastic Stack
+  level: Advanced
+  keywords:
+  - db
+- name: GitLab CI
+  level: Expert
+  keywords:
+  - devops
+- name: Jenkins
+  level: Advanced
+  keywords:
+  - devops
+- name: Ansible
+  level: Expert
+  keywords:
+  - devops
+- name: Puppet
+  level: Expert
+  keywords:
+  - devops
+- name: Docker
+  level: Expert
+  keywords:
+  - devops
+- name: Kubernetes
+  level: Expert
+  keywords:
+  - devops
+- name: Terraform
+  level: Advanced
+  keywords:
+  - devops
+- name: Bash
+  level: Expert
+  keywords:
+  - devops
+- name: Linux
+  level: Expert
+  keywords:
+  - devops
+- name: Git
+  level: Expert
+  keywords:
+  - misc
+- name: Jira
+  level: Expert
+  keywords:
+  - misc
+- name: Confluence
+  level: Expert
+  keywords:
+  - misc
+- name: Scrum
+  level: Expert
+  keywords:
+  - misc
+- name: Kanban
+  level: Expert
+  keywords:
+  - misc
+- name: team management
+  level: Advanced
+  keywords:
+  - misc
+languages:
+- language: Russian
+  fluency: Native speaker
+- language: English
+  fluency: Professional working proficiency (C1)
+certificates:
+- name: ""
+  date: 1970-01-01
+  url: https://example.com/
+  issuer: ""
+projects:
+- name: FOSS News
+  description: News aggregation and classification platform
+  highlights:
+  - ""
+  keywords:
+  - FOSS
+  - Linux
+  - Python
+  - asyncio
+  - aiohttp
+  - aiogram
+  - Telegram
+  - BeautifulSoup
+  - Django
+  - Celery
+  - RabbitMQ
+  - PostgreSQL
+  - nginx
+  - Docker
+  - Docker Compose
+  - AI
+  - Classification
+  - News
+  startDate: 1970-01-01
+  endDate: 1970-01-01
+  url: https://example.com/
+  roles:
+  - ""
+  entity: ""
+  type: service
+publications: []
+awards: []
+references: []
+volunteer:
+- organization: PermLUG
+  position: Community manager
+  url: https://permlug.org/
+  startDate: 2011-09-01
+  # endDate: ""
+  summary: ""
+  highlights:
+  - ""
+interests:
+- name: ""
+  keywords:
+  - ""
+meta:
+  version: v1.0.0
+  canonical: "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json"
+  lastModified: 2020-12-29T15:53:00

@@ -1,0 +1,23 @@
+{{- $page := . -}}
+{{- $section := .FirstSection -}}
+{{- $b := site.Params.collapse_breakpoint | default "md" -}}
+<aside class="sidebar">
+{{- if .Params.sidebar | default true }}
+  <div id="sidebar" class="offcanvas-{{ $b }} offcanvas-start" tabindex="-1" aria-labelledby="sidebar-title">
+    <div class="offcanvas-header">
+      <h5 id="sidebar-title" class="offcanvas-title">{{ $section.Title }}</h5>
+      {{ partial "buttonClose" "sidebar" }}
+    </div>
+    <div class="offcanvas-body">
+      <h6>{{ $section.Title }}</h6><hr>
+      <nav class="sidebar-nav" aria-label="Sidebar navigation">
+        <ul class="sidebar-list sidebar-root">
+        {{- range $section.Pages }}
+          {{ partial "sidebar/item" (dict "item" . "page" $page) }}
+        {{- end }}
+        </ul>
+      </nav>
+    </div>
+  </div>
+{{- end }}
+</aside>

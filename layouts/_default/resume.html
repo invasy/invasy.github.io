@@ -1,0 +1,28 @@
+{{ define "main" }}
+{{- $resume := site.Data.resume -}}
+{{- $show := .Params -}}
+{{- $scratch := .Scratch -}}
+<main class="resume">
+  <nav class="resume-nav">{{/*  {{ $pdf_url := (.OutputFormats.Get "pdf").RelPermalink }}  */}}
+    {{ $pdf_url := "Vasiliy-Polyakov-Resume.pdf" -}}
+    <a class="resume-link" href="{{ $pdf_url }}" title="Résumé in PDF">{{ partial "icon" "pdf" }}</a>
+    {{ $json := site.Data.resume | jsonify | resources.FromString "resume.json" -}}
+    <a class="resume-link" href="{{ $json.RelPermalink }}" title="Résumé in JSON">{{ partial "icon" "json" }}</a>
+  </nav>
+  {{ partial "resume/header" (dict "basics" $resume.basics "show" $show) }}
+  {{ partial "resume/summary" $resume.basics.summary }}
+  {{- $scratch.Set "sections" (slice (dict "id" "summary" "title" "Summary")) }}
+  {{- range $resume.sections }}
+    {{- $title := .title | default (title .id) }}
+    {{- $section := index $resume .id }}
+    {{- if $section | and (index $show .id | default true) }}
+      {{ partial (path.Join "resume" .id) (dict "id" .id "title" $title "section" $section) }}
+      {{- $scratch.Add "sections" (dict "id" .id "title" $title) }}
+    {{- end }}
+  {{- end }}
+</main>
+{{ end }}
+
+{{ define "right" }}
+{{ partial "toc" (dict "Params" .Params "TableOfContents" (partial "resume/toc" .)) }}
+{{ end }}

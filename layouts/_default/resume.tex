@@ -1,0 +1,38 @@
+{{- $show := .Params -}}
+\documentclass[a4paper,12pt{{ if $show.draft }},draft{{ end }}]{article}
+
+\usepackage[T1]{fontenc}
+\usepackage{geometry}
+\usepackage[empty]{fullpage}
+\usepackage{xcolor}
+\usepackage{anyfontsize}
+\usepackage{tabularx}
+\usepackage{multirow}
+\usepackage{svg}
+\usepackage[hidelinks]{hyperref}
+\usepackage[english]{babel}
+
+\geometry{margin=2cm}
+
+\svgsetup{inkscape=force,width=1em,pretex=\textcolor[rgb]{.5,0,.125}}
+\svgpath{../icons}
+
+\begin{document}{{ with site.Data.resume }}%
+\begin{tabular}{l r}{{ with .basics }}%
+{{- $contacts := slice
+  (dict "network" "Email" "url" (printf "mailto:%s" .email) "username" .email)
+  (dict "network" "Phone" "url" (printf "tel:%s" .phone) "username" .phone)
+  (dict "network" "Website" "url" .url "username" (.url | replaceRE "^https?://([^/]+).*$" "$1"))
+}}{{ $contacts = $contacts | append .profiles }}
+  {\fontsize{3em}{3.6em}\selectfont {{ .name }} \par} & \multirow{3}{10cm}{\begin{tabular}{c l l}%
+  {{- range $contacts }}
+    {{- $type := .network | lower }}
+    {{- if (index $show $type | default true) }}
+    \includesvg{{"{"}}{{ $type }}{{"}"}} & {{ .network }}: & \href{{"{"}}{{ .url }}{{"}{"}}{{ .username }}{{"}"}} \\
+    {{- end }}
+  {{- end }}
+  \end{tabular}} \\
+  \vspace{.1em} \\
+  {\fontsize{2em}{2.4em}\selectfont \color{darkgray} {{ .label }} \par}
+\end{tabular}{{ end }}
+\end{document}{{ end }}

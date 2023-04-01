@@ -1,0 +1,7 @@
+{{- $slice := . -}}
+{{- $len := len $slice -}}
+{{- $reversed := slice -}}
+{{- range seq $len -}}
+  {{- $reversed = $reversed | append (index $slice (sub $len .)) -}}
+{{- end -}}
+{{- return $reversed -}}

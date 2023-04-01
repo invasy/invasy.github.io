@@ -1,0 +1,23 @@
+{
+  "id": "user",
+  "version": "0.1.0",
+  "name": "Create user",
+  "description": "Create new user in container",
+  "options": {
+    "username": {
+      "description": "Username",
+      "type": "string",
+      "default": ""
+    },
+    "password": {
+      "description": "Password",
+      "type": "string",
+      "default": ""
+    },
+    "comment": {
+      "description": "Comment",
+      "type": "string",
+      "default": ""
+    }
+  }
+}

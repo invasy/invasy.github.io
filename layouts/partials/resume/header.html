@@ -1,0 +1,50 @@
+{{- $show := .show -}}
+{{- with .basics -}}
+<header class="resume-header">
+  {{- if .image | and ($show.photo | default false) }}
+  <img class="resume-photo" src="{{ .image }}">
+  {{- end }}
+  <hgroup>
+    <h1 class="resume-name">{{ .name }}</h1>
+    <h2 class="resume-title">{{ .label }}</h2>
+  </hgroup>
+  <ul class="resume-profiles">
+  {{- if .location | and ($show.location | default false) }}
+    <li class="resume-profile">
+      {{ partial "icon" "location" }}
+      <span class="resume-profile-hint">Location</span>
+      <span class="resume-profile-text">{{ .location.city }}, {{ (index (getJSON "https://restcountries.com/v3.1/alpha/" .location.countryCode) 0).name.common }}</span>
+    </li>
+  {{- end }}
+  {{- if .email | and ($show.email | default true) }}
+    <li class="resume-profile">
+      {{ partial "icon" "email" }}
+      <span class="resume-profile-hint">E-mail</span>
+      {{ partial "protectEmail" (dict
+        "email" .email
+        "title" "Mail me about vacancy or job offer"
+        "text" (.email | replaceRE "@" " at " | replaceRE "\\." " dot " | printf "<span class=\"resume-profile-text\">%s</span>" | safeHTML)
+        "class" "resume-profile-link"
+      ) }}
+    </li>
+  {{- end }}
+  {{- $profiles := slice
+    (dict "network" "Phone" "url" (.phone | printf "tel:%s") "username" .phone)
+    (dict "network" "Website" "url" .url "username" (.url | replaceRE "^https?://([^/]+).*$" "$1"))
+  -}}
+  {{- $profiles = $profiles | append .profiles -}}
+  {{- range $profiles  }}
+    {{- $type := .network | lower }}
+    {{- if (index $show $type | default true) }}
+    <li class="resume-profile">
+      {{ partial "icon" $type }}
+      <span class="resume-profile-hint">{{ .network }}</span>
+      <a class="resume-profile-link" href="{{ .url }}" title="{{ .network }}" aria-label="{{ .network }}">
+        <span class="resume-profile-text">{{ .username }}</span>
+      </a>
+    </li>
+    {{- end }}
+  {{- end }}
+  </ul>
+</header>
+{{- end -}}

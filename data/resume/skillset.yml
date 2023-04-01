@@ -1,0 +1,12 @@
+- name: C++
+  keyword: cpp
+- name: Scala
+  keyword: scala
+- name: Python
+  keyword: python
+- name: DB
+  keyword: db
+- name: DevOps
+  keyword: devops
+- name: Misc
+  keyword: misc

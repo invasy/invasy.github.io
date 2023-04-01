@@ -1,0 +1,22 @@
+$collapse-breakpoint: 'md' !default;
+
+#sidebar {
+  display: flex;
+  flex: auto;
+
+  .offcanvas-body {
+    flex: auto;
+    flex-direction: column;
+    flex-grow: 1;
+  }
+}
+
+.sidebar-item {
+  button {
+    padding: 0;
+  }
+}
+
+.sidebar-link.active {
+  font-weight: bold;
+}

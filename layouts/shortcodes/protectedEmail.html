@@ -1,0 +1,7 @@
+{{- partial "protectEmail" (dict
+  "class" (.Get "class")
+  "email" (.Get "email")
+  "subject" (.Get "subject")
+  "title" (.Get "title")
+  "text" .Inner
+) -}}

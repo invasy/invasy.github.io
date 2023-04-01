@@ -1,0 +1,11 @@
+<aside class="toc">
+{{- if .Params.toc | default true }}
+  <button type="button" class="btn btn-link toc-toggler" data-bs-toggle="collapse" data-bs-target="#toc" aria-controls="toc" aria-expanded="false">
+    Table of contents
+  </button>
+  <h6>Table of contents</h6><hr>
+  <div id="toc" class="collapse show">
+    {{ .TableOfContents }}
+  </div>
+{{- end }}
+</aside>

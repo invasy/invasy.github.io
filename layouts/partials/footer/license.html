@@ -1,0 +1,7 @@
+{{ with site.Data.license -}}
+<a rel="license" href="{{ .url }}" title="{{ .title }}" aria-label="{{ .title }}">
+  {{- range .icons }}{{ partial "icon" . }}{{ end -}}
+</a><br>
+<span class="d-none d-{{ .breakpoint | default "md" }}-inline">Content on this site is licensed under a</span>
+<a rel="license" href="{{ .url }}" title="{{ .title }}" aria-label="{{ .title }}">{{ .abbr }}</a>
+{{- end }}

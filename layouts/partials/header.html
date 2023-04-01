@@ -1,0 +1,15 @@
+<header id="header" class="header navbar navbar-expand-sm">
+  <nav class="container-xxl" aria-label="Main navigation">
+    {{ if .Params.sidebar | default true }}{{ partialCached "header/toggler" "sidebar" "sidebar" }}{{ end }}
+    <a class="navbar-brand me-md-4" href="/" title="{{ site.Title }}" aria-label="{{ site.Title }}">
+      {{ $logo := resources.Get "images/logo.svg" | minify -}}
+      <img src="{{ $logo.RelPermalink }}" title="{{ site.Title }}" alt="{{ site.Title }}">
+    </a>
+    <div class="search-bar">
+      {{/* {{ partialCached "search" "" }} */}}
+    </div>
+    <button id="theme-toggler" class="btn" type="button" title="Toggle color scheme" aria-label="Toggle color scheme"></button>
+    {{ partialCached "header/toggler" "navbar" "navbar" }}
+    {{ partial "navbar" . }}
+  </nav>
+</header>

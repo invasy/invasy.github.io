@@ -1,0 +1,8 @@
+{{- with site.Params.search -}}
+<form id="search" class="d-flex" role="search" method="get" action="{{ .url }}">
+  <div class="input-group">
+    <input id="search-query" class="form-control" type="search" name="{{ .param }}" placeholder="Search" aria-label="Search" aria-describedby="search-submit">
+    <button id="search-submit" class="btn btn-outline-secondary" type="submit" value="Search">{{ partialCached "icon" "search" }}</button>
+  </div>
+</form>
+{{- end -}}

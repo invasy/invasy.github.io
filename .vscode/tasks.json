@@ -1,0 +1,91 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Make icons",
+      "detail": "Combine SVG icons to a file",
+      "group": {
+        "kind": "build"
+      },
+      "type": "shell",
+      "command": "scripts/make-icons.py",
+      "icon": {
+        "id": "wand",
+        "color": "terminal.ansiCyan"
+      },
+      "presentation": {
+        "echo": true,
+        "panel": "shared",
+        "reveal": "silent",
+        "focus": false,
+        "clear": true,
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Build",
+      "detail": "Build this site with Hugo",
+      "group": {
+        "kind": "build"
+      },
+      "type": "shell",
+      "command": "hugo",
+      "args": [
+        "--minify",
+        "--environment", "production",
+        "--printI18nWarnings",
+        "--printPathWarnings",
+        "--printUnusedTemplates",
+        "--templateMetrics",
+        "--templateMetricsHints",
+        "--cleanDestinationDir"
+      ],
+      "icon": {
+        "id": "server-process",
+        "color": "terminal.ansiGreen"
+      },
+      "presentation": {
+        "echo": true,
+        "panel": "dedicated",
+        "reveal": "always",
+        "focus": true,
+        "clear": true,
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Serve",
+      "detail": "Serve this site with Hugo webserver",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "type": "shell",
+      "command": "hugo",
+      "args": [
+        "server",
+        "--bind", "0.0.0.0",
+        "--environment", "development",
+        "--printPathWarnings",
+        "--printUnusedTemplates",
+        "--templateMetricsHints"
+      ],
+      "icon": {
+        "id": "server-environment",
+        "color": "terminal.ansiMagenta"
+      },
+      "presentation": {
+        "echo": true,
+        "panel": "dedicated",
+        "reveal": "silent",
+        "revealProblems": "onProblem",
+        "focus": false,
+        "clear": true,
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    }
+  ]
+}

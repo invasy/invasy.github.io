@@ -1,0 +1,73 @@
+title: invasy.dev
+baseUrl: 'https://invasy.dev'
+languageCode: en-us
+author:
+  name: Vasiliy Polyakov
+  email: site@invasy.dev
+module:
+  hugoVersion:
+    extended: true
+    min: "0.110.0"
+  mounts:
+  - source: assets
+    target: assets
+  - source: content
+    target: content
+  - source: data
+    target: data
+  - source: layouts
+    target: layouts
+  - source: static
+    target: static
+  imports:
+  - path: github.com/twbs/bootstrap
+    ignoreConfig: true
+    mounts:
+    - source: scss
+      target: assets/scss/bootstrap
+    - source: site/assets/scss
+      target: assets/scss/bootstrap/docs
+    - source: js
+      target: assets/js/bootstrap
+  - path: github.com/twbs/rfs
+    ignoreConfig: true
+    mounts:
+    - source: scss.scss
+      target: assets/scss/bootstrap/vendor/_rfs.scss
+mediaTypes:
+  application/x-tex:
+    suffixes:
+    - tex
+  application/x-latex:
+    suffixes:
+    - tex
+outputFormats:
+  latex:
+    mediaType: application/x-latex
+    isPlainText: true
+  pdf:
+    mediaType: application/pdf
+markup:
+  tableOfContents:
+    startLevel: 1
+    endLevel: 4
+    ordered: false
+params:
+  collapse_breakpoint: md
+  copyright:
+    year: 2017
+    subject: Mail me about this site
+  favicon:
+    safary_icon_color: '#800020'
+    msapp_tile_color: '#b91d47'
+    theme_color: '#ffffff'
+  search:
+    fuse:
+      enable: false
+      url: /search
+      param: q
+    pagefind:
+      enable: false
+    gcse:
+      enable: false
+      id: '1e801f0739759a3cb'

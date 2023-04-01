@@ -1,0 +1,17 @@
+<section class="resume-section">
+  {{ partial "resume/section-title" . }}
+  <ul class="resume-educations">
+  {{- range .section }}
+    <li class="resume-education">
+      <div class="resume-education-date">
+        <span class="resume-education-date-end">{{ .endDate | dateFormat "2006" }}</span>
+      </div>
+      <div class="resume-education-body">
+        <span class="resume-education-degree">{{ .studyType }}</span> in
+        <span class="resume-education-area">{{ .area }}</span>,
+        <a class="resume-education-institution" href="{{ .url }}" title="{{ .institution }}" aria-label="{{ .institution }}">{{ .institution }}</a>
+      </div>
+    </li>
+  {{- end }}
+  </ul>
+</section>

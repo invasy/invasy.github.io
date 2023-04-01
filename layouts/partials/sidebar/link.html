@@ -1,0 +1,4 @@
+{{- $active := .active -}}
+{{- with .item -}}
+<a class="sidebar-link{{ if $active }} active{{ end }}" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a>
+{{- end -}}

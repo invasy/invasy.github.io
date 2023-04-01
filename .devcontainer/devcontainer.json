@@ -1,0 +1,57 @@
+{
+  "name": "Hugo",
+  "image": "debian:bullseye-slim",
+  "features": {
+    "./packages": {
+      "packages": [
+        "bash-completion",
+        "ca-certificates",
+        "curl",
+        "git",
+        "jq",
+        "less",
+        "pandoc",
+        "python3",
+        "python3-pip"
+      ]
+    },
+    "./user": {},
+    "./golang": {"version": "1.20.2"},
+    "./hugo": {},
+    "./hugo-env": {}
+  },
+  "containerUser": "hugo",
+  "forwardPorts": [1313],
+  "portsAttributes": {
+    "1313": {"label": "Hugo server"}
+  },
+  "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "asciidoctor.asciidoctor-vscode",
+        "bierner.github-markdown-preview",
+        "bierner.markdown-checkbox",
+        "bierner.markdown-emoji",
+        "bierner.markdown-mermaid",
+        "budparr.language-hugo-vscode",
+        "codezombiech.gitignore",
+        "ecmel.vscode-html-css",
+        "EditorConfig.EditorConfig",
+        "esbenp.prettier-vscode",
+        "golang.go",
+        "ms-azuretools.vscode-docker",
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-vscode.vscode-typescript-next",
+        "redhat.vscode-xml",
+        "redhat.vscode-yaml",
+        "rusnasonov.vscode-hugo",
+        "syler.sass-indented",
+        "timonwong.shellcheck",
+        "unifiedjs.vscode-remark",
+        "vscode-icons-team.vscode-icons"
+      ]
+    }
+  }
+}

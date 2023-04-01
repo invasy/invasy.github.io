@@ -1,0 +1,8 @@
+{{- $scriptPath := printf "ts/%s.ts" . -}}
+{{- $targetPath := printf "js/%s.js" . -}}
+{{- $js := resources.Get $scriptPath | js.Build (dict
+  "targetPath" $targetPath
+  "target" "esnext"
+  "minify" hugo.IsProduction
+) -}}
+<script src="{{ $js.RelPermalink }}"></script>

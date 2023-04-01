@@ -1,0 +1,16 @@
+$collapse-breakpoint: 'md' !default;
+
+.main {
+  display: flex;
+  flex: 4 0 auto;
+  flex-direction: column;
+  min-height: 100%;
+  padding: 1rem;
+  overflow-y: auto;
+
+  @include media-breakpoint-up($collapse-breakpoint) {
+    max-width: 68%;
+    // border-left: 1px var(--bs-border-style) var(--bs-border-color);
+    // border-right: 1px var(--bs-border-style) var(--bs-border-color);
+  }
+}

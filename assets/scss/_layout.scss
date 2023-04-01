@@ -1,0 +1,60 @@
+html, body {
+  min-height: 100vh;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
+}
+
+#layout {
+  display: flex;
+  flex: 1 0 100%;
+  flex-direction: column-reverse;
+  min-height: 100%;
+  padding: 0;
+
+  @include media-breakpoint-up($collapse-breakpoint) {
+    flex-direction: row;
+  }
+}
+
+.home,
+.main,
+.resume,
+.not-found {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.home {
+  img {
+    max-width: 100%;
+  }
+}
+
+.home,
+.not-found {
+  #content {
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.main {
+  flex: 4 0 auto;
+  
+  @include media-breakpoint-up($collapse-breakpoint) {
+    max-width: 68%;
+  }
+}
+
+#content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  overflow-y: auto;
+}

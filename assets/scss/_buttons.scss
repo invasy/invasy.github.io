@@ -1,0 +1,49 @@
+.navbar-toggler {
+  width: 2rem;
+  height: 2rem;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  vertical-align: middle;
+}
+
+.btn-sidebar {
+  margin-right: .5rem;
+}
+
+.btn-navbar {
+  margin-left: .5rem;
+}
+
+#theme-toggler {
+  width: 1.5em;
+  height: 1.5em;
+  min-width: 1.5em;
+  min-height: 1.5em;
+  border: none;
+  border-radius: 0;
+  padding: 0;
+  vertical-align: middle;
+  background-image: url('/icons/dark.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100%;
+}
+
+@include color-mode(dark) {
+  #theme-toggler {
+    background-image: url('/icons/light.svg');
+  }
+
+  .navbar {
+    background-color: $dark;
+  }
+
+  #theme-toggler,
+  .btn-navbar,
+  .btn-sidebar,
+  .btn-close,
+  aside img {
+    filter: invert(80%);
+  }
+}

@@ -1,0 +1,4 @@
+<section class="resume-section">
+  {{ partial "resume/section-title" (dict "id" "summary" "title" "Summary") }}
+  {{ . | markdownify }}
+</section>

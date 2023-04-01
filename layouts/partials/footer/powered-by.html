@@ -1,0 +1,8 @@
+<span class="d-none d-lg-inline">Hand-crafted &amp; designed with </span>{{ partial "icon" "heart" }}
+{{- with site.Data.powered_by -}}
+<br class="d-none d-lg-inline">
+<span class="d-none d-lg-inline">Powered by </span><br class="d-none d-md-inline d-lg-none">
+{{- range . }}
+<a href="{{ .url }}" title="{{ .title }}" aria-label="{{ .title }}">{{ partial "icon" .icon }}</a>
+{{- end }}
+{{- end }}

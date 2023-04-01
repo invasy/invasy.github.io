@@ -1,0 +1,6 @@
+{{- $email := split .email "@" -}}
+{{- $name := index $email 0 -}}
+{{- $host := delimit (partial "meta/reverse" (split (index $email 1) ".")) "; " -}}
+<a class="{{ with .class }}{{ . }} {{ end }}text-addr" href="#" data-name="{{ $name }}" data-host="{{ $host }}"
+{{- with .subject }} data-subject="{{ . }}"{{ end }}
+{{- with .title }} title="{{ . }}"{{ end }}>{{ .text }}</a>

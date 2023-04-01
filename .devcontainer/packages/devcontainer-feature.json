@@ -1,0 +1,13 @@
+{
+  "id": "packages",
+  "version": "0.1.0",
+  "name": "Packages",
+  "description": "Install packages",
+  "options": {
+    "packages": {
+      "description": "List of packages to install",
+      "type": "string",
+      "default": ""
+    }
+  }
+}

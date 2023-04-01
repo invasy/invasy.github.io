@@ -1,0 +1,65 @@
+*                 text=auto
+
+*.json            text
+*.yaml            text
+*.yml             text
+
+*.md              text diff=markdown
+*.markdown        text diff=markdown
+*.goldmark        text diff=markdown
+*.pandoc          text diff=markdown
+*.pdc             text diff=markdown
+*.rst             text
+*.cls             text
+*.tex             text
+*.txt             text
+
+*.htm             text diff=html
+*.html            text diff=html
+*.xhtml           text diff=html
+*.xml             text
+*.css             text diff=css
+*.less            text
+*.sass            text
+*.scss            text diff=css
+*.coffee          text
+*.js              text
+*.ts              text
+
+*.svg             text
+*.ico             binary
+*.gif             binary
+*.jpg             binary
+*.png             binary
+*.eot             binary
+*.ttf             binary
+*.woff            binary
+*.xcf             binary
+*.pdf             binary
+
+*.py              text diff=python
+*.sh              text eol=lf diff=bash
+*.bash            text eol=lf diff=bash
+*.bat             text eol=crlf
+*.cmd             text eol=crlf
+*.ps1             text eol=crlf
+*.psm1            text eol=crlf
+
+CNAME             text
+site.webmanifest  text
+
+.nojekyll         text
+Gemfile           text
+Gemfile.lock      text
+go.mod            text
+go.sum            text
+
+Dockerfile        text eol=lf
+.dockerignore     text
+
+.editorconfig     text
+
+.gitattributes    text export-ignore
+.gitignore        text export-ignore
+.gitkeep          text export-ignore
+.gitmodules       text export-ignore

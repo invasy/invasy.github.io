@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="author" content="{{ site.Author.name }}">
+  {{ partial "meta/title" . }}
+  {{ partialCached "meta/favicon" "" }}
+  {{ partialCached "meta/style" "" }}
+</head>
+{{ block "bodyTag" . }}<body>{{ end }}
+  {{ partialCached "icons.svg" "" }}
+  {{ partial "header" . }}
+  <div id="layout" class="container-xxl">
+    {{ block "left" . }}{{ partial "sidebar" . }}{{ end }}
+    {{ block "main" . }}
+    <main class="main">
+      {{ block "title" . }}{{ partial "title" . }}{{ end }}
+      <section id="content">
+        {{ block "content" . }}{{ .Content }}{{ end }}
+      </section>
+    </main>
+    {{ end }}
+    {{ block "right" . }}{{ partial "toc" . }}{{ end }}
+  </div>
+  {{ partialCached "footer" "" }}
+  {{ partialCached "meta/scripts" "" }}
+  {{ block "scripts" . }}{{ end }}
+</body>
+</html>

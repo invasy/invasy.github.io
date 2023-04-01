@@ -1,0 +1,15 @@
+{{- $b := site.Params.collapse_breakpoint | default "md" -}}
+<div id="navbar" class="offcanvas-sm offcanvas-end" tabindex="-1" aria-labelledby="navbar-title">
+  <div class="offcanvas-header">
+    <h5 id="navbar-title" class="offcanvas-title">{{ site.Title }}</h5>
+    {{ partial "buttonClose" "navbar" }}
+  </div>
+  <div class="offcanvas-body">
+    <ul class="navbar-nav me-auto">{{ $page := . }}
+    {{- range site.Menus.navbar }}{{ if .Params.show | default true }}
+      {{- $active := or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .) }}
+      <li class="nav-item"><a class="nav-link{{ if $active }} active" aria-current="page{{ end }}" href="{{ .URL }}" title="{{ .Name }}" aria-label="{{ .Name }}">{{ .Name }}</a></li>
+    {{- end }}{{ end }}
+    </ul>
+  </div>
+</div>

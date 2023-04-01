@@ -1,0 +1,54 @@
+// Sidebar and table of contents (ToC)
+aside {
+  h6 {
+    display: none;
+  }
+
+  hr {
+    display: none;
+  }
+
+  @include media-breakpoint-up($collapse-breakpoint) {
+    display: flex;
+    flex: 0 0 16%;
+    flex-direction: column;
+    position: -webkit-sticky;
+    position: sticky;
+    top: var(--header-height);
+    width: 16%;
+    min-height: calc(100vh - var(--header-height) - var(--footer-height));
+    max-height: calc(100vh - var(--header-height));
+    align-self: stretch;
+    padding: .5rem;
+    overflow-y: auto;
+
+    h6 {
+      display: block;
+    }
+
+    hr {
+      display: block;
+      margin: 0;
+    }
+  }
+
+  nav {
+    ul {
+      list-style: none;
+      margin: 0;
+      padding-left: 1.2rem;
+    }
+
+    > ul {
+      padding-left: 0;
+    }
+
+    a {
+      font-weight: 500;
+
+      &:not(:hover) {
+        text-decoration: none;
+      }
+    }
+  }
+}

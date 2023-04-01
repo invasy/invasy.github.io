@@ -1,0 +1,64 @@
+$collapse-breakpoint: 'md' !default;
+
+.toc {
+  &:has(#TableOfContents:empty) {
+    display: none;
+  }
+
+  @include media-breakpoint-down($collapse-breakpoint) {
+    flex: 0 0 auto;
+    width: 100%;
+    padding: .5rem 2rem;
+  }
+}
+
+.toc-toggler {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0;
+  font-size: 1rem;
+  font-weight: bold;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    width: 2em;
+    height: 2em;
+    vertical-align: middle;
+    background-image: url('/icons/arrow-down.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 100%;  
+  }
+
+  &.collapsed::after {
+    background-image: url('/icons/arrow-left.svg');
+  }
+
+  @include media-breakpoint-up($collapse-breakpoint) {
+    display: none;
+  }
+
+  img {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+@include color-mode(dark) {
+  .toc-toggler::after,
+  .toc-toggler.collapsed::after {
+    filter: contrast(20%);
+  }
+}
+
+#toc {
+  font-size: 1rem;
+
+  @include media-breakpoint-up($collapse-breakpoint) {
+    display: block;
+    font-size: 1.1rem;
+  }
+}

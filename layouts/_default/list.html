@@ -1,0 +1,9 @@
+{{ define "content" }}
+{{ .Content }}
+{{ template "_internal/pagination.html" . }}
+<ul>
+{{- range .Paginator.Pages }}
+  {{ .Render "list/item" }}
+{{- end }}
+</ul>
+{{ end }}

@@ -1,0 +1,11 @@
+{{- if .IsNamedParams -}}
+  {{- $src := .Get "src" -}}
+  {{- $title := .Get "title" -}}
+  {{- $link := .Get "link" -}}
+  {{- if eq $link "." }}{{ $link = $src }}{{ end -}}
+  {{- if $link }}<a href="{{ $link }}"{{ with $title }} title="{{ . }}"{{ end }}>{{ end -}}
+  <img src="{{ $src }}"{{ with .Get "width" }} width="{{ . }}"{{ end }}{{ with .Get "height" }} height="{{ . }}"{{ end }}{{ with $title }} title="{{ . }}"{{ end }}{{ with .Get "alt" }} alt="{{ . }}" aria-label="{{ . }}"{{ end }}>
+  {{- if $link }}</a>{{ end }}
+{{- else -}}
+  <img src="{{ .Get 0 }}"{{ with .Get 1 }} width="{{ . }}"{{ end }}{{ with .Get 2 }} height="{{ . }}"{{ end }}{{ with .Get 3 }} title="{{ . }}"{{ end }}{{ with .Get 4 }} alt="{{ . }}"{{ end }}>
+{{- end -}}

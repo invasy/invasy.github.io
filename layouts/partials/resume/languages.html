@@ -1,0 +1,11 @@
+<section class="resume-section">
+  {{ partial "resume/section-title" . }}
+  <ul class="resume-languages">
+  {{- range .section }}
+    <li>
+      <span class="resume-language">{{ .language }}</span>:
+      <span class="resume-fluency">{{ .fluency }}</span>.
+    </li>
+  {{- end }}
+  </ul>
+</section>

@@ -1,0 +1,75 @@
+$collapse-breakpoint: {{ site.Params.collapse_breakpoint | default "md" }};
+
+$header-height: calc(min(64px, 10vw));
+$footer-height: 64px;
+
+// Colors
+$color-mode-type: data;
+$burgundy: #800020;
+$body-bg: #fff;
+$body-bg-dark: #222;
+$primary: $burgundy;
+$secondary: #666;
+$dark: #303030;
+$light: #ddd;
+$navbar-dark-color: rgba(255, 255, 255, .5);
+$headings-color: $burgundy;
+$headings-color-dark: #CC0044;
+// $blue: #004080;
+$link-color: #003399;
+$link-color-dark: #0088D2;
+// $headings-color: $primary;
+// $border-color: #444;
+
+// Bootstrap
+@import 'bootstrap/functions';
+@import 'bootstrap/variables';
+@import 'bootstrap/variables-dark';
+@import 'bootstrap/maps';
+@import 'bootstrap/mixins';
+@import 'bootstrap/utilities';
+@import 'bootstrap/root';
+@import 'bootstrap/reboot';
+@import 'bootstrap/type';
+@import 'bootstrap/containers';
+@import 'bootstrap/grid';
+@import 'bootstrap/forms';
+@import 'bootstrap/buttons';
+@import 'bootstrap/transitions';
+@import 'bootstrap/nav';
+@import 'bootstrap/navbar';
+@import 'bootstrap/offcanvas';
+@import 'bootstrap/helpers';
+@import 'bootstrap/utilities/api';
+
+// Custom styles
+@import 'layout';
+@import 'buttons';
+@import 'header';
+@import 'footer';
+@import 'aside';
+@import 'navbar';
+@import 'sidebar';
+@import 'toc';
+@import 'resume';
+
+:root {
+  --header-height: #{$header-height};
+  --footer-height: #{$footer-height};
+}
+
+.icon {
+  display: inline-block;
+  width: 1.1em;
+  height: 1.1em;
+}
+
+@include color-mode(dark) {
+  .icon {
+    fill: $gray-500;
+  }
+}
+
+.icon-heart {
+  fill: $burgundy !important;
+}

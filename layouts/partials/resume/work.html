@@ -1,0 +1,28 @@
+<section class="resume-section">
+  {{ partial "resume/section-title" . }}
+  {{- range .section }}
+  <section class="resume-work">
+    {{- $name := .name }}
+    <span class="resume-work-date">
+      <span class="resume-work-date-start">{{ .startDate | dateFormat "Jan 2006" }}</span>
+      <span class="resume-work-date-end">{{ .endDate | dateFormat "Jan 2006" }}</span>
+    </span>
+    <div class="resume-work-body">
+      <div class="resume-work-header">
+        <strong class="resume-work-position">{{ .position }}</strong>,
+        <a class="resume-work-company" href="{{ .url }}" title="{{ $name }}" aria-label="{{ $name }}">{{ $name }}</a>,
+        <span class="resume-work-location">{{ .location }}</span>
+      </div>
+      {{ with .summary }}<div class="resume-work-summary">{{ . | markdownify }}</div>{{ end }}
+      {{- with .highlights }}
+      <ul class="resume-work-highlights">
+        {{- range . }}
+        <li class="resume-work-highlight">{{ . | markdownify }}</li>
+        {{- end }}
+      </ul>
+      {{- end }}
+      {{ with .description }}<div class="resume-work-description">{{ . | markdownify }}</div>{{ end }}
+    </div>
+  </section>
+  {{- end }}
+</section>

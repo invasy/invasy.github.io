@@ -1,0 +1,2 @@
+{{- $icon := .Params.icon | default (cond .IsSection "folder" "note") -}}
+{{ partial "icon" $icon }}

@@ -1,0 +1,7 @@
+<nav id="TableOfContents">
+  <ul>
+  {{- range .Scratch.Get "sections" }}
+    <li><a href="#{{ .id }}" title="{{ .title }}">{{ .title }}</a></li>
+  {{- end }}
+  </ul>
+</nav>

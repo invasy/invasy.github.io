@@ -1,0 +1,1 @@
+<title>{{ if not .IsHome | and .LinkTitle }}{{ if not .IsSection | and .CurrentSection | and .CurrentSection.Title }}{{ .CurrentSection.Title }}/{{ end }}{{ .LinkTitle }} // {{ end }}{{ .Site.Title }}</title>
