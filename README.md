@@ -18,6 +18,7 @@
 - [GitHub Actions](https://github.com/features/actions "GitHub Actions") — CI/CD pipelines
     - [`pages.yml`](.github/workflows/pages.yml "GitHub Pages Workflow") — GitHub Pages workflow
 - [GitHub Pages](https://pages.github.com/ "GitHub Pages") — static site hosting
+- [GitHub Codespaces](https://github.com/features/codespaces "GitHub Codespaces") — cloud devcontainer and VSCode in browser
 - [Development Containers](https://containers.dev/ "Development Containers") — [.devcontainer](.devcontainer)
 - [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code")
     - [`tasks.json`](.vscode/tasks.json) — VSCode tasks for icons and Hugo
