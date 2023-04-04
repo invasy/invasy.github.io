@@ -9,4 +9,8 @@ MD013:
   headers: true
   strict: false
   stern: false
+MD022:
+  lines_above: 1
+  lines_below: 0
 MD025: false
+MD032: false

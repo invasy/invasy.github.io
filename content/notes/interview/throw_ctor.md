@@ -4,15 +4,12 @@ categories:
 - intervew
 tags:
 - C++
-- ctor
 - default initialization
 - copy initialization
 - constructor
 - default constructor
 - copy constructor
-- dtor
 - destructor
-- virtual dtor
 - virtual destructor
 - exceptions
 - throw
@@ -20,7 +17,6 @@ tags:
 - catch
 ---
 # Task
-
 What will the following code print to `stdout`?
 
 ```cpp
@@ -76,7 +72,6 @@ int main() {
 ```
 
 # Solution
-
 ```text
 A::A()
 D::D()
@@ -94,7 +89,6 @@ E::~E()
 ```
 
 # Explanation
-
 1. [`try`][try] block in `main()`.
 2. [Default initialization][default_init] of local variable `b` in `main()`.
 3. [Default constructor][default_ctor] of a [base class][derived] `A::A()`.

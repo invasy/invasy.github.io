@@ -1,9 +1,11 @@
 title: invasy.dev
 baseUrl: 'https://invasy.dev'
-languageCode: en-us
 author:
   name: Vasiliy Polyakov
   email: site@invasy.dev
+
+languageCode: en-us
+
 markup:
   highlight:
     noClasses: false
@@ -15,11 +17,13 @@ markup:
     startLevel: 1
     endLevel: 4
     ordered: false
+
 taxonomies:
   algorithm: algorithms
   category: categories
   data_structure: data_structures
   tag: tags
+
 mediaTypes:
   application/x-tex:
     suffixes:
@@ -28,12 +32,14 @@ mediaTypes:
     suffixes:
     - tex
     - latex
+
 outputFormats:
   latex:
     mediaType: application/x-latex
     isPlainText: true
   pdf:
     mediaType: application/pdf
+
 module:
   hugoVersion:
     extended: true
@@ -64,6 +70,7 @@ module:
     mounts:
     - source: scss.scss
       target: assets/scss/bootstrap/vendor/_rfs.scss
+
 params:
   collapse_breakpoint: md
   copyright:
