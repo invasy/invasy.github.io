@@ -4,10 +4,40 @@ languageCode: en-us
 author:
   name: Vasiliy Polyakov
   email: site@invasy.dev
+markup:
+  highlight:
+    noClasses: false
+    codeFences: true
+    lineNos: true
+    lineNumbersInTable: false
+    anchorLineNos: true
+  tableOfContents:
+    startLevel: 1
+    endLevel: 4
+    ordered: false
+taxonomies:
+  algorithm: algorithms
+  category: categories
+  data_structure: data_structures
+  tag: tags
+mediaTypes:
+  application/x-tex:
+    suffixes:
+    - tex
+  application/x-latex:
+    suffixes:
+    - tex
+    - latex
+outputFormats:
+  latex:
+    mediaType: application/x-latex
+    isPlainText: true
+  pdf:
+    mediaType: application/pdf
 module:
   hugoVersion:
     extended: true
-    min: "0.110.0"
+    min: '0.110.0'
   mounts:
   - source: assets
     target: assets
@@ -34,24 +64,6 @@ module:
     mounts:
     - source: scss.scss
       target: assets/scss/bootstrap/vendor/_rfs.scss
-mediaTypes:
-  application/x-tex:
-    suffixes:
-    - tex
-  application/x-latex:
-    suffixes:
-    - tex
-outputFormats:
-  latex:
-    mediaType: application/x-latex
-    isPlainText: true
-  pdf:
-    mediaType: application/pdf
-markup:
-  tableOfContents:
-    startLevel: 1
-    endLevel: 4
-    ordered: false
 params:
   collapse_breakpoint: md
   copyright:
@@ -63,11 +75,11 @@ params:
     theme_color: '#ffffff'
   search:
     fuse:
-      enable: false
+      enabled: false
       url: /search
       param: q
     pagefind:
-      enable: false
+      enabled: false
     gcse:
-      enable: false
+      enabled: false
       id: '1e801f0739759a3cb'
