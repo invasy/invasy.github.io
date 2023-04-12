@@ -2,6 +2,8 @@ name: Build with Hugo and deploy to GitHub Pages
 
 on:
   push:
+    branches-ignore:
+    - 'dependabot/**'
   workflow_dispatch:
 
 permissions:
@@ -25,19 +27,24 @@ jobs:
       uses: actions/setup-go@v3
       with:
         go-version: stable
+
     - name: Setup Hugo
       uses: peaceiris/actions-hugo@v2
       with:
         hugo-version: latest
         extended: true
+
     - name: Checkout
       uses: actions/checkout@v3
       with:
         submodules: recursive
+
     - name: Update Hugo modules
       run: hugo mod get -u
+
     - name: Build
       run: hugo --minify --environment production
+
     - name: Upload site artifact
       uses: actions/upload-pages-artifact@v1
       with:
