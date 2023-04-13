@@ -1,3 +1,6 @@
+{{- if site.Params.search.pagefind.enabled }}
+<link href="/_pagefind/pagefind-ui.css" rel="stylesheet">
+{{- end }}
 {{ $style := resources.Get "scss/style.scss" | resources.ExecuteAsTemplate "css/style.css" . | toCSS -}}
 {{ if hugo.IsProduction }}{{ $style = $style | minify }}{{ end -}}
 <link rel="stylesheet" href="{{ $style.RelPermalink }}">

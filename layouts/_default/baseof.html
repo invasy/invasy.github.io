@@ -14,7 +14,7 @@
   <div id="layout" class="container-xxl">
     {{ block "left" . }}{{ partial "sidebar" . }}{{ end }}
     {{ block "main" . }}
-    <main class="main">
+    <main class="main" data-pagefind-body>
       {{ block "title" . }}{{ partial "title" . }}{{ end }}
       <section id="content">
         {{ block "content" . }}{{ .Content }}{{ end }}

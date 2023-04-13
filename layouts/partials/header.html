@@ -6,7 +6,7 @@
       <img src="{{ $logo.RelPermalink }}" title="{{ site.Title }}" alt="{{ site.Title }}">
     </a>
     <div class="search-bar">
-      {{/* {{ partialCached "search" "" }} */}}
+      {{ partial "search" . }}
     </div>
     <button id="theme-toggler" class="btn" type="button" title="Toggle color scheme" aria-label="Toggle color scheme"></button>
     {{ partialCached "header/toggler" "navbar" "navbar" }}

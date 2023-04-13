@@ -2,7 +2,7 @@
   "id": "user",
   "version": "0.1.0",
   "name": "Create user",
-  "description": "Create new user in container",
+  "description": "Create a new user in the container",
   "options": {
     "username": {
       "description": "Username",
@@ -18,6 +18,11 @@
       "description": "Comment",
       "type": "string",
       "default": ""
+    },
+    "root_password": {
+      "description": "Superuser (root) password",
+      "type": "string",
+      "default": "root"
     }
   }
 }

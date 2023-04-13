@@ -74,7 +74,7 @@ module:
 params:
   collapse_breakpoint: md
   copyright:
-    year: 2017
+    year: 2016
     subject: Mail me about this site
   favicon:
     safary_icon_color: '#800020'

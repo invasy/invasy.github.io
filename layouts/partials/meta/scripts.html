@@ -4,5 +4,10 @@
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 {{/* MathJax */}}
 <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{{/* Pagefind */}}
+{{- if site.Params.search.pagefind.enabled }}
+<script src="/_pagefind/pagefind-ui.js"></script>
+<script>document.addEventListener('DOMContentLoaded', (e) => { new PagefindUI({ element: "#search" }); });</script>
+{{- end }}
 {{/* My scripts */}}
-{{ partial "script" "index" }}
+{{ partialCached "script" "index" }}

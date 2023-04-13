@@ -1,13 +1,11 @@
-{{- define "main" -}}
+{{ define "main" }}
 <main class="main">
-  <header>
-    <h1 id="{{ anchorize .Title }}">{{ .Title | markdownify }}</h1>
-  </header>
+  {{ partial "title" . }}
   <section class="content">
-  {{- with site.Params.search.gcse }}
+  {{- with site.Params.search.gcse }}{{ if .enabled }}
     <script async src="https://cse.google.com/cse.js?cx={{ .id }}"></script>
     <div class="gcse-search"></div>
-  {{- end }}
+  {{- end }}{{ end }}
   </section>
 </main>
-{{- end -}}
+{{ end }}
