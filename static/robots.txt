@@ -1,0 +1,10 @@
+User-agent: AdsBot-Google
+User-agent: AdsBot-Google-Mobile
+User-agent: AdsBot-Google-Mobile-Apps
+User-agent: Mediapartners-Google
+Disallow: /
+
+User-agent: *
+Disallow: /about/
+Disallow: /cv/
+Disallow: /resume/
