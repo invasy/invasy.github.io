@@ -1,9 +1,11 @@
 {{ define "content" }}
 {{ .Content }}
-{{ template "_internal/pagination.html" . }}
-<ul>
-{{- range .Paginator.Pages }}
+<ul class="page-list">
+  {{- range .Paginator.Pages }}
   {{ .Render "list/item" }}
-{{- end }}
+  {{- end }}
 </ul>
+<div class="container d-flex justify-content-center">
+  {{ template "_internal/pagination.html" . }}
+</div>
 {{ end }}

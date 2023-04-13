@@ -24,7 +24,7 @@
     {{ block "right" . }}{{ partial "toc" . }}{{ end }}
   </div>
   {{ partialCached "footer" "" }}
-  {{ partialCached "meta/scripts" "" }}
+  {{ partial "meta/scripts" . }}
   {{ block "scripts" . }}{{ end }}
 </body>
 </html>

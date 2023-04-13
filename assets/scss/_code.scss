@@ -1,0 +1,49 @@
+.code-block {
+  position: relative;
+  
+  pre {
+    margin: 0 1.5em 0 0;
+  }
+}
+
+.code-copy {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 1em;
+  height: 1em;
+  border: none;
+  background-color: $primary;
+
+  -webkit-mask-image: url('/icons/clipboard.svg');
+  -webkit-mask-repeat: no-repeat;
+  -webkit-mask-position: center;
+  -webkit-mask-size: 100%;
+
+  mask-image: url('/icons/clipboard.svg');
+  mask-repeat: no-repeat;
+  mask-position: center;
+  mask-size: 100%;
+}
+
+.code-copied {
+  background-color: $green;
+  -webkit-mask-image: url('/icons/clipboard-check.svg');
+  mask-image: url('/icons/clipboard-check.svg');
+}
+
+.code-copy-error {
+  background-color: $red;
+  -webkit-mask-image: url('/icons/clipboard-x.svg');
+  mask-image: url('/icons/clipboard-x.svg');
+}
+
+@include color-mode(dark) {
+  .code-copy {
+    background-color: var(--bs-heading-color);
+  }
+
+  .code-copied {
+    background-color: $green;
+  }
+}

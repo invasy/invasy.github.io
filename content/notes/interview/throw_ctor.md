@@ -1,7 +1,7 @@
 ---
 title: Constructors and exceptions
 categories:
-- intervew
+- interview
 tags:
 - C++
 - default initialization

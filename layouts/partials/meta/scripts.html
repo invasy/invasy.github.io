@@ -10,4 +10,7 @@
 <script>document.addEventListener('DOMContentLoaded', (e) => { new PagefindUI({ element: "#search" }); });</script>
 {{- end }}
 {{/* My scripts */}}
+{{- if (findRE "<pre" .Content 1) }}
+{{ partial "script" "copy-code" }}
+{{- end }}
 {{ partialCached "script" "index" }}

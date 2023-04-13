@@ -1,7 +1,12 @@
 $collapse-breakpoint: {{ site.Params.collapse_breakpoint | default "md" }};
 
+// Header and footer
 $header-height: calc(min(64px, 10vw));
 $footer-height: 64px;
+
+// Page lists
+$pagination: {{ site.Params.pagination | default 50 }};
+$page-list-item-height: 1.5em;
 
 // Colors
 $color-mode-type: data;
@@ -38,6 +43,7 @@ $link-color-dark: #0088D2;
 @import 'bootstrap/transitions';
 @import 'bootstrap/nav';
 @import 'bootstrap/navbar';
+@import 'bootstrap/pagination';
 @import 'bootstrap/offcanvas';
 @import 'bootstrap/helpers';
 @import 'bootstrap/utilities/api';
@@ -51,12 +57,16 @@ $link-color-dark: #0088D2;
 @import 'navbar';
 @import 'sidebar';
 @import 'toc';
+@import 'list';
 @import 'highlight';
+@import 'code';
 @import 'resume';
 
 :root {
   --header-height: #{$header-height};
   --footer-height: #{$footer-height};
+  --pagination: #{$pagination};
+  --page-list-item-height: #{$page-list-item-height};
 }
 
 .icon {

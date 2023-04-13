@@ -1,5 +1,5 @@
 {{- $page := . -}}
-{{- $section := .FirstSection -}}
+{{- $section := site.GetPage "/notes" -}}
 {{- $b := site.Params.collapse_breakpoint | default "md" -}}
 <aside class="sidebar">
 {{- if .Params.sidebar | default true }}

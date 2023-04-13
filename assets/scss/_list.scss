@@ -1,0 +1,14 @@
+.page-list {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  height: calc(var(--page-list-item-height) * var(--pagination));
+
+  @include media-breakpoint-up($collapse-breakpoint) {
+    height: calc(var(--page-list-item-height) * var(--pagination) / 2);
+  }
+}
+
+.page-list-item {
+  height: var(--page-list-item-height);
+}

@@ -5,7 +5,7 @@ $collapse-breakpoint: 'md' !default;
   flex: 4 0 auto;
   flex-direction: column;
   min-height: 100%;
-  padding: 1rem;
+  padding: 2rem;
   overflow-y: auto;
 
   @include media-breakpoint-up($collapse-breakpoint) {

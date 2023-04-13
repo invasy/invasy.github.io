@@ -24,6 +24,8 @@ taxonomies:
   data_structure: data_structures
   tag: tags
 
+paginate: 50
+
 mediaTypes:
   application/x-tex:
     suffixes:
@@ -39,6 +41,8 @@ outputFormats:
     isPlainText: true
   pdf:
     mediaType: application/pdf
+
+enableRobotsTXT: false
 
 module:
   hugoVersion:
