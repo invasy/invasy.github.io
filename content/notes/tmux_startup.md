@@ -1,7 +1,7 @@
 ---
-title: Extra characters at tmux startup
+title: How to fix extra characters at tmux startup
 categories:
-- howto
+- how to
 tags:
 - tmux
 - config
@@ -15,6 +15,6 @@ Some characters in the terminal at tmux start:
 
 # Solution
 Change the following option in `tmux.conf`:
-```tmux
+```tmux {title="tmux.conf"}
 set -s escape-time 10  # Any value ≠ 0
 ```

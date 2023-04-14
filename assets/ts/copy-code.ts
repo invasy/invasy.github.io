@@ -1,10 +1,9 @@
-function addCopyButtons(clipboard: Clipboard) {
-  document.querySelectorAll('pre > code').forEach(function (code: HTMLElement) {
-    let button = document.createElement('button');
-    button.classList.add('code-copy');
-    button.type = 'button';
+function enableCodeCopy(clipboard: Clipboard): void {
+  Array.from(document.getElementsByClassName('code-copy')).forEach((button: HTMLElement) => {
+    const code = button.parentElement.parentElement.querySelector('pre > code');
+    button.style.display = 'block';
     button.title = 'Copy code';
-    button.addEventListener('click', function () {
+    button.addEventListener('click', () => {
       const text: string = Array.from(code.getElementsByClassName('cl')).map((e: HTMLElement) => e.innerText).join('');
       clipboard.writeText(text).then(function () {
         button.blur();
@@ -16,26 +15,15 @@ function addCopyButtons(clipboard: Clipboard) {
         }, 2000);
       }, function (error) {
         button.classList.add('code-copy-error');
+        button.disabled = true;
       });
     });
-
-    let codeBlock = code.parentNode;
-    if (codeBlock.parentNode.classList.contains('highlight')) {
-      codeBlock = codeBlock.parentNode;
-    }
-    const parent = codeBlock.parentNode;
-    const children = parent.children;
-    const index = Array.from(children).indexOf(codeBlock);
-    const div = document.createElement('div');
-    div.classList.add('code-block', 'chroma');
-    div.append(codeBlock, button);
-    parent.insertBefore(div, children[index]);
-});
+  });
 }
 
 function onLoad(): void {
   if (navigator && navigator.clipboard) {
-    addCopyButtons(navigator.clipboard);
+    enableCodeCopy(navigator.clipboard);
   } else {
     let script = document.createElement('script');
     script.src = 'https://cdnjs.cloudflare.com/ajax/libs/clipboard-polyfill/4.0.0/es6/clipboard-polyfill.es6.min.js';
@@ -43,7 +31,7 @@ function onLoad(): void {
     script.crossOrigin = 'anonymous';
     script.referrerPolicy = 'no-referrer';
     script.onload = function() {
-      addCopyButtons(clipboard);
+      enableCodeCopy(clipboard);
     };
     document.body.appendChild(script);
   }

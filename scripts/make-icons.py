@@ -12,8 +12,8 @@ E = ElementMaker(namespace=NAMESPACE, nsmap={None: NAMESPACE})
 
 if __name__ == '__main__':
     parser = ArgumentParser(description='Combines SVG icons to one file')
-    parser.add_argument('-d', '--icons-dir', metavar='PATH', help='Directory with separate icons')
-    parser.add_argument('-o', '--output', metavar='SVG', help='Output filename', default='layouts/partials/icons.svg')
+    parser.add_argument('-d', '--icons-dir', metavar='PATH', default='icons', help='Directory with separate icons')
+    parser.add_argument('-o', '--output', metavar='SVG', default='layouts/partials/icons.svg', help='Output filename')
     args = parser.parse_args()
 
     svg = E.svg()

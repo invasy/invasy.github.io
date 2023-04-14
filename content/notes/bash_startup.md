@@ -7,6 +7,7 @@ tags:
 - startup
 - config
 ---
+{{< table class="table table-bordered table-hover" >}}
 | File              | `-li` | `-l`  | `-i`  |   |
 |-------------------|:-----:|:-----:|:-----:|:-:|
 | `/etc/profile`    |   1   |   1   |       |   |
@@ -16,6 +17,7 @@ tags:
 | `~/.bashrc`       |       |       |   1   |   |
 | `$BASH_ENV`       |       |       |       | 1 |
 | `~/.bash_logout`  |   3   |   3   |       |   |
+{{< /table >}}
 
 ## Options and modes
 - `-l` — login shell

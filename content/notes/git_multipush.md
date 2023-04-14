@@ -1,16 +1,15 @@
 ---
-title: Push to multiple remotes in git
+title: How to push to multiple remotes in git
 categories:
-- howto
+- how to
 tags:
 - git
 - config
 - push
 - remote
 ---
-`.git/config` (_in a repository_):
-```git
-…
+In a repository:
+```git {title=".git/config"}
 [remote "github"]
 	url = git@github.com:$user/$project.git
 	fetch = +refs/heads/*:refs/remotes/github/*
@@ -32,9 +31,9 @@ tags:
 [branch "master"]  
 	remote = github
 	merge = refs/heads/master
-…
 ```
 
-# See Also
-- [[Using `IdentitiesOnly` Option in `ssh_config`]]
-- [[OpenSSH agent in WSL2]]
+Change `$user` and `$project` accordinly.
+
+## See Also
+- [How to setup OpenSSH agent in WSL2](/notes/openssh_agent_wsl2 "How to setup OpenSSH agent in WSL2")

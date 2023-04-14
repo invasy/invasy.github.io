@@ -1,0 +1,3 @@
+{{- $class := "" -}}
+{{- if .IsNamedParams }}{{ $class = .Get "class" }}{{ else }}{{ $class = .Get 0 }}{{ end -}}
+{{ replace (.Inner | markdownify) "<table>" (printf "<table class=\"%s\">" $class) | safeHTML }}

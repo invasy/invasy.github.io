@@ -1,11 +1,12 @@
 ---
 title: Debian changelog format
+categories:
+- reference
 tags:
 - changelog
 - Debian
 - syntax
 - format
-- format/datetime
 - documentation
 - RFC2822
 - RFC5322

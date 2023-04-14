@@ -8,6 +8,10 @@ $footer-height: 64px;
 $pagination: {{ site.Params.pagination | default 50 }};
 $page-list-item-height: 1.5em;
 
+// Code blocks
+$code-icon-size: 1.25em;
+$code-icon-color: #6ea8fe;
+
 // Colors
 $color-mode-type: data;
 $burgundy: #800020;
@@ -38,6 +42,7 @@ $link-color-dark: #0088D2;
 @import 'bootstrap/type';
 @import 'bootstrap/containers';
 @import 'bootstrap/grid';
+@import 'bootstrap/tables';
 @import 'bootstrap/forms';
 @import 'bootstrap/buttons';
 @import 'bootstrap/transitions';
@@ -67,6 +72,8 @@ $link-color-dark: #0088D2;
   --footer-height: #{$footer-height};
   --pagination: #{$pagination};
   --page-list-item-height: #{$page-list-item-height};
+  --code-icon-size: #{$code-icon-size};
+  --code-icon-color: #{$code-icon-color};
 }
 
 .icon {

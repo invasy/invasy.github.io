@@ -1,7 +1,7 @@
 ---
 title: How to update all Python packages
 categories:
-- howto
+- how to
 tags:
 - Python
 - pip

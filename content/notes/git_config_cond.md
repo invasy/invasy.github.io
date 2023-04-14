@@ -5,8 +5,7 @@ tags:
 - config
 - include
 ---
-`$XDG_CONFIG_HOME/git/config`:
-```ini
+```ini {title="$XDG_CONFIG_HOME/git/config"}
 [include]
 	path = user.config
 

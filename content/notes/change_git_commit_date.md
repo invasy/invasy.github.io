@@ -1,7 +1,7 @@
 ---
-title: Change Git commit date
+title: How to change Git commit date
 categories:
-- howto
+- how to
 tags:
 - git
 - commit

@@ -1,7 +1,7 @@
 ---
-title: Create user (Docker)
+title: How to create user in Dockerfile
 categories:
-- howto
+- how to
 tags:
 - Docker
 - Dockerfile
@@ -12,22 +12,19 @@ tags:
 - adduser
 - useradd
 ---
-# Dockerfile
-Add the following lines with the `RUN` command:
-
 ## Debian and Ubuntu
-```shell
-set -eu;\
-useradd --create-home --user-group --comment="$comment" "$user";\
-yes "$user" | passwd "$user"
+```dockerfile {title="Dockerfile"}
+RUN set -eu;\
+    useradd --create-home --user-group --comment="$comment" "$user";\
+    yes "$user" | passwd "$user"
 ```
 
 ## Alpine
-```shell
-yes "$password" | adduser --gecos "$comment" "$username"
+```dockerfile {title="Dockerfile"}
+RUN yes "$password" | adduser --gecos "$comment" "$username"
 ```
 
-# Documentation
+## Documentation
 - [useradd(8)](https://manpages.debian.org/bullseye/passwd/useradd.8.en.html "man 8 useradd (Debian Bullseye)") — Debian Bullseye
 - [useradd(8)](https://manpages.ubuntu.com/manpages/focal/en/man8/useradd.8.html "man 8 useradd (Ubuntu 20.04 LTS)") — Ubutnu 20.04 LTS (Focal Fossa)
 - [useradd(8)](https://manpages.ubuntu.com/manpages/jammy/en/man8/useradd.8.html "man 8 useradd (Ubuntu 22.04 LTS)") — Ubutnu 22.04 LTS (Jammy Jellyfish)

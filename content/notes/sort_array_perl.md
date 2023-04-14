@@ -1,7 +1,7 @@
 ---
-title: How to sort array in Perl
+title: How to sort an array in Perl
 categories:
-- howto
+- how to
 - algorithm
 tags:
 - perl
@@ -12,5 +12,5 @@ tags:
 sort {$a <=> $b} @a
 ```
 
-# See Also
+## See Also
 - [sort — Perldoc](https://perldoc.perl.org/functions/sort)

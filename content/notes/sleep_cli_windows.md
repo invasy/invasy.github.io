@@ -1,7 +1,7 @@
 ---
-title: Sleep mode from command line in Windows
+title: How to enter sleep mode from command line in Windows
 categories:
-- howto
+- how to
 tags:
 - Windows
 - sleep
@@ -9,7 +9,7 @@ tags:
 - cli
 - shortcut
 ---
-```batch
+```batch {title="sleep.cmd"}
 %SystemRoot%\System32\rundll32.exe PowrProf.dll,SetSuspendState Sleep
 ```
 

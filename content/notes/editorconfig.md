@@ -5,7 +5,7 @@ tags:
 - format
 - template
 ---
-```
+```ini {title=".editorconfig"}
 root = true
 
 [*]

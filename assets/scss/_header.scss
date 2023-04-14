@@ -1,11 +1,11 @@
 h1:not(:first-of-type), h2 {
-  margin-top: 1em;
-}
-h3, h4 {
   margin-top: .5em;
 }
-h5, h6 {
+h3, h4 {
   margin-top: .25em;
+}
+h5, h6 {
+  margin-top: .1em;
 }
 
 #header {

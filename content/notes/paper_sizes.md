@@ -1,5 +1,7 @@
 ---
 title: Paper sizes
+categories:
+- cheatsheet
 tags:
 - paper
 - size
@@ -9,6 +11,7 @@ tags:
 ---
 Standard paper sizes in millimeters:
 
+{{< table class="table table-bordered table-striped table-hover" >}}
 | Format |    A     |     B     |    C     |
 |-------:|:--------:|:---------:|:--------:|
 |      0 | 841×1189 | 1000×1414 | 917×1297 |
@@ -22,6 +25,7 @@ Standard paper sizes in millimeters:
 |      8 |  52×74   |   62×88   |  57×81   |
 |      9 |  37×52   |   44×62   |  40×57   |
 |     10 |  26×37   |   31×44   |  28×40   |
+{{< /table >}}
 
-# See Also
+## See Also
 - [ISO 216:2007 Writing paper and certain classes of printed matter — Trimmed sizes — A and B series, and indication of machine direction](https://www.iso.org/standard/36631.html)

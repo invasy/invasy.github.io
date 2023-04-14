@@ -1,7 +1,7 @@
 ---
 title: How to run commands over SSH with sudo
 categories:
-- howto
+- how to
 tags:
 - SSH
 - sudo

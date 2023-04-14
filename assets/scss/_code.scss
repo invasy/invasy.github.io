@@ -1,33 +1,65 @@
 .code-block {
-  position: relative;
+  display: flex;
+  flex-direction: column;
+  margin: .25em 0;
   
+  .icon {
+    width: var(--code-icon-size);
+    height: var(--code-icon-size);
+    fill: var(--code-icon-color);
+  }
+
   pre {
-    margin: 0 1.5em 0 0;
+    margin: 0;
+    padding: .25em;
   }
 }
 
+@include color-mode(dark) {
+  .code-block {
+    .icon {
+      fill: var(--code-icon-color);
+    }
+  }
+}
+
+.code-header {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: .25em;
+  border-bottom: 1px dashed $gray-600;
+}
+
+.code-title {
+  flex: 1 0 auto;
+  margin: 0;
+  padding: 0 .5em;
+  color: $gray-400 !important;
+}
+
 .code-copy {
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: 1em;
-  height: 1em;
+  display: none;
+  width: var(--code-icon-size);
+  height: var(--code-icon-size);
   border: none;
-  background-color: $primary;
+  background-color: var(--code-icon-color);
 
   -webkit-mask-image: url('/icons/clipboard.svg');
   -webkit-mask-repeat: no-repeat;
   -webkit-mask-position: center;
-  -webkit-mask-size: 100%;
+  -webkit-mask-size: 80%;
 
   mask-image: url('/icons/clipboard.svg');
   mask-repeat: no-repeat;
   mask-position: center;
-  mask-size: 100%;
+  mask-size: 80%;
 }
 
 .code-copied {
-  background-color: $green;
+  background-color: $green-500;
   -webkit-mask-image: url('/icons/clipboard-check.svg');
   mask-image: url('/icons/clipboard-check.svg');
 }
@@ -36,14 +68,4 @@
   background-color: $red;
   -webkit-mask-image: url('/icons/clipboard-x.svg');
   mask-image: url('/icons/clipboard-x.svg');
-}
-
-@include color-mode(dark) {
-  .code-copy {
-    background-color: var(--bs-heading-color);
-  }
-
-  .code-copied {
-    background-color: $green;
-  }
 }
