@@ -1,0 +1,13 @@
+{{- $page := .page -}}
+{{- $title := strings.FirstUpper .taxonomy -}}
+{{- with $page.GetTerms .taxonomy -}}
+{{- $page.Scratch.Set "has_meta" true -}}
+<div class="taxonomy">
+  <h6 class="taxonomy-title">{{ $title }}:</h6>
+  <ul class="taxonomy-list">
+  {{- range . }}
+    <li class="taxonomy-item"><a class="taxonomy-link" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .LinkTitle }}</a></li>
+  {{- end }}
+  </ul>
+</div>
+{{- end -}}

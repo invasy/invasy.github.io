@@ -16,9 +16,16 @@
     {{ block "main" . }}
     <main class="main" data-pagefind-body>
       {{ block "title" . }}{{ partial "title" . }}{{ end }}
-      <section id="content">
-        {{ block "content" . }}{{ .Content }}{{ end }}
+      {{ block "meta" . }}
+      <section class="page-meta">
+        {{ partial "taxonomy-list" (dict "page" . "taxonomy" "categories") }}
+        {{ partial "taxonomy-list" (dict "page" . "taxonomy" "tags") }}
+        {{ if .Scratch.Get "has_meta" }}<hr>{{ end }}
       </section>
+      {{ end }}
+      <article id="content">
+        {{ block "content" . }}{{ .Content }}{{ end }}
+      </article>
     </main>
     {{ end }}
     {{ block "right" . }}{{ partial "toc" . }}{{ end }}
