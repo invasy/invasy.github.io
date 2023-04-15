@@ -1,4 +1,4 @@
-name: Build with Hugo and deploy to GitHub Pages
+name: Build and deploy
 
 on:
   push:
@@ -23,6 +23,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+
     - name: Setup Go
       uses: actions/setup-go@v3
       with:
@@ -48,19 +49,35 @@ jobs:
       run: hugo mod get -u
 
     - name: Build
-      run: hugo --minify --environment production
+      run: >-
+        hugo
+          --environment production
+          --cleanDestinationDir
+          --minify
+          --printI18nWarnings
+          --printPathWarnings
+          --printUnusedTemplates
+          --templateMetrics
+          --templateMetricsHints
+          --logFile hugo.log
+    
+    - name: Upload Hugo log
+      uses: actions/upload-artifact@v3
+      with:
+        name: hugo-log
+        path: hugo.log
 
-    - name: Index site with Pagefind
-      run: pagefind --source public
+    - name: Make Pagefind index
+      run: pagefind --source ./public
 
-    - name: Upload site artifact
+    - name: Upload pages
       uses: actions/upload-pages-artifact@v1
       with:
         path: ./public
 
   deploy:
-    needs: build
     if: github.ref_name == github.event.repository.default_branch
+    needs: build
     runs-on: ubuntu-latest
     environment:
       name: github-pages
