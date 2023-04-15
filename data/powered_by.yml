@@ -4,18 +4,24 @@
 - title: Hugo
   icon: hugo
   url: https://gohugo.io/
-- title: GitHub Pages & Actions
+- title: GitHub Repository, Actions & Pages
   icon: github
   url: https://pages.github.com/
 - title: Bootstrap 5
   icon: bootstrap
   url: https://getbootstrap.com/
-- title: SCSS
-  icon: sass
-  url: https://sass-lang.com/
+- title: Go
+  icon: go
+  url: https://go.dev/
+- title: Python
+  icon: python
+  url: https://www.python.org/
 - title: Typescript
   icon: typescript
   url: https://www.typescriptlang.org/
+- title: SCSS
+  icon: sass
+  url: https://sass-lang.com/
 - title: Iconify
   icon: iconify
   url: https://iconify.design/
