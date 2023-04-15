@@ -6,10 +6,12 @@
   </div>
   <div class="offcanvas-body">
     <ul class="navbar-nav me-auto">{{ $page := . }}
-    {{- range site.Menus.navbar }}{{ if .Params.show | default true }}
+    {{- range site.Menus.navbar }}
+    {{- if .Params.show | default true }}
       {{- $active := or ($page.IsMenuCurrent .Menu .) ($page.HasMenuCurrent .Menu .) }}
       <li class="nav-item"><a class="nav-link{{ if $active }} active" aria-current="page{{ end }}" href="{{ .URL }}" title="{{ .Name }}" aria-label="{{ .Name }}">{{ .Name }}</a></li>
-    {{- end }}{{ end }}
+    {{- end }}
+    {{- end }}
     </ul>
   </div>
 </div>

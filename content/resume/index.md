@@ -10,12 +10,17 @@ outputs:
 #- latex
 #- pdf
 
+# Build options
+_build:
+  render: always
+  list: never
+
 # Navbar
 menu:
   navbar:
     weight: 3
     params:
-      show: true
+      show: false
 search: false
 sidebar: false
 toc: true
