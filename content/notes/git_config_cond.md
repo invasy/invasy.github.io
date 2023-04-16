@@ -1,5 +1,7 @@
 ---
 title: Git config conditional include
+categories:
+- reference
 tags:
 - git
 - config

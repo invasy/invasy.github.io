@@ -1,6 +1,6 @@
 ---
 title: Git
-category:
+categories:
 - cheatsheet
 tags:
 - Git

@@ -1,6 +1,6 @@
 ---
 title: Bash startup files
-category:
+categories:
 - cheatsheet
 tags:
 - Bash

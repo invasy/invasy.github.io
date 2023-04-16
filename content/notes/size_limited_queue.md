@@ -3,6 +3,7 @@ title: Size-limited queue
 categories:
 - data structure
 - interview
+- problem
 tags:
 - C++
 - queue

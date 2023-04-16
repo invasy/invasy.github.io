@@ -1,12 +1,12 @@
 {{- $page := .page -}}
-{{- $title := strings.FirstUpper .taxonomy -}}
+{{- $taxonomy := .taxonomy | printf "/%s" | site.GetPage -}}
 {{- with $page.GetTerms .taxonomy -}}
 {{- $page.Scratch.Set "has_meta" true -}}
 <div class="taxonomy">
-  <h6 class="taxonomy-title">{{ $title }}:</h6>
+  <h6 class="taxonomy-title">{{ $taxonomy.Title }}:</h6>
   <ul class="taxonomy-list">
   {{- range . }}
-    <li class="taxonomy-item"><a class="taxonomy-link" href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .LinkTitle }}</a></li>
+    <li class="taxonomy-term"><a class="taxonomy-link badge rounded-pill text-bg-{{ .Params.color | default "light" }}" href="{{ .RelPermalink }}" title="{{ .Data.Singular }} “{{ .Title }}”">{{ .LinkTitle }}</a></li>
   {{- end }}
   </ul>
 </div>

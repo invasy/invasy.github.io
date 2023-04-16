@@ -1,1 +1,13 @@
-<title>{{ if not .IsHome | and .LinkTitle }}{{ if not .IsSection | and .CurrentSection | and .CurrentSection.Title }}{{ .CurrentSection.Title }}/{{ end }}{{ .LinkTitle }} // {{ end }}{{ .Site.Title }}</title>
+{{- $title := "" -}}
+{{- if not .IsHome -}}
+  {{- if .Kind | in (slice "section" "page") -}}
+    {{- with delimit (apply (after 1 .Ancestors.Reverse) "partial" "LinkTitle" ".") " / " -}}
+      {{- $title = printf "%s / " . -}}
+    {{- end -}}
+  {{- else if eq .Kind "term" -}}
+    {{- $title = printf "%s: " (strings.FirstUpper .Data.Singular) -}}
+  {{- end -}}
+  {{- $title = printf "%s%s // " $title .LinkTitle -}}
+{{- end -}}
+{{- $title = printf "%s%s" $title .Site.Title -}}
+{{- $title -}}

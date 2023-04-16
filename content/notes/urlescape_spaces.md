@@ -2,6 +2,7 @@
 title: Replace spaces with `%20`
 categories:
 - interview
+- problem
 tags:
 - C++
 - string

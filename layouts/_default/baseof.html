@@ -4,9 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="{{ site.Author.name }}">
-  {{ partial "meta/title" . }}
+  <title>{{ block "head_title" . }}{{ partial "meta/title" . }}{{ end }}</title>
   {{ partialCached "meta/favicon" "" }}
   {{ partialCached "meta/style" "" }}
+  {{/*  {{ $icons := resources.Get "images/icons.svg" | minify -}}
+  <link rel="preload" href="{{ $icons.RelPermalink }}" as="image" type="image/svg+xml">  */}}
 </head>
 {{ block "bodyTag" . }}<body>{{ end }}
   {{ partialCached "icons.svg" "" }}
@@ -31,7 +33,7 @@
     {{ block "right" . }}{{ partial "toc" . }}{{ end }}
   </div>
   {{ partialCached "footer" "" }}
-  {{ partialCached "meta/scripts" . }}
+  {{ partial "meta/scripts" . }}
   {{ block "scripts" . }}{{ end }}
 </body>
 </html>

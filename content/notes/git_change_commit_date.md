@@ -8,7 +8,7 @@ tags:
 - date
 ---
 ```bash
-GIT_COMMITTER_DATE="$date" GIT_AUTHOR_DATE="$date" git commit -m "$description"
+GIT_COMMITTER_DATE="$date" GIT_AUTHOR_DATE="$date" git commit -m "$commit_message"
 ```
 
 ## See Also

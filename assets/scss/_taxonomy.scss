@@ -18,6 +18,10 @@
   list-style: none;
 }
 
-.taxonomy-item {
+.taxonomy-term {
   margin-left: .75em;
+}
+
+.taxonomy-link:not(:hover) {
+  text-decoration: none;
 }

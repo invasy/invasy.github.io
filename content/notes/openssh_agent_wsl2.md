@@ -1,6 +1,6 @@
 ---
 title: How to setup OpenSSH agent in WSL2
-category:
+categories:
 - how to
 tags:
 - OpenSSH

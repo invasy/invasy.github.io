@@ -4,7 +4,9 @@ categories:
 - how to
 tags:
 - Python
+- venv
 - pip
+- update
 - upgrade
 - package
 - jq

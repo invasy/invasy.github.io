@@ -1,9 +1,11 @@
 ---
 title: .gitattributes
-tags:
-- Git
-- gitattributes
+categories:
 - template
+tags:
+- git
+- gitattributes
+- config
 ---
 # .gitattributes
 ```

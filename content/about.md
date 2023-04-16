@@ -7,4 +7,5 @@ permalink: /about
 #     weight: 2
 sidebar: false
 toc: false
+draft: true
 ---

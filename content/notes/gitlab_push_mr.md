@@ -1,9 +1,9 @@
 ---
-title: How to create merge request in GitLab on push
+title: How to create a merge request on push to GitLab
 categories:
 - how to
 tags:
-- Git
+- git
 - GitLab
 - push
 - merge request

@@ -195,14 +195,13 @@ $theme-color: #800020 !default;
 
 .resume-work-date,
 .resume-education-date {
-  flex: 0 0 6em;
-  width: 6em;
+  flex: 0 0 5em;
+  width: 5em;
 }
 
 .resume-work-date {
   display: flex;
   flex-direction: column;
-  font-size: 1.1rem;
 }
 
 .resume-work-body {
@@ -211,6 +210,7 @@ $theme-color: #800020 !default;
   flex-direction: column;
 }
 
+.resume-work-date,
 .resume-work-header,
 .resume-education {
   font-size: 1.1rem;

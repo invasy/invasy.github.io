@@ -1,9 +1,10 @@
 ---
 title: .editorconfig
+categories:
+- template
 tags:
 - editorconfig
-- format
-- template
+- config
 ---
 ```ini {title=".editorconfig"}
 root = true

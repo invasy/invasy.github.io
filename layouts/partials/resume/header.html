@@ -13,7 +13,7 @@
     <li class="resume-profile">
       {{ partial "icon" "location" }}
       <span class="resume-profile-hint">Location</span>
-      <span class="resume-profile-text">{{ .location.city }}, {{ (index (getJSON "https://restcountries.com/v3.1/alpha/" .location.countryCode) 0).name.common }}</span>
+      <span class="resume-profile-text">{{ .location.city }}, {{ partialCached "resume/country" .location.coutryCode }}</span>
     </li>
   {{- end }}
   {{- if .email | and ($show.email | default true) }}
