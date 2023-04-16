@@ -6,7 +6,7 @@
   <div id="sidebar" class="offcanvas-{{ $b }} offcanvas-start" tabindex="-1" aria-labelledby="sidebar-title">
     <div class="offcanvas-header">
       <h5 id="sidebar-title" class="offcanvas-title">{{ $section.Title }}</h5>
-      {{ partial "buttonClose" "sidebar" }}
+      {{ partialCached "button-close" "sidebar" "sidebar" }}
     </div>
     <div class="offcanvas-body">
       <h6>{{ $section.Title }}</h6><hr>

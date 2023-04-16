@@ -2,7 +2,7 @@
 <div id="navbar" class="offcanvas-sm offcanvas-end" tabindex="-1" aria-labelledby="navbar-title">
   <div class="offcanvas-header">
     <h5 id="navbar-title" class="offcanvas-title">{{ site.Title }}</h5>
-    {{ partial "buttonClose" "navbar" }}
+    {{ partialCached "button-close" "navbar" "navbar" }}
   </div>
   <div class="offcanvas-body">
     <ul class="navbar-nav me-auto">{{ $page := . }}

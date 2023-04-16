@@ -31,7 +31,7 @@
     {{ block "right" . }}{{ partial "toc" . }}{{ end }}
   </div>
   {{ partialCached "footer" "" }}
-  {{ partial "meta/scripts" . }}
+  {{ partialCached "meta/scripts" . }}
   {{ block "scripts" . }}{{ end }}
 </body>
 </html>

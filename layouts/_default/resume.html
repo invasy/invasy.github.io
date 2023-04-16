@@ -9,14 +9,14 @@
     {{ $json := site.Data.resume | jsonify | resources.FromString "resume.json" -}}
     <a class="resume-link" href="{{ $json.RelPermalink }}" title="Résumé in JSON">{{ partial "icon" "json" }}</a>
   </nav>
-  {{ partial "resume/header" (dict "basics" $resume.basics "show" $show) }}
-  {{ partial "resume/summary" $resume.basics.summary }}
+  {{ partialCached "resume/header" (dict "basics" $resume.basics "show" $show) }}
+  {{ partialCached "resume/summary" $resume.basics.summary }}
   {{- $scratch.Set "sections" (slice (dict "id" "summary" "title" "Summary")) }}
   {{- range $resume.sections }}
     {{- $title := .title | default (title .id) }}
     {{- $section := index $resume .id }}
     {{- if $section | and (index $show .id | default true) }}
-      {{ partial (path.Join "resume" .id) (dict "id" .id "title" $title "section" $section) }}
+      {{ partialCached (path.Join "resume" .id) (dict "id" .id "title" $title "section" $section) }}
       {{- $scratch.Add "sections" (dict "id" .id "title" $title) }}
     {{- end }}
   {{- end }}
@@ -24,5 +24,5 @@
 {{ end }}
 
 {{ define "right" }}
-{{ partial "toc" (dict "Params" .Params "TableOfContents" (partial "resume/toc" .)) }}
+{{ partial "toc" (dict "Params" .Params "TableOfContents" (partialCached "resume/toc" .)) }}
 {{ end }}

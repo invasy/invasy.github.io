@@ -5,7 +5,7 @@
 {{- if .IsSection }}
   {{- $slug := anchorize .RelPermalink }}
   <button type="button" class="btn btn-link" data-bs-toggle="collapse" data-bs-target="#{{ $slug }}" aria-expanded="true" aria-controls="{{ $slug }}">
-    {{ partial "sidebar/icon" . }}</button>
+    {{- partial "sidebar/icon" . }}</button>
   {{ partial "sidebar/link" (dict "item" . "active" $active) }}
   <ul id="{{ $slug }}" class="collapse show">
   {{- range sort .Pages "Title" -}}

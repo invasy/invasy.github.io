@@ -20,7 +20,7 @@
     <li class="resume-profile">
       {{ partial "icon" "email" }}
       <span class="resume-profile-hint">E-mail</span>
-      {{ partial "protectEmail" (dict
+      {{ partial "protect-email" (dict
         "email" .email
         "title" "Mail me about vacancy or job offer"
         "text" (.email | replaceRE "@" " at " | replaceRE "\\." " dot " | printf "<span class=\"resume-profile-text\">%s</span>" | safeHTML)

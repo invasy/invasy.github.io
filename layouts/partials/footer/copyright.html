@@ -1,6 +1,6 @@
 {{ with site.Params.copyright -}}
 {{- $yearNow := now.Format "2006" | int -}}
-&copy;&nbsp;{{ if .year | and (lt .year $yearNow) }}{{ .year }}&ndash;{{ end }}{{ $yearNow }} {{ partial "protectEmail" (dict
+&copy;&nbsp;{{ if .year | and (lt .year $yearNow) }}{{ .year }}&ndash;{{ end }}{{ $yearNow }} {{ partial "protect-email" (dict
   "email" site.Author.email
   "title" (.subject | default "Mail me about this site")
   "text" (delimit (split site.Author.name " ") "&nbsp;")
