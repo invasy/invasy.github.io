@@ -3,7 +3,7 @@
   "tasks": [
     {
       "label": "Make icons",
-      "detail": "Combine SVG icons to a file",
+      "detail": "Combine SVG icons to a partial template",
       "group": {
         "kind": "build"
       },
@@ -14,11 +14,12 @@
         "color": "terminal.ansiCyan"
       },
       "presentation": {
-        "echo": true,
         "panel": "shared",
         "reveal": "silent",
+        "revealProblems": "onProblem",
         "focus": false,
         "clear": true,
+        "echo": true,
         "showReuseMessage": false
       },
       "problemMatcher": []
@@ -27,30 +28,33 @@
       "label": "Build",
       "detail": "Build this site with Hugo",
       "group": {
-        "kind": "build"
+        "kind": "build",
+        "isDefault": true
       },
       "type": "shell",
       "command": "hugo",
       "args": [
+        "--environment=production",
+        "--cleanDestinationDir",
         "--minify",
-        "--environment", "production",
         "--printI18nWarnings",
         "--printPathWarnings",
         "--printUnusedTemplates",
         "--templateMetrics",
         "--templateMetricsHints",
-        "--cleanDestinationDir"
+        "--logFile=hugo.log"
       ],
       "icon": {
         "id": "server-process",
         "color": "terminal.ansiGreen"
       },
       "presentation": {
-        "echo": true,
         "panel": "dedicated",
         "reveal": "always",
+        "revealProblems": "onProblem",
         "focus": true,
         "clear": true,
+        "echo": true,
         "showReuseMessage": false
       },
       "problemMatcher": []
@@ -59,15 +63,14 @@
       "label": "Serve",
       "detail": "Serve this site with Hugo webserver",
       "group": {
-        "kind": "build",
-        "isDefault": true
+        "kind": "build"
       },
       "type": "shell",
       "command": "hugo",
       "args": [
         "server",
-        "--bind", "0.0.0.0",
-        "--environment", "development",
+        "--bind=0.0.0.0",
+        "--environment=development",
         "--printPathWarnings",
         "--printUnusedTemplates",
         "--templateMetricsHints"
@@ -77,12 +80,12 @@
         "color": "terminal.ansiMagenta"
       },
       "presentation": {
-        "echo": true,
         "panel": "dedicated",
         "reveal": "silent",
         "revealProblems": "onProblem",
         "focus": false,
         "clear": true,
+        "echo": true,
         "showReuseMessage": false
       },
       "problemMatcher": []
