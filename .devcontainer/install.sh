@@ -32,17 +32,23 @@ declare -a CURL=(
 )
 
 msg() {
-  echo -e ">> $*"
+  local fmt="${1:?}"; shift
+  # shellcheck disable=SC2059
+  printf "=> $fmt\n" "$@"
+}
+
+msg_install() {
+  local name="${1:?}" version="${2:?}"
+  msg 'Installing %s %s...' "$name" "$version"
 }
 
 install_packages() {
   export DEBIAN_FRONTEND='noninteractive'
 
   msg 'Installing packages...'
-
-  apt-get update
-  apt-get -y upgrade
-  apt-get -y install --no-install-recommends "$@"
+  apt-get -q  update
+  apt-get -qy upgrade
+  apt-get -qy install --no-install-recommends "$@"
 
   rm -rf /var/lib/apt/lists/*
 }
@@ -84,8 +90,7 @@ install_go() {
   local version="${1:?}"
   local pkg="go${version}.linux-amd64.tar.gz"
 
-  msg "Installing Go v$version..."
-
+  msg_install 'Go' "$version"
   fetch "https://go.dev/dl/$pkg"
   extract "/tmp/$pkg"
 }
@@ -99,8 +104,7 @@ install_sass() {
     -t '%s' \
     'sass/dart-sass-embedded')
 
-  msg "Installing Dart SASS Embedded v$version..."
-
+  msg_install 'Dart SASS Embedded' "$version"
   fetch "$url"
   extract "/tmp/$pkg"
   ln -s /opt/sass_embedded/dart-sass-embedded /usr/local/bin/
@@ -114,16 +118,17 @@ install_hugo() {
     -a '^'"$variant"'_[0-9.]+_linux-amd64\\.tar\\.gz$' \
     'gohugoio/hugo')
   version="${version#v}"
+  local checksums="hugo_${version}_checksums.txt"
 
-  msg "Installing Hugo v$version..."
-
-  fetch "${url%/*}/hugo_${version}_checksums.txt"
+  msg_install 'Hugo' "$version"
+  fetch "${url%/*}/$checksums"
   fetch "$url"
   pushd /tmp >/dev/null
-  sha256sum --check --status --ignore-missing "hugo_${version}_checksums.txt"
+  sha256sum --check --status --ignore-missing "$checksums"
   popd >/dev/null
   extract "/tmp/$pkg" '/usr/local/bin'
 
+  # Install bash completion for Hugo
   hugo completion bash > /etc/bash_completion.d/hugo
 }
 
@@ -136,28 +141,28 @@ install_pagefind() {
     'CloudCannon/pagefind')
   version="${version#v}"
 
-  msg "Installing Pagefind v$version..."
-
+  msg_install 'Pagefind' "$version"
   fetch "$url"
   extract "/tmp/$pkg" '/usr/local/bin'
 }
 
-set_root_password() {
-  local password="${1:-root}"
+set_password() {
+  local username="${1:?}"
+  local password="${2:-$username}"
 
-  msg 'Setting root user password...'
+  msg 'Setting %s password...' "$username"
 
-  yes "$password" | passwd || :
+  yes "$password" | passwd -q "$username" || :
 }
 
 create_user() {
   local username="${1:?}"
   local password="${2:-$username}" comment="${3:-${username@u}}"
 
-  msg "Creating user '$username'..."
+  msg "Creating user '%s'..." "$username"
 
   useradd --create-home --comment="$comment" --user-group "$username"
-  yes "$password" | passwd "$username" || :
+  set_password "$username" "$password"
 }
 
 main() {
@@ -168,8 +173,8 @@ main() {
   install_hugo "$HUGO_VERSION" "$HUGO_VARIANT"
   install_pagefind "$PAGEFIND_VERSION"
 
-  set_root_password "$ROOT_PASSWORD"
   create_user "$USERNAME" "$PASSWORD" "$COMMENT"
+  set_password root "$ROOT_PASSWORD"
 }
 
 main "$@"
