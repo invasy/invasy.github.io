@@ -37,6 +37,7 @@
         "--environment=production",
         "--cleanDestinationDir",
         "--minify",
+        "--gc",
         "--printI18nWarnings",
         "--printPathWarnings",
         "--printUnusedTemplates",

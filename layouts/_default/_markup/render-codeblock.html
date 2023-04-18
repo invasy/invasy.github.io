@@ -4,10 +4,10 @@
 <div class="code-block chroma">
   {{- if or $type $title $copy }}
   <div class="code-header">
-    {{ partial "icon" $type }}
+    <abbr title="{{ $type }}">{{ partialCached "icon" $type $type }}</abbr>
     <h6 class="code-title">{{ $title | markdownify }}</h6>
     {{- if $copy }}
-    <button class="code-copy" type="button"></button>
+    <button class="code-copy icon-clipboard" type="button"></button>
     {{- end }}
   </div>
   {{- end }}

@@ -1,0 +1,2 @@
+{{- $color := .Params.color | default "#666" -}}
+<li class="page-list-item"><a class="taxonomy-link badge rounded-pill" style="background-color:{{ $color }};" href="{{ .RelPermalink }}" title="{{ .Data.Singular }} “{{ .Title }}”">{{ .LinkTitle }}</a></li>

@@ -1,39 +1,35 @@
 <!doctype html>
-<html lang="en">
+<html lang="{{ site.LanguageCode }}">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="author" content="{{ site.Author.name }}">
-  <title>{{ block "head_title" . }}{{ partial "meta/title" . }}{{ end }}</title>
-  {{ partialCached "meta/favicon" "" }}
-  {{ partialCached "meta/style" "" }}
-  {{/*  {{ $icons := resources.Get "images/icons.svg" | minify -}}
-  <link rel="preload" href="{{ $icons.RelPermalink }}" as="image" type="image/svg+xml">  */}}
+  <title>{{ block "head_title" . }}{{ partial "head/title" . }}{{ end }}</title>
+  {{ partialCached "head/favicon" . }}
+  {{ partialCached "head/style" . }}
 </head>
-{{ block "bodyTag" . }}<body>{{ end }}
-  {{ partialCached "icons.svg" "" }}
+{{ block "body_tag" . }}<body>{{ end }}
   {{ partial "header" . }}
-  <div id="layout" class="container-xxl">
+  <div class="layout container-xxl">
     {{ block "left" . }}{{ partial "sidebar" . }}{{ end }}
     {{ block "main" . }}
-    <main class="main" data-pagefind-body>
+    <main class="main">
       {{ block "title" . }}{{ partial "title" . }}{{ end }}
       {{ block "meta" . }}
-      <section class="page-meta">
-        {{ partial "taxonomy-list" (dict "page" . "taxonomy" "categories") }}
-        {{ partial "taxonomy-list" (dict "page" . "taxonomy" "tags") }}
-        {{ if .Scratch.Get "has_meta" }}<hr>{{ end }}
+      <section class="meta">
+        {{ partial "taxonomy" "categories" }}
+        {{ partial "taxonomy" "tags" }}
       </section>
       {{ end }}
-      <article id="content">
+      <section class="content" data-pagefind-body>
         {{ block "content" . }}{{ .Content }}{{ end }}
-      </article>
+      </section>
     </main>
     {{ end }}
     {{ block "right" . }}{{ partial "toc" . }}{{ end }}
   </div>
-  {{ partialCached "footer" "" }}
-  {{ partial "meta/scripts" . }}
+  {{ partialCached "footer" . }}
+  {{ partial "scripts" . }}
   {{ block "scripts" . }}{{ end }}
 </body>
 </html>

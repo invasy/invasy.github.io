@@ -18,6 +18,9 @@ markup:
     endLevel: 4
     ordered: false
 
+enableGitInfo: true
+enableRobotsTXT: false
+
 taxonomies:
   algorithm: algorithms
   category: categories
@@ -42,12 +45,10 @@ outputFormats:
   pdf:
     mediaType: application/pdf
 
-enableRobotsTXT: false
-
 module:
   hugoVersion:
     extended: true
-    min: '0.110.0'
+    min: '0.111.0'
   mounts:
   - source: assets
     target: assets

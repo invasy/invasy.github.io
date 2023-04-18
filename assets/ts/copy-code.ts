@@ -8,13 +8,16 @@ function enableCodeCopy(clipboard: Clipboard): void {
       clipboard.writeText(text).then(function () {
         button.blur();
         button.title = 'Copied'
-        button.classList.add('code-copied');
+        button.classList.remove('icon-clipboard');
+        button.classList.add('code-copied', 'icon-clipboard-check');
         setTimeout(function () {
           button.title = 'Copy code';
-          button.classList.remove('code-copied');
+          button.classList.remove('code-copied', 'icon-clipboard-check');
+          button.classList.add('icon-clipboard');
         }, 2000);
       }, function (error) {
-        button.classList.add('code-copy-error');
+        button.classList.remove('icon-clipboard');
+        button.classList.add('code-copy-error', 'icon-clipboard-x');
         button.disabled = true;
       });
     });

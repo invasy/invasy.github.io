@@ -24,17 +24,10 @@
   border-radius: 0;
   padding: 0;
   vertical-align: middle;
-  background-image: url('/icons/dark.svg');
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: 100%;
+  background-color: black;
 }
 
 @include color-mode(dark) {
-  #theme-toggler {
-    background-image: url('/icons/light.svg');
-  }
-
   .navbar {
     background-color: $dark;
   }

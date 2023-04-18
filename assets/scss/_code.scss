@@ -6,7 +6,7 @@
   .icon {
     width: var(--code-icon-size);
     height: var(--code-icon-size);
-    fill: var(--code-icon-color);
+    background-color: var(--code-icon-color);
   }
 
   pre {
@@ -18,9 +18,13 @@
 @include color-mode(dark) {
   .code-block {
     .icon {
-      fill: var(--code-icon-color);
+      background-color: var(--code-icon-color);
     }
   }
+}
+
+p + .code-block {
+  margin-top: -.8rem;
 }
 
 .code-header {
@@ -31,6 +35,12 @@
   width: 100%;
   padding: .25em;
   border-bottom: 1px dashed $gray-600;
+
+  abbr[title] {
+    display: inline-block;
+    margin-top: -.2em;
+    text-decoration: none;
+  }
 }
 
 .code-title {
@@ -46,26 +56,12 @@
   height: var(--code-icon-size);
   border: none;
   background-color: var(--code-icon-color);
-
-  -webkit-mask-image: url('/icons/clipboard.svg');
-  -webkit-mask-repeat: no-repeat;
-  -webkit-mask-position: center;
-  -webkit-mask-size: 80%;
-
-  mask-image: url('/icons/clipboard.svg');
-  mask-repeat: no-repeat;
-  mask-position: center;
-  mask-size: 80%;
 }
 
 .code-copied {
   background-color: $green-500;
-  -webkit-mask-image: url('/icons/clipboard-check.svg');
-  mask-image: url('/icons/clipboard-check.svg');
 }
 
 .code-copy-error {
   background-color: $red;
-  -webkit-mask-image: url('/icons/clipboard-x.svg');
-  mask-image: url('/icons/clipboard-x.svg');
 }

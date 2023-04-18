@@ -51,7 +51,7 @@ jobs:
     - name: Build
       run: >-
         hugo
-        --environment production
+        --environment=production
         --cleanDestinationDir
         --minify
         --printI18nWarnings
@@ -59,7 +59,7 @@ jobs:
         --printUnusedTemplates
         --templateMetrics
         --templateMetricsHints
-        --logFile hugo.log
+        --logFile=hugo.log
     
     - name: Upload Hugo log
       uses: actions/upload-artifact@v3
@@ -68,7 +68,7 @@ jobs:
         path: hugo.log
 
     - name: Make Pagefind index
-      run: pagefind --source ./public
+      run: pagefind --source public
 
     - name: Upload pages
       uses: actions/upload-pages-artifact@v1

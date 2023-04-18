@@ -18,5 +18,3 @@ _site/
 jsconfig.json
 .hugo_build.lock
 *.log
-
-/icons/

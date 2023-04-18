@@ -1,6 +1,4 @@
-{{- $page := .page -}}
-{{- with .item -}}
-{{- $active := eq . $page -}}
+{{- $active := eq . page -}}
 <li class="sidebar-item{{ if $active }} active" aria-current="true{{ end }}">
 {{- if .IsSection }}
   {{- $slug := anchorize .RelPermalink }}
@@ -9,7 +7,7 @@
   {{ partial "sidebar/link" (dict "item" . "active" $active) }}
   <ul id="{{ $slug }}" class="collapse show">
   {{- range sort .Pages "Title" -}}
-    {{ partial "sidebar/item" (dict "item" . "page" $page) }}
+    {{ partial "sidebar/item" . }}
   {{- end }}
   </ul>
 {{- else }}
@@ -17,4 +15,3 @@
 {{ partial "sidebar/link" (dict "item" . "active" $active) }}
 {{- end }}
 </li>
-{{- end -}}

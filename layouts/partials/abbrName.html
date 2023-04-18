@@ -1,4 +1,0 @@
-{{- $name := split .name " " -}}
-{{- $initial := substr (index $name 0) 0 1 -}}
-{{- $tail := substr (index $name 0) 1 -}}
-{{ $initial }}<span class="d-inline d-{{ .breakpoint }}-none">.</span><span class="d-none d-{{ .breakpoint | default "sm" }}-inline">{{ $tail }}</span>&nbsp;{{ index $name 1 }}

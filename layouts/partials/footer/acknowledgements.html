@@ -1,0 +1,19 @@
+<div class="crafted">
+  <span class="crafted-title">Hand-crafted &amp; designed with</span>{{ partialCached "icon" "heart" "heart" }}
+</div>
+{{- with site.Data.powered_by -}}
+<div class="powered-by">
+  <span class="powered-by-title">Powered by</span>
+  <nav>
+    <ul class="powered-by-list">
+    {{- range . }}
+      <li class="powered-by-item">
+        <a class="powered-by-link" href="{{ .url }}" title="{{ .title }}" aria-label="{{ .title }}">
+          {{ partialCached "icon" .icon .icon }}
+        </a>
+      </li>
+    {{- end }}
+    </ul>
+  </nav>
+</div>
+{{- end }}

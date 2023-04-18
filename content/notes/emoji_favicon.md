@@ -1,5 +1,7 @@
 ---
 title: Emoji favicon
+categories:
+- neat
 tags:
 - favicon
 - emoji

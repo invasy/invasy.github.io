@@ -1,0 +1,12 @@
+{{- $taxonomy := . | printf "/%s" | site.GetPage -}}
+{{- with page.GetTerms . -}}
+{{- page.Scratch.Set "has_meta" true -}}
+<div class="taxonomy">
+  <h6 class="taxonomy-title">{{ $taxonomy.Title }}:</h6>
+  <ul class="taxonomy-list">
+  {{- range . }}{{ $color := .Params.color | default "#666" }}
+    <li class="taxonomy-term"><a class="taxonomy-link badge rounded-pill" style="background-color:{{ $color }};" href="{{ .RelPermalink }}" title="{{ .Data.Singular }} “{{ .Title }}”">{{ .LinkTitle }}</a></li>
+  {{- end }}
+  </ul>
+</div>
+{{- end -}}

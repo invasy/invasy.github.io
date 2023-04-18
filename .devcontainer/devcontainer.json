@@ -47,6 +47,7 @@
         "GitHub.remotehub",
         "GitHub.vscode-github-actions",
         "GitHub.vscode-pull-request-github",
+        "GitLab.gitlab-workflow",
         "golang.go",
         "James-Yu.latex-workshop",
         "lextudio.restructuredtext",

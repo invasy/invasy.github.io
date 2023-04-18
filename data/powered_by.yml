@@ -4,12 +4,12 @@
 - title: Hugo
   icon: hugo
   url: https://gohugo.io/
+- title: Bootstrap
+  icon: bootstrap
+  url: https://getbootstrap.com/
 - title: GitHub Repository, Actions & Pages
   icon: github
   url: https://pages.github.com/
-- title: Bootstrap 5
-  icon: bootstrap
-  url: https://getbootstrap.com/
 - title: Go
   icon: go
   url: https://go.dev/

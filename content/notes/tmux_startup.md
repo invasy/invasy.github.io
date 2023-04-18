@@ -14,7 +14,9 @@ Some characters in the terminal at tmux start:
 ```
 
 # Solution
-Change the following option in `tmux.conf`:
+Change [`escape-time`] option in `tmux.conf` to any non-zero value:
 ```tmux {title="tmux.conf"}
 set -s escape-time 10  # Any value ≠ 0
 ```
+
+[`escape-time`]: http://man.openbsd.org/OpenBSD-current/man1/tmux.1#escape-time "escape-time // tmux(1)"

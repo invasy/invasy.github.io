@@ -82,14 +82,29 @@ $link-color-dark: #0088D2;
   display: inline-block;
   width: 1.1em;
   height: 1.1em;
+  vertical-align: middle;
+  background-color: black;
 }
 
 @include color-mode(dark) {
   .icon {
-    fill: $gray-500;
+    background-color: $gray-500;
   }
 }
 
+{{- range $icon := resources.Match "icons/*.svg" }}
+{{- $name := $icon.RelPermalink | path.BaseName }}
+{{- $icon = $icon | minify }}
+.icon-{{ $name }} {
+{{- range $prefix := slice "-webkit-" "" }}
+  {{ $prefix }}mask-image: url('{{ $icon.RelPermalink }}');
+  {{ $prefix }}mask-size: 100%;
+  {{ $prefix }}mask-repeat: no-repeat;
+{{- end }}
+}
+{{- end }}
+
 .icon-heart {
   fill: $burgundy !important;
+  background-color: $burgundy !important;
 }

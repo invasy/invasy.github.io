@@ -1,5 +1,7 @@
 ---
 title: JavaScript Template Strings
+categories:
+- reference
 tags:
 - JavaScript
 - template

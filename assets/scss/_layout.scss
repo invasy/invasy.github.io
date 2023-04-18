@@ -7,7 +7,7 @@ body {
   flex-direction: column;
 }
 
-#layout {
+.layout {
   display: flex;
   flex: 1 0 100%;
   flex-direction: column-reverse;
@@ -37,7 +37,7 @@ body {
 
 .home,
 .not-found {
-  #content {
+  .content {
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
@@ -52,7 +52,17 @@ body {
   }
 }
 
-#content {
+.title,
+.meta {
+  border-bottom: var(--bs-border-style) var(--bs-border-width) var(--bs-border-color);
+}
+
+.meta {
+  margin-bottom: .75rem;
+  padding: .5em 0;
+}
+
+.content {
   display: flex;
   flex: 1 1 auto;
   flex-direction: column;

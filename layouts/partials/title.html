@@ -1,4 +1,7 @@
-<header id="title">
-  <h1 id="{{ .Title | anchorize }}" data-pagefind-meta="title">{{ .Title | markdownify }}</h1>
+{{- $title := .Title | markdownify -}}
+{{- if eq .Kind "term" -}}
+  {{- $title = printf "%s: %s" (.Data.Singular | strings.FirstUpper) $title -}}
+{{- end -}}
+<header class="title">
+  <h1 id="{{ .Title | anchorize }}"{{ if .IsPage }} data-pagefind-meta="title"{{ end }}>{{ $title }}</h1>
 </header>
-<hr>

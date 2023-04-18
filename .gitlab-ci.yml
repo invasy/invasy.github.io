@@ -1,0 +1,48 @@
+image: registry.gitlab.com/pages/hugo/hugo_extended:latest
+
+variables:
+  GIT_SUBMODULE_STRATEGY: recursive
+  PAGEFIND_VERSION: '0.12.0'
+
+default:
+  before_script:
+  - apk add --no-cache bash curl go tar
+  - curl -LSs "https://github.com/CloudCannon/pagefind/releases/download/v${PAGEFIND_VERSION}/pagefind-v${PAGEFIND_VERSION}-x86_64-unknown-linux-musl.tar.gz" -o /tmp/pagefind.tgz
+  - tar -xzf /tmp/pagefind.tgz -C /usr/local/bin
+  - hugo mod get -u
+
+test:
+  rules:
+  - if: $CI_COMMIT_REF_NAME != $CI_DEFAULT_BRANCH
+  script:
+  - >-
+    hugo
+    --baseUrl="${CI_PAGES_URL}"
+    --environment=development
+    --cleanDestinationDir
+    --printI18nWarnings
+    --printPathWarnings
+    --printUnusedTemplates
+    --templateMetrics
+    --templateMetricsHints
+  - pagefind --source public
+
+pages:
+  rules:
+  - if: $CI_COMMIT_REF_NAME == $CI_DEFAULT_BRANCH
+  script:
+  - >-
+    hugo
+    --baseUrl="${CI_PAGES_URL}"
+    --environment=production
+    --cleanDestinationDir
+    --minify
+    --printI18nWarnings
+    --printPathWarnings
+    --printUnusedTemplates
+    --templateMetrics
+    --templateMetricsHints
+  - pagefind --source public
+  artifacts:
+    paths:
+    - public
