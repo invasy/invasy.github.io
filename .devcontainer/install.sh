@@ -2,21 +2,58 @@
 set -euo pipefail
 shopt -qs lastpipe
 
-declare -a CURL_FLAGS=(
+declare -a packages=(
+  bash-completion
+  ca-certificates
+  curl
+  git
+  jq
+  less
+  make
+  pandoc
+)
+
+: "${HUGO_VARIANT:=hugo_extended}"
+: "${HUGO_VERSION:=latest}"
+: "${SASS_VERSION:=latest}"
+: "${PAGEFIND_VERSION:=latest}"
+: "${GO_VERSION:=1.20.3}"
+
+: "${ROOT_PASSWORD:=root}"
+: "${USERNAME:=$_CONTAINER_USER}"
+: "${PASSWORD:=$USERNAME}"
+: "${COMMENT:=${USERNAME@u}}"
+
+declare -a CURL=(
+  curl
   --silent
   --show-error
   --location
 )
 
+msg() {
+  echo -e ">> $*"
+}
+
+install_packages() {
+  export DEBIAN_FRONTEND='noninteractive'
+
+  msg 'Installing packages...'
+
+  apt-get update
+  apt-get -y upgrade
+  apt-get -y install --no-install-recommends "$@"
+
+  rm -rf /var/lib/apt/lists/*
+}
+
 fetch() {
   local url="${1:?}"
-
-  curl "${CURL_FLAGS[@]}" --output-dir '/tmp' --remote-name "$url"
+  "${CURL[@]}" --output-dir '/tmp' --remote-name "$url"
 }
 
 fetch_release() {
-  local version='latest' asset_filename tag_format='tags/v%s' repo
-  local OPT OPTARG
+  local version='latest' asset_filename tag_format='tags/v%s' repo OPT OPTARG
   local -i OPTIND=1 OPTERR=0
 
   # shellcheck disable=SC2220
@@ -34,14 +71,23 @@ fetch_release() {
     printf -v version "$tag_format" "$version"
   fi
 
-  curl "${CURL_FLAGS[@]}" "https://api.github.com/repos/$repo/releases/$version" \
+  "${CURL[@]}" "https://api.github.com/repos/$repo/releases/$version" \
   | jq -r '.tag_name as $tag|.assets|map(select(.name|match("'"$asset_filename"'")))|.[0]|[$tag,.browser_download_url,.name]|join(" ")'
 }
 
 extract() {
   local pkg="${1:?}" dest="${2:-/opt}"
+  tar -xf "$pkg" -C "$dest"
+}
 
-  tar -C "$dest" -xf "$pkg"
+install_go() {
+  local version="${1:?}"
+  local pkg="go${version}.linux-amd64.tar.gz"
+
+  msg "Installing Go v$version..."
+
+  fetch "https://go.dev/dl/$pkg"
+  extract "/tmp/$pkg"
 }
 
 install_sass() {
@@ -52,6 +98,8 @@ install_sass() {
     -a '^sass_embedded-[0-9.]+-linux-x64\\.tar\\.gz$' \
     -t '%s' \
     'sass/dart-sass-embedded')
+
+  msg "Installing Dart SASS Embedded v$version..."
 
   fetch "$url"
   extract "/tmp/$pkg"
@@ -66,6 +114,8 @@ install_hugo() {
     -a '^'"$variant"'_[0-9.]+_linux-amd64\\.tar\\.gz$' \
     'gohugoio/hugo')
   version="${version#v}"
+
+  msg "Installing Hugo v$version..."
 
   fetch "${url%/*}/hugo_${version}_checksums.txt"
   fetch "$url"
@@ -86,10 +136,40 @@ install_pagefind() {
     'CloudCannon/pagefind')
   version="${version#v}"
 
+  msg "Installing Pagefind v$version..."
+
   fetch "$url"
   extract "/tmp/$pkg" '/usr/local/bin'
 }
 
-install_sass "$SASS_VERSION"
-install_hugo "$VERSION" "$VARIANT"
-install_pagefind "$PAGEFIND_VERSION"
+set_root_password() {
+  local password="${1:-root}"
+
+  msg 'Setting root user password...'
+
+  yes "$password" | passwd || :
+}
+
+create_user() {
+  local username="${1:?}"
+  local password="${2:-$username}" comment="${3:-${username@u}}"
+
+  msg "Creating user '$username'..."
+
+  useradd --create-home --comment="$comment" --user-group "$username"
+  yes "$password" | passwd "$username" || :
+}
+
+main() {
+  install_packages "${packages[@]}"
+
+  install_go "$GO_VERSION"
+  install_sass "$SASS_VERSION"
+  install_hugo "$HUGO_VERSION" "$HUGO_VARIANT"
+  install_pagefind "$PAGEFIND_VERSION"
+
+  set_root_password "$ROOT_PASSWORD"
+  create_user "$USERNAME" "$PASSWORD" "$COMMENT"
+}
+
+main "$@"

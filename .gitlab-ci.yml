@@ -1,3 +1,6 @@
+# GitLab CI Pipeline
+# https://docs.gitlab.com/ee/ci/yaml/
+
 image: registry.gitlab.com/pages/hugo/hugo_extended:latest
 
 variables:

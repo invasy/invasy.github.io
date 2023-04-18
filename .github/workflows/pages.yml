@@ -1,3 +1,6 @@
+# GitHub Actions Workflow
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+
 name: Build and deploy
 
 on:
@@ -60,7 +63,7 @@ jobs:
         --templateMetrics
         --templateMetricsHints
         --logFile=hugo.log
-    
+
     - name: Upload Hugo log
       uses: actions/upload-artifact@v3
       with:

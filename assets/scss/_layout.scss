@@ -60,6 +60,10 @@ body {
 .meta {
   margin-bottom: .75rem;
   padding: .5em 0;
+
+  &:empty {
+    border-bottom: none;
+  }
 }
 
 .content {

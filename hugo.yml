@@ -1,3 +1,6 @@
+# Hugo configuration
+# https://gohugo.io/getting-started/configuration/
+
 title: invasy.dev
 baseUrl: 'https://invasy.dev'
 author:

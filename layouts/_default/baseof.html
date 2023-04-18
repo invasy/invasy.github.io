@@ -17,8 +17,8 @@
       {{ block "title" . }}{{ partial "title" . }}{{ end }}
       {{ block "meta" . }}
       <section class="meta">
-        {{ partial "taxonomy" "categories" }}
-        {{ partial "taxonomy" "tags" }}
+        {{- partial "taxonomy" "categories" -}}
+        {{- partial "taxonomy" "tags" -}}
       </section>
       {{ end }}
       <section class="content" data-pagefind-body>

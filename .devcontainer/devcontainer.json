@@ -1,32 +1,12 @@
 {
   "name": "Hugo",
-  "image": "debian:bullseye-slim",
-  "features": {
-    "./packages": {
-      "packages": [
-        "bash-completion",
-        "ca-certificates",
-        "curl",
-        "git",
-        "jq",
-        "less",
-        "make",
-        "pandoc",
-        "python3",
-        "python3-pip"
-      ]
-    },
-    "./user": {},
-    "./golang": {"version": "1.20.2"},
-    "./hugo": {},
-    "./hugo-env": {}
-  },
+  "build": {"dockerfile": "Dockerfile"},
   "containerUser": "hugo",
   "forwardPorts": [1313],
   "portsAttributes": {
     "1313": {"label": "Hugo server"}
   },
-  "postCreateCommand": ".devcontainer/postCreateCommand.sh",
+  "postCreateCommand": ".devcontainer/init.sh",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -53,8 +33,6 @@
         "lextudio.restructuredtext",
         "mads-hartmann.bash-ide-vscode",
         "ms-azuretools.vscode-docker",
-        "ms-python.python",
-        "ms-python.vscode-pylance",
         "ms-vscode.makefile-tools",
         "ms-vscode.vscode-typescript-next",
         "redhat.vscode-xml",
