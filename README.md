@@ -8,22 +8,33 @@
 [![GitLab CI Pages Pipeline Status][gitlab-ci-badge]][gitlab-ci]
 [![invasy.gitlab.io][gitlab-pages-badge]][gitlab-pages]
 
+[![invasy/invasy.bitbucket.io @ Bitbucket][bitbucket-repo-badge]][bitbucket-repo]
+[![Bitbucket Pipelines Status][bitbucket-pipelines-badge]][bitbucket-pipelines]
+[![invasy.bitbucket.io][bitbucket-pages-badge]][bitbucket-pages]
+
 [![Open in Dev Containers][devcontainers-badge]][devcontainers]
 [![Open in Gitpod][gitpod-badge]][gitpod]
 
-[github-pages]: https://invasy.dev/ "invasy.dev"
-[github-pages-badge]: https://img.shields.io/badge/Visit-invasy.dev-800020
 [github-repo]: https://github.com/invasy/invasy.github.io "invasy/invasy.github.io @ GitHub"
 [github-repo-badge]: https://img.shields.io/badge/GitHub-invasy/invasy.github.io-blue?logo=github
 [github-wf]: https://github.com/invasy/invasy.github.io/actions "GitHub Pages Workflow Status"
-[github-wf-badge]: https://img.shields.io/github/actions/workflow/status/invasy/invasy.github.io/pages.yml?branch=master&label=GitHub%20Pages&logo=github "GitHub Pages Workflow Status"
+[github-wf-badge]: https://img.shields.io/github/actions/workflow/status/invasy/invasy.github.io/pages.yml?branch=master&logo=github&label=Build%20Pages "GitHub Pages Workflow Status"
+[github-pages]: https://invasy.dev/ "invasy.dev"
+[github-pages-badge]: https://img.shields.io/badge/Visit-invasy.dev-800020
 
-[gitlab-pages]: https://invasy.gitlab.io/ "invasy.gitlab.io"
-[gitlab-pages-badge]: https://img.shields.io/badge/Visit-invasy.gitlab.io-800020
 [gitlab-repo]: https://gitlab.com/invasy/invasy.gitlab.io "invasy/invasy.gitlab.io @ GitLab"
 [gitlab-repo-badge]: https://img.shields.io/badge/GitLab-invasy/invasy.gitlab.io-blue?logo=gitlab
 [gitlab-ci]: https://gitlab.com/invasy/invasy.gitlab.io/-/pipelines/latest "GitLab CI Pages Pipeline Status"
-[gitlab-ci-badge]: https://img.shields.io/gitlab/pipeline-status/invasy/invasy.gitlab.io?branch=master&label=GitLab%20Pages&logo=gitlab "GitLab CI Pages Pipeline Status"
+[gitlab-ci-badge]: https://img.shields.io/gitlab/pipeline-status/invasy/invasy.gitlab.io?branch=master&logo=gitlab&label=Build%20Pages "GitLab CI Pages Pipeline Status"
+[gitlab-pages]: https://invasy.gitlab.io/ "invasy.gitlab.io"
+[gitlab-pages-badge]: https://img.shields.io/badge/Visit-invasy.gitlab.io-800020
+
+[bitbucket-repo]: https://bitbucket.org/invasy/invasy.bitbucket.io/ "invasy/invasy.dev @ Bitbucket"
+[bitbucket-repo-badge]: https://img.shields.io/badge/Bitbucket-invasy/invasy.bitbucket.io-blue?logo=bitbucket
+[bitbucket-pipelines]: https://bitbucket.org/invasy/invasy.bitbucket.io/pipelines "Bitbucket Pipelines Status"
+[bitbucket-pipelines-badge]: https://img.shields.io/bitbucket/pipelines/invasy/invasy.bitbucket.io/master?logo=bitbucket&label=Build%20Pages "Bitbucket Pipelines Status"
+[bitbucket-pages]: https://invasy.bitbucket.io/ "invasy.bitbucket.io"
+[bitbucket-pages-badge]: https://img.shields.io/badge/Visit-invasy.bitbucket.io-800020
 
 [devcontainers]: https://vscode.dev/redirect?url=vscode://ms-vscode-remote.remote-containers/cloneInVolume?url=https://github.com/invasy/invasy.github.io "Open in Dev Containers"
 [devcontainers-badge]: https://img.shields.io/badge/Dev%20Containers-open-blue?logo=visualstudiocode "Open in Dev Containers"
@@ -100,6 +111,8 @@
 - GitLab:
   - [`.gitlab-ci.yml` keyword reference](https://docs.gitlab.com/ee/ci/yaml/ ".gitlab-ci.yml keyword reference")
   - [Predefined variables reference](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html "Predefined variables reference")
+- Bitbucket:
+  - [Bitbucket Pipelines configuration reference](https://support.atlassian.com/bitbucket-cloud/docs/bitbucket-pipelines-configuration-reference/ "Bitbucket Pipelines configuration reference")
 - Gitpod:
   - [`.gitpod.yml`](https://www.gitpod.io/docs/references/gitpod-yml ".gitpod.yml") Reference
 - Dev Containers:
