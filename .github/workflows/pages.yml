@@ -56,7 +56,7 @@ jobs:
         hugo
         --environment=production
         --cleanDestinationDir
-        --minify
+        --minify --gc
         --printI18nWarnings
         --printPathWarnings
         --printUnusedTemplates

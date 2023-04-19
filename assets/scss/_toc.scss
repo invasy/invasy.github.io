@@ -30,7 +30,7 @@ $collapse-breakpoint: 'md' !default;
     background-image: url('/icons/arrow-down.svg');
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 100%;  
+    background-size: 100%;
   }
 
   &.collapsed::after {

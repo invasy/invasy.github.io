@@ -3,7 +3,8 @@
   integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
 {{/* MathJax */}}
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+{{ partialCached "script" "mathjax-config" "mathjax-config" }}
+<script id="MathJax-script" defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 {{/* Pagefind */}}
 {{- if site.Params.search.pagefind.enabled }}
 <script src="/_pagefind/pagefind-ui.js"></script>
@@ -13,4 +14,4 @@
 {{- if (findRE "<pre" .Content 1) }}
 {{ partial "script" "copy-code" }}
 {{- end }}
-{{ partialCached "script" "index" }}
+{{ partialCached "script" "index" "index" }}

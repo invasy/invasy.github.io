@@ -11,6 +11,7 @@
     "vscode": {
       "extensions": [
         "asciidoctor.asciidoctor-vscode",
+        "Atlassian.atlascode",
         "bierner.github-markdown-preview",
         "bierner.markdown-checkbox",
         "bierner.markdown-emoji",

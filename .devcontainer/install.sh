@@ -19,10 +19,12 @@ declare -a packages=(
 : "${PAGEFIND_VERSION:=latest}"
 : "${GO_VERSION:=1.20.3}"
 
-: "${ROOT_PASSWORD:=root}"
-: "${USERNAME:=$_CONTAINER_USER}"
-: "${PASSWORD:=$USERNAME}"
-: "${COMMENT:=${USERNAME@u}}"
+if [[ $_CONTAINER_USER ]]; then
+  : "${ROOT_PASSWORD:=root}"
+  : "${USERNAME:=$_CONTAINER_USER}"
+  : "${PASSWORD:=$USERNAME}"
+  : "${COMMENT:=${USERNAME@u}}"
+fi
 
 declare -a CURL=(
   curl
@@ -173,8 +175,10 @@ main() {
   install_hugo "$HUGO_VERSION" "$HUGO_VARIANT"
   install_pagefind "$PAGEFIND_VERSION"
 
-  create_user "$USERNAME" "$PASSWORD" "$COMMENT"
-  set_password root "$ROOT_PASSWORD"
+  if [[ $_CONTAINER_USER ]]; then
+    create_user "$USERNAME" "$PASSWORD" "$COMMENT"
+    set_password root "$ROOT_PASSWORD"
+  fi
 }
 
 main "$@"

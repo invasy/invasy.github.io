@@ -76,6 +76,7 @@ $link-color-dark: #0088D2;
   --page-list-item-height: #{$page-list-item-height};
   --code-icon-size: #{$code-icon-size};
   --code-icon-color: #{$code-icon-color};
+  --powered-by-width: #{ {{ mul (len site.Data.powered_by) .8 }} }em;
 }
 
 .icon {

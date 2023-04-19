@@ -113,6 +113,7 @@
   - [Predefined variables reference](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html "Predefined variables reference")
 - Bitbucket:
   - [Bitbucket Pipelines configuration reference](https://support.atlassian.com/bitbucket-cloud/docs/bitbucket-pipelines-configuration-reference/ "Bitbucket Pipelines configuration reference")
+  - [Variables and secrets](https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/)
 - Gitpod:
   - [`.gitpod.yml`](https://www.gitpod.io/docs/references/gitpod-yml ".gitpod.yml") Reference
 - Dev Containers:

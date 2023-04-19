@@ -39,7 +39,7 @@ pages:
     --baseUrl="${CI_PAGES_URL}"
     --environment=production
     --cleanDestinationDir
-    --minify
+    --minify --gc
     --printI18nWarnings
     --printPathWarnings
     --printUnusedTemplates

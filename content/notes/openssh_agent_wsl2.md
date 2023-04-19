@@ -20,7 +20,7 @@ tags:
     ```powershell
     ubuntu.exe
     ```
-2. Make a symlink for `.ssh` directory from Windows in WSL home directory:
+2. Make a symlink in WSL user home directory to `.ssh` directory from Windows:
     ```bash
     ln -s "/mnt/c/Users/$WINDOWS_USERNAME/.ssh" "$HOME/.ssh"
     chmod -R go= "$HOME/.ssh"
