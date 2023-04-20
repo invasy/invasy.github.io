@@ -55,10 +55,10 @@ $collapse-breakpoint: 'md' !default;
 }
 
 #toc {
-  font-size: 1rem;
+  font-size: .9rem;
 
   @include media-breakpoint-up($collapse-breakpoint) {
     display: block;
-    font-size: 1.1rem;
+    font-size: 1rem;
   }
 }
