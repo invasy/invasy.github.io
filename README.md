@@ -108,12 +108,15 @@
   - [Hugo Markdown](https://www.markdownguide.org/tools/hugo/ "Hugo Markdown") — Markdown syntax in Hugo
 - GitHub:
   - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions "Workflow syntax for GitHub Actions")
+  - [actions/cache](https://github.com/actions/cache "actions/cache"): Cache dependencies and build outputs in GitHub Actions
 - GitLab:
   - [`.gitlab-ci.yml` keyword reference](https://docs.gitlab.com/ee/ci/yaml/ ".gitlab-ci.yml keyword reference")
   - [Predefined variables reference](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html "Predefined variables reference")
+  - [Caching in GitLab CI/CD](https://docs.gitlab.com/ee/ci/caching/ "Caching in GitLab CI/CD")
 - Bitbucket:
   - [Bitbucket Pipelines configuration reference](https://support.atlassian.com/bitbucket-cloud/docs/bitbucket-pipelines-configuration-reference/ "Bitbucket Pipelines configuration reference")
   - [Variables and secrets](https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/)
+  - [Publishing a Website on Bitbucket Cloud](https://support.atlassian.com/bitbucket-cloud/docs/publishing-a-website-on-bitbucket-cloud/ "Publishing a Website on Bitbucket Cloud")
 - Gitpod:
   - [`.gitpod.yml`](https://www.gitpod.io/docs/references/gitpod-yml ".gitpod.yml") Reference
 - Dev Containers:

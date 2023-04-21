@@ -131,9 +131,9 @@ SinglyLinkedListNode* mergeLists(SinglyLinkedListNode* head1, SinglyLinkedListNo
     if (!head1) return head2;
     if (!head2) return head1;
 
-    auto *i = head1, *j = head2;
+    auto i = head1, j = head2;
     if (i->data > j->data) swap(i, j);
-    auto *merged = i;
+    auto merged = i;
 
     while (i->next && j) {
         if (i->next->data > j->data) {
@@ -167,8 +167,8 @@ int main() {
 
             llist1->insert_node(llist1_item);
         }
-      
-      	SinglyLinkedList* llist2 = new SinglyLinkedList();
+
+        SinglyLinkedList* llist2 = new SinglyLinkedList();
 
         int llist2_count;
         cin >> llist2_count;
@@ -252,10 +252,10 @@ public:
         if (!list1) return list2;
         if (!list2) return list1;
 
-        ListNode *i = list1, *j = list2;
+        auto i = list1, j = list2;
         if (i->val > j->val) swap(i, j);
         // `i` points to the list with a lesser first element (at index 0)
-        ListNode *merged = i;  // Head of the merged list
+        auto merged = i;  // Head of the merged list
 
         // Traverse lists until the shorter list ends
         while (i->next && j) {
