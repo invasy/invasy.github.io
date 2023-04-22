@@ -1,9 +1,11 @@
 ---
-title: C++ interview questions
+title: Technical interview questions
 categories:
 - interview
 tags:
 - C++
+- database
+- SQL
 draft: true
 ---
 # C++
@@ -83,6 +85,17 @@ draft: true
 - [ ] variant
 - [ ] initialization
 - [ ] string_view
+
+# Algorithms
+- [ ] Longest common subsequence
+
+# DB
+- `SELECT`
+- joins ([Different Types of SQL JOINs](https://www.w3schools.com/sql/sql_join.asp)):
+  - `(INNER) JOIN`: Returns records that have matching values in both tables
+  - `LEFT (OUTER) JOIN`: Returns all records from the left table, and the matched records from the right table
+  - `RIGHT (OUTER) JOIN`: Returns all records from the right table, and the matched records from the left table
+  - `FULL (OUTER) JOIN`: Returns all records when there is a match in either left or right table
 
 # See also
 - [24 Essential C++ Interview Questions — Toptal](https://www.toptal.com/c-plus-plus/interview-questions)
