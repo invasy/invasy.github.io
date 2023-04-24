@@ -43,7 +43,7 @@ function search(): void {
       header.appendChild(link);
       article.appendChild(header);
       let snippet = '';
-      let highlights = [];
+      const highlights = [];
       result.matches.forEach((match, index) => {
         if (match.key == 'tags' || match.key == 'categories') {
           highlights.push(match.value);

@@ -18,3 +18,6 @@ _site/
 jsconfig.json
 .hugo_build.lock
 *.log
+
+# Node.js
+node_modules/

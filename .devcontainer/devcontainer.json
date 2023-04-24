@@ -22,6 +22,7 @@
         "budparr.language-hugo-vscode",
         "codezombiech.gitignore",
         "DavidAnson.vscode-markdownlint",
+        "dbaeumer.vscode-eslint",
         "ecmel.vscode-html-css",
         "EditorConfig.EditorConfig",
         "esbenp.prettier-vscode",

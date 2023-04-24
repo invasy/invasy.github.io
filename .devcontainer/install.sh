@@ -10,6 +10,8 @@ declare -a packages=(
   jq
   less
   make
+  nodejs
+  npm
   pandoc
 )
 
@@ -33,6 +35,8 @@ declare -a CURL=(
   --location
 )
 
+###############################################################################
+
 msg() {
   local fmt="${1:?}"; shift
   # shellcheck disable=SC2059
@@ -44,16 +48,7 @@ msg_install() {
   msg 'Installing %s %s...' "$name" "$version"
 }
 
-install_packages() {
-  export DEBIAN_FRONTEND='noninteractive'
-
-  msg 'Installing packages...'
-  apt-get -q  update
-  apt-get -qy upgrade
-  apt-get -qy install --no-install-recommends "$@"
-
-  rm -rf /var/lib/apt/lists/*
-}
+###############################################################################
 
 fetch() {
   local url="${1:?}"
@@ -86,6 +81,19 @@ fetch_release() {
 extract() {
   local pkg="${1:?}" dest="${2:-/opt}"
   tar -xf "$pkg" -C "$dest"
+}
+
+###############################################################################
+
+install_packages() {
+  export DEBIAN_FRONTEND='noninteractive'
+
+  msg 'Installing packages...'
+  apt-get -q  update
+  apt-get -qy upgrade
+  apt-get -qy install --no-install-recommends "$@"
+
+  rm -rf /var/lib/apt/lists/*
 }
 
 install_go() {
@@ -148,6 +156,8 @@ install_pagefind() {
   extract "/tmp/$pkg" '/usr/local/bin'
 }
 
+###############################################################################
+
 set_password() {
   local username="${1:?}"
   local password="${2:-$username}"
@@ -167,9 +177,10 @@ create_user() {
   set_password "$username" "$password"
 }
 
+###############################################################################
+
 main() {
   install_packages "${packages[@]}"
-
   install_go "$GO_VERSION"
   install_sass "$SASS_VERSION"
   install_hugo "$HUGO_VERSION" "$HUGO_VARIANT"
