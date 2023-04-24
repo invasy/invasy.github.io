@@ -5,6 +5,7 @@ categories:
 tags:
 - C++
 - smart pointer
+draft: true
 ---
 {{< table class="table table-bordered" >}}
 | Type | 

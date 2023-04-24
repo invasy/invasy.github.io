@@ -71,4 +71,3 @@ LANG=C date -R
 
 # See Also
 - [deb-changelog(5)](https://manpages.debian.org/testing/dpkg-dev/deb-changelog.5.en.html)
-- [[Date and Time Formats]]

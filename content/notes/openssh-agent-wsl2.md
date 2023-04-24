@@ -11,7 +11,7 @@ tags:
 - socat
 ---
 # Prerequisites
-- [OpenSSH in Windows 10](/notes/openssh_windows10)
+- [OpenSSH in Windows 10]({{< relref "openssh-windows10" >}})
 - WSL2
 - Golang
 

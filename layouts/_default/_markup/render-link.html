@@ -1,0 +1,8 @@
+{{- $url := urls.Parse .Destination -}}
+{{- $class := "" -}}
+{{- $target := "" -}}
+{{- if $url.IsAbs -}}
+  {{- $class = printf "link-icon-%s" (index site.Data.link_icons $url.Hostname | default "external") -}}
+  {{- $target = "_blank" -}}
+{{- end -}}
+<a{{ with $class }} class="{{ . }}"{{ end }} href="{{ $url }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ with $target }} target="{{ . }}"{{ end }}>{{ .Text | safeHTML }}</a>

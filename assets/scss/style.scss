@@ -103,6 +103,21 @@ $link-color-dark: #0088D2;
   {{ $prefix }}mask-repeat: no-repeat;
 {{- end }}
 }
+
+.link-icon-{{ $name }}::before {
+  content: "";
+  display: inline-block;
+  width: 1em;
+  height: 1em;
+  margin: 0 .25em .2em 0;
+  vertical-align: middle;
+  background-color: rgba(var(--bs-link-color-rgb), var(--bs-link-opacity, 1));
+{{- range $prefix := slice "-webkit-" "" }}
+  {{ $prefix }}mask-image: url('{{ $icon.RelPermalink }}');
+  {{ $prefix }}mask-size: 100%;
+  {{ $prefix }}mask-repeat: no-repeat;
+{{- end }}
+}
 {{- end }}
 
 .icon-heart {

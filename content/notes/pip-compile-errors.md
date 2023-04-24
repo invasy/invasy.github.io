@@ -7,20 +7,22 @@ tags:
 - pip-compile
 - error
 ---
-## When
+# Problem
+When running `pip-compile`
 ```bash
 pip-compile pyproject.toml
 ```
-
-## What
-Error with the following message:
+there's an error with the following message:
 ```
 Backend subprocess exited when trying to invoke prepare_metadata_for_build_wheel
 Failed to parse .../pyproject.toml
 ```
 
-## How to debug
-Change `subprocess_runner` from `quiet` to `default` to show verbose log:
+And no other info is provided in the console.
+
+# Solution
+Change `runner` parameter for `ProjectBuilder` from `quiet_subprocess_runner` to `default_subprocess_runner`
+to show verbose log:
 
 ```diff {title="util.diff"}
 --- a/lib/python3.11/site-packages/build/util.py	2023-04-03 18:16:13.713254111 +0500
