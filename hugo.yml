@@ -8,6 +8,10 @@ author:
   email: site@invasy.dev
 
 languageCode: en-us
+paginate: 50
+enableGitInfo: true
+enableRobotsTXT: false
+googleAnalytics: 'G-J7ENYFHF93'
 
 markup:
   highlight:
@@ -21,16 +25,11 @@ markup:
     endLevel: 4
     ordered: false
 
-enableGitInfo: true
-enableRobotsTXT: false
-
 taxonomies:
   algorithm: algorithms
   category: categories
   data_structure: data_structures
   tag: tags
-
-paginate: 50
 
 mediaTypes:
   application/x-tex:

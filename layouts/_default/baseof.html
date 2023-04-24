@@ -9,6 +9,7 @@
   {{ partialCached "head/style" . }}
 </head>
 {{ block "body_tag" . }}<body>{{ end }}
+  {{ partialCached "analytics" . }}
   {{ partial "header" . }}
   <div class="layout container-xxl">
     {{ block "left" . }}{{ partial "sidebar" . }}{{ end }}

@@ -83,6 +83,9 @@
 - [JSON Resume](https://jsonresume.org/) — community driven open source JSON based standard for résumés
 - [xdanaux/moderncv](https://github.com/xdanaux/moderncv) — [LaTeX] documentclass for typesetting curricula vitae
 
+### Analytics
+- [Google Analytics](https://analytics.google.com/analytics/web/)
+
 [SVG]: https://en.wikipedia.org/wiki/SVG "SVG — Wikipedia"
 [favicon]: https://en.wikipedia.org/wiki/Favicon "Favicon — Wikipedia"
 [LaTeX]: https://www.latex-project.org/ "LaTeX"
