@@ -1,0 +1,3 @@
+{{- with site.Params.donate -}}{{- if .show -}}
+<li class="nav-item"><a class="nav-link" href="{{ .url }}" title="{{ .title }}" target="_blank">{{ partialCached "icon" .icon .icon }}</a></li>
+{{- end -}}{{- end -}}

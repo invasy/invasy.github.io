@@ -97,3 +97,8 @@ params:
     gcse:
       enabled: false
       id: '1e801f0739759a3cb'
+  donate:
+    show: true
+    title: Buy me a coffee
+    url: https://ko-fi.com/invasy
+    icon: ko-fi
