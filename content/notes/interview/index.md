@@ -18,32 +18,45 @@ draft: true
   - [ ] `std::shared_pointer`
   - [ ] `std::weak_pointer`
 - [ ] STL containers:
-  - [ ] `std::array`
-  - [ ] `std::vector`
+  - [ ] `std::array` — static array
+  - [ ] `std::vector` — dynamic array
   - [ ] `std::deque`
-  - [ ] `std::map`
-  - [ ] `std::unordered_map`
+  - [ ] `std::map` — self-balnced tree — red-black tree (RBT)
+  - [ ] `std::unordered_map` — hash table
   - [ ] `std::set`
   - [ ] `std::unordered_set`
   - [ ] `std::stack`
   - [ ] `std::queue`
   - [ ] `std::priority_queue`
-  - [ ] list
-  - [ ] span
+  - [ ] `std::list` — doubly-linked list
+  - [ ] spans
 - [ ] Exceptions:
-  - [ ] try, catch, finally
+  - [ ] `throw`
+  - [ ] `try`, `catch`, `finally`
   - [ ] stack unwinding
-- [ ] `noexcept`
-- [ ] `volatile`
-- [ ] Inheritance
-- [ ] Virtual destructor
+  - [ ] keyword `noexcept`
+  - [ ] can constructor raise exceptions?
+  - [ ] can destructor raise exceptions?
+  - [ ] catching by reference
+- [ ] keyword `volatile`
+- [ ] inheritance
+- [ ] keyword `virtual`:
+  - [ ] virtual functions
+  - [ ] virtual destructor
+  - [ ] pure virtual functions
+  - [ ] abstract classes
+  - [ ] interfaces
+  - [ ] keyword `override`
+  - [ ] vptr
+  - [ ] vtable
+  - [ ] can constructor be virtual?
+  - [ ] calling virtual methods from a constructor
+    - Yes, we can call a virtual function from a constructor. But it can throw an exception of overriding.
+  - [ ] calling virtual methods from a destructor
 - [ ] `struct` vs `class`
-- [ ] virtual functions
-- [ ] pure virtual functions
-- [ ] vtable
-- [ ] lvalue, rvalue
-- [ ] perfect forwarding
+- [ ] `lvalue`, `rvalue`
 - [ ] move semantics
+- [ ] perfect forwarding
 - [ ] reference vs pointer
 - [ ] `new` vs `malloc`
 - [ ] `new` and `new[]`
@@ -57,34 +70,32 @@ draft: true
 - [ ] destructor overloading
 - [ ] friend classes and functions
 - [ ] recursive inline function?
-- [ ] `inline`
-- [ ] `static`
-- [ ] abstract class
+- [ ] keyword `inline`
+- [ ] keyword `static`
 - [ ] storage class
-- [ ] `mutable`
-- [ ] `auto`
+- [ ] keyword `mutable`
+- [ ] keyword `auto`
 - [ ] namespaces
-- [ ] anonymous namespace
-- [ ] Can we call a virtual function from a constructor?
-  - Yes, we can call a virtual function from a constructor. But it can throw an exception of overriding.
+  - [ ] anonymous namespace
 - [ ] anatomy of a class, memory layout
 - [ ] size of an empty class
 - [ ] `this` pointer
 - [ ] lambdas
 - [ ] function overloading
 - [ ] concurrency:
-  - [ ] thread and jthread
+  - [ ] `std::mutex`, `std::lock_guard`
+  - [ ] `std::semaphore`
+  - [ ] condition_variable
+  - [ ] `std::thread` and `std::jthread`
   - [ ] future, promise, async
   - [ ] latch, barrier
-  - [ ] mutex, semaphore
-  - [ ] condition_variable
   - [ ] coroutines
 - [ ] type traits
 - [ ] ranges
-- [ ] optional
-- [ ] variant
+- [ ] `std::optional`
+- [ ] `std::variant`
 - [ ] initialization
-- [ ] string_view
+- [ ] `std::string_view`
 
 # Algorithms
 - [ ] Longest common subsequence
@@ -96,6 +107,11 @@ draft: true
   - `LEFT (OUTER) JOIN`: Returns all records from the left table, and the matched records from the right table
   - `RIGHT (OUTER) JOIN`: Returns all records from the right table, and the matched records from the left table
   - `FULL (OUTER) JOIN`: Returns all records when there is a match in either left or right table
+
+# System design
+- [25 Software Design Interview Questions to Crack Any Programming and Technical Interviews](https://medium.com/javarevisited/25-software-design-interview-questions-to-crack-any-programming-and-technical-interviews-4b8237942db0 "25 Software Design Interview Questions to Crack Any Programming and Technical Interviews")
+- [Top 10 System Design Interview Questions and Answers](https://www.geeksforgeeks.org/top-10-system-design-interview-questions-and-answers/ "Top 10 System Design Interview Questions and Answers")
+- 
 
 # See also
 - [24 Essential C++ Interview Questions — Toptal](https://www.toptal.com/c-plus-plus/interview-questions)
