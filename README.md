@@ -43,7 +43,8 @@
 [gitpod-badge]: https://img.shields.io/badge/Gitpod-open-blue?logo=gitpod "Open in Gitpod"
 
 ## Powered By
-- [Hugo](https://gohugo.io/ "Hugo") — static site generator
+- [Markdown] — lightweight markup language
+- [Hugo](https://gohugo.io/ "Hugo") — static site generator from Markdown files
 - [Bootstrap](https://getbootstrap.com/ "Bootstrap") — CSS and JavaScript framework
 - [SASS](https://sass-lang.com/ "SASS") — stylesheet preprocessor
 - [Typescript](https://www.typescriptlang.org/ "Typescript") — JavaScript superset with statical typing
@@ -51,9 +52,9 @@
 ### Development
 - [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code")
   - [`tasks.json`](.vscode/tasks.json) — VSCode tasks for icons and Hugo
-- [Development Containers](https://containers.dev/ "Development Containers")
+- [Development Containers](https://containers.dev/ "Development Containers") — Docker containers with fully featured development environment
   - [`.devcontainer`](.devcontainer)
-- [Gitpod](https://www.gitpod.io/ "Gitpod")
+- [Gitpod](https://www.gitpod.io/ "Gitpod") — cloud development environment
   - [`.gitpod.yml`](.gitpod.yml)
 
 ### GitHub
@@ -81,7 +82,8 @@
 ### Résumé
 - [`resume.yml`](data/resume.yml "resume.yml") — my résumé data
 - [JSON Resume](https://jsonresume.org/) — community driven open source JSON based standard for résumés
-- [xdanaux/moderncv](https://github.com/xdanaux/moderncv) — [LaTeX] documentclass for typesetting curricula vitae
+- [xdanaux/moderncv](https://github.com/xdanaux/moderncv "xdanaux/moderncv — GitHub") — $\LaTeX$ documentclass for typesetting curricula vitae
+- [LaTeX] — document preparation system
 
 ### Analytics
 - [Google Analytics](https://analytics.google.com/analytics/web/)
@@ -91,10 +93,16 @@
 [LaTeX]: https://www.latex-project.org/ "LaTeX"
 
 ## Documentation
+- [Markdown]:
+  - [Markdown Guide](https://www.markdownguide.org/ "Markdown Guide") — comprehensive Markdown reference
+  - [CommonMark](https://commonmark.org/ "CommonMark") — strongly defined, highly compatible specification of Markdown
+  - [GFM](https://github.github.com/gfm/ "GitHub Flavored Markdown") — GitHub Flavored Markdown (CommonMark superset)
+  - [goldmark](https://github.com/yuin/goldmark/ "goldmark") — Markdown parser written in Go (compliant with CommonMark 0.30)
+  - [Hugo Markdown](https://www.markdownguide.org/tools/hugo/ "Hugo Markdown") — Markdown syntax in Hugo
 - Hugo and Go:
   - [Hugo Documentation](https://gohugo.io/documentation/ "Hugo Documentation")
   - [Hugo Discourse](https://discourse.gohugo.io/ "Hugo Discourse")
-  - [Go fmt package](https://pkg.go.dev/fmt "Go fmt package")
+  - [Go `fmt` package](https://pkg.go.dev/fmt "Go fmt package")
 - Bootstrap:
   - [Bootstrap Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/ "Bootstrap Documentation")
   - [twbs/bootstrap](https://github.com/twbs/bootstrap "twbs/bootstrap — GitHub") — Bootstrap source code
@@ -104,14 +112,9 @@
   - [CSS Selectors](https://www.w3schools.com/cssref/css_selectors.php "CSS Selectors")
   - [JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JavaScript Reference — MDN")
   - [MathML Reference](https://developer.mozilla.org/en-US/docs/Web/MathML "MathML Reference — MDN")
-- [Markdown](https://daringfireball.net/projects/markdown/syntax "Markdown"):
-  - [CommonMark](https://commonmark.org/ "CommonMark") — strongly defined, highly compatible specification of Markdown
-  - [GFM](https://github.github.com/gfm/ "GitHub Flavored Markdown") — GitHub Flavored Markdown (CommonMark superset)
-  - [goldmark](https://github.com/yuin/goldmark/ "goldmark") — Markdown parser written in Go (compliant with CommonMark 0.30)
-  - [Hugo Markdown](https://www.markdownguide.org/tools/hugo/ "Hugo Markdown") — Markdown syntax in Hugo
 - GitHub:
   - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions "Workflow syntax for GitHub Actions")
-  - [actions/cache](https://github.com/actions/cache "actions/cache"): Cache dependencies and build outputs in GitHub Actions
+  - [actions/cache](https://github.com/actions/cache "actions/cache — GitHub"): Cache dependencies and build outputs in GitHub Actions
 - GitLab:
   - [`.gitlab-ci.yml` keyword reference](https://docs.gitlab.com/ee/ci/yaml/ ".gitlab-ci.yml keyword reference")
   - [Predefined variables reference](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html "Predefined variables reference")
@@ -125,3 +128,5 @@
 - Dev Containers:
   - [Dev Container metadata reference](https://containers.dev/implementors/json_reference/ "Dev Container metadata reference")
 - [YAML Multiline](https://yaml-multiline.info/ "YAML Multiline")
+
+[Markdown]: https://daringfireball.net/projects/markdown/syntax "Markdown"
