@@ -2,7 +2,7 @@
 set -euo pipefail
 shopt -qs lastpipe
 
-declare -r name='invasy.bitbucket.io'
+declare -r repo_name='invasy.bitbucket.io'
 declare -r branch="$(git rev-parse --abbrev-ref HEAD)"
 declare -r commit="$(git rev-parse --short=8 HEAD)"
 
@@ -10,11 +10,11 @@ declare -r commit="$(git rev-parse --short=8 HEAD)"
 rm -rf public resources
 
 # Clone
-git clone -b public "https://invasy@bitbucket.org/invasy/$name.git" public
+git clone -b public "https://invasy@bitbucket.org/invasy/$repo_name.git" public
 
 # Build
 hugo \
-  --baseUrl="https://$name" \
+  --baseUrl="https://$repo_name" \
   --environment=production \
   --minify --gc \
   --printI18nWarnings \
