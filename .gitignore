@@ -21,3 +21,5 @@ jsconfig.json
 
 # Node.js
 node_modules/
+package*.json
+yarn.lock

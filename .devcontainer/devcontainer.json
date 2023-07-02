@@ -1,12 +1,70 @@
 {
   "name": "Hugo",
-  "build": {"dockerfile": "Dockerfile"},
+  "image": "debian:bookworm-slim",
   "containerUser": "hugo",
+  "remoteEnv": {
+    "GOPATH": "/home/hugo/go",
+    "GOBIN": "/home/hugo/go/bin",
+    "PATH": "/home/hugo/bin:/home/hugo/.local/bin:/home/hugo/go/bin:${containerEnv:PATH}"
+  },
+  "features": {
+    "./base": {
+      "root_password": "1",
+      "packages": [
+        "shellcheck"
+      ]
+    },
+    "./hadolint": {"version": "latest"},
+    "./python": {
+      "version": "latest",
+      "pip_version": "latest",
+      "packages": [
+        "yamllint"
+      ]
+    },
+    "./node": {
+      "version": "lts",
+      "packages": [
+        "@typescript-eslint/eslint-plugin",
+        "@typescript-eslint/parser",
+        "eslint",
+        "markdownlint",
+        "markdownlint-cli",
+        "remark",
+        "remark-cli",
+        "remark-emoji",
+        "remark-frontmatter",
+        "remark-gfm",
+        "remark-hint",
+        "remark-lint",
+        "remark-math",
+        "remark-preset-lint-consistent",
+        "remark-preset-lint-recommended",
+        "remark-toc",
+        "typescript"
+      ]
+    },
+    "./go": {"version": "1.20.5"},
+    "./user": {
+      "password": "1",
+      "comment": "Hugo",
+      "go_packages": [
+        "golang.org/x/tools/gopls@latest",
+        "github.com/go-delve/delve/cmd/dlv@latest",
+        "honnef.co/go/tools/cmd/staticcheck@latest"
+      ]
+    },
+    "./hugo": {
+      "version": "0.114.1",
+      "sass_version": "latest",
+      "pagefind_version": "latest"
+    }
+  },
+  "postCreateCommand": ".devcontainer/init.sh",
   "forwardPorts": [1313],
   "portsAttributes": {
     "1313": {"label": "Hugo server"}
   },
-  "postCreateCommand": ".devcontainer/init.sh",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -32,8 +90,10 @@
         "GitLab.gitlab-workflow",
         "golang.go",
         "James-Yu.latex-workshop",
+        "jq-syntax-highlighting.jq-syntax-highlighting",
         "lextudio.restructuredtext",
         "mads-hartmann.bash-ide-vscode",
+        "mikestead.dotenv",
         "ms-azuretools.vscode-docker",
         "ms-vscode.makefile-tools",
         "ms-vscode.vscode-typescript-next",

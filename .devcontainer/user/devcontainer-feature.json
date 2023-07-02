@@ -1,0 +1,34 @@
+{
+  "id": "user",
+  "name": "User setup",
+  "version": "0.1.0",
+  "description": "User setup",
+  "installsAfter": ["base", "go"],
+  "options": {
+    "password": {
+      "type": "string",
+      "description": "User password",
+      "default": "1"
+    },
+    "comment": {
+      "type": "string",
+      "description": "User comment (GECOS field)",
+      "default": "User"
+    },
+    "go_packages": {
+      "type": "string",
+      "description": "Go packages to install",
+      "default": ""
+    },
+    "node_packages": {
+      "type": "string",
+      "description": "Node.js packages to install",
+      "default": ""
+    },
+    "python_packages": {
+      "type": "string",
+      "description": "Python packages to install",
+      "default": ""
+    }
+  }
+}

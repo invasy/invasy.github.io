@@ -1,0 +1,15 @@
+{
+  "id": "hadolint",
+  "name": "Hadolint",
+  "version": "0.1.0",
+  "description": "Haskell Dockerfile Linter",
+  "installsAfter": ["base"],
+  "options": {
+    "version":  {
+      "type": "string",
+      "description": "Hadolint version",
+      "proposals": ["latest", "2.12.0"],
+      "default": "latest"
+    }
+  }
+}

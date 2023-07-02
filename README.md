@@ -2,10 +2,12 @@
 
 [![invasy/invasy.github.io @ GitHub][github-repo-badge]][github-repo]
 [![GitHub Pages Workflow Status][github-wf-badge]][github-wf]
+[![devcontainer][github-devcontainer-badge]][github-devcontainer]
 [![invasy.dev][github-pages-badge]][github-pages]
 
 [![invasy/invasy.gitlab.io @ GitLab][gitlab-repo-badge]][gitlab-repo]
 [![GitLab CI Pages Pipeline Status][gitlab-ci-badge]][gitlab-ci]
+[![devcontainer][gitlab-devcontainer-badge]][gitlab-devcontainer]
 [![invasy.gitlab.io][gitlab-pages-badge]][gitlab-pages]
 
 [![invasy/invasy.bitbucket.io @ Bitbucket][bitbucket-repo-badge]][bitbucket-repo]
@@ -19,6 +21,8 @@
 [github-repo-badge]: https://img.shields.io/badge/GitHub-invasy/invasy.github.io-blue?logo=github
 [github-wf]: https://github.com/invasy/invasy.github.io/actions "GitHub Pages Workflow Status"
 [github-wf-badge]: https://img.shields.io/github/actions/workflow/status/invasy/invasy.github.io/pages.yml?branch=master&logo=github&label=Build%20Pages "GitHub Pages Workflow Status"
+[github-devcontainer]: https://github.com/invasy/invasy.github.io/pkgs/container/invasy.github.io "devcontainer"
+[github-devcontainer-badge]: https://img.shields.io/badge/ghcr.io-Devcontainer-darkmagenta?logo=github
 [github-pages]: https://invasy.dev/ "invasy.dev"
 [github-pages-badge]: https://img.shields.io/badge/Visit-invasy.dev-800020
 
@@ -26,6 +30,8 @@
 [gitlab-repo-badge]: https://img.shields.io/badge/GitLab-invasy/invasy.gitlab.io-blue?logo=gitlab
 [gitlab-ci]: https://gitlab.com/invasy/invasy.gitlab.io/-/pipelines/latest "GitLab CI Pages Pipeline Status"
 [gitlab-ci-badge]: https://img.shields.io/gitlab/pipeline-status/invasy/invasy.gitlab.io?branch=master&logo=gitlab&label=Build%20Pages "GitLab CI Pages Pipeline Status"
+[gitlab-devcontainer]: https://gitlab.com/invasy/invasy.gitlab.io/container_registry "devcontainer"
+[gitlab-devcontainer-badge]: https://img.shields.io/badge/registry-Devcontainer-darkmagenta?logo=gitlab
 [gitlab-pages]: https://invasy.gitlab.io/ "invasy.gitlab.io"
 [gitlab-pages-badge]: https://img.shields.io/badge/Visit-invasy.gitlab.io-800020
 
@@ -127,6 +133,9 @@
   - [`.gitpod.yml`](https://www.gitpod.io/docs/references/gitpod-yml ".gitpod.yml") Reference
 - Dev Containers:
   - [Dev Container metadata reference](https://containers.dev/implementors/json_reference/ "Dev Container metadata reference")
+- VSCode:
+  - [Integrate with External Tools via Tasks](https://code.visualstudio.com/docs/editor/tasks "Integrate with External Tools via Tasks")
+  - [codicon | The icon font for Visual Studio Code](https://microsoft.github.io/vscode-codicons/dist/codicon.html "codicon | The icon font for Visual Studio Code")
 - [YAML Multiline](https://yaml-multiline.info/ "YAML Multiline")
 
 [Markdown]: https://daringfireball.net/projects/markdown/syntax "Markdown"

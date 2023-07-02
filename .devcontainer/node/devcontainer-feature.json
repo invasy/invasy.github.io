@@ -1,0 +1,34 @@
+{
+  "id": "node",
+  "name": "Node.js",
+  "version": "0.1.0",
+  "description": "Open-source, cross-platform JavaScript runtime environment",
+  "installsAfter": ["base", "python"],
+  "containerEnv": {
+    "PATH": "/opt/node/bin:$PATH"
+  },
+  "options": {
+    "version":  {
+      "type": "string",
+      "description": "Hugo version",
+      "proposals": ["lts", "latest", "20.3.1", "18.16.1"],
+      "default": "lts"
+    },
+    "yarn_version": {
+      "type": "string",
+      "description": "Yarn version",
+      "proposals": ["none", "stable"],
+      "default": "none"
+    },
+    "gyp":  {
+      "type": "boolean",
+      "description": "Install node-gyp?",
+      "default": true
+    },
+    "packages":  {
+      "type": "string",
+      "description": "Node.js packages to install",
+      "default": ""
+    }
+  }
+}

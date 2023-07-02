@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+IMAGE_NAME="${REGISTRY:+$REGISTRY/}$REGISTRY_USERNAME/$NAME"
+set -euo pipefail
+shopt -qs lastpipe
+
+declare -a build_args=()
+declare -a labels=()
+declare -a tags=(
+  "$IMAGE_NAME:latest"
+)
+
+build() {
+  local path="${1:-.}"
+  docker build --progress=plain \
+    "${build_args[@]/#/--build-arg=}" \
+    "${labels[@]/#/--label=}" \
+    "${tags[@]/#/--tag=}" \
+    "$path"
+}

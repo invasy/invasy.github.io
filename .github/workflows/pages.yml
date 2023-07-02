@@ -1,17 +1,26 @@
 # GitHub Actions Workflow
 # https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
 
-name: Build and deploy
+name: Build and deploy pages
 
 on:
   push:
+    paths:
+    - "assets/**/*"
+    - "config/*/*"
+    - "content/**/*"
+    - "data/**/*"
+    - "layouts/**/*"
+    - "static/**/*"
+    - "hugo.yml"
+    - ".github/workflows/pages.yml"
     branches-ignore:
-    - 'dependabot/**'
+    - "dependabot/**"
   workflow_dispatch:
 
 permissions:
-  contents: read
   id-token: write
+  packages: write
   pages: write
 
 concurrency:
@@ -23,56 +32,26 @@ defaults:
     shell: bash
 
 jobs:
+  devcontainer:
+    uses: ./.github/workflows/devcontainer.yml
+
   build:
+    needs:
+    - devcontainer
     runs-on: ubuntu-latest
+    container:
+      image: ghcr.io/${{ github.repository }}:latest
+    env:
+      HUGO_ENVIRONMENT: production
     steps:
-
-    - name: Setup Go
-      uses: actions/setup-go@v3
-      with:
-        go-version: stable
-
-    - name: Setup Hugo
-      uses: peaceiris/actions-hugo@v2
-      with:
-        hugo-version: latest
-        extended: true
-
-    - name: Setup Pagefind
-      uses: jaxxstorm/action-install-gh-release@v1.10.0
-      with:
-        repo: CloudCannon/pagefind
-
     - name: Checkout
       uses: actions/checkout@v3
       with:
         submodules: recursive
-
-    - name: Update Hugo modules
-      run: hugo mod get -u
-
+    - name: Initialize environment
+      run: .devcontainer/init.sh
     - name: Build
-      run: >-
-        hugo
-        --environment=production
-        --cleanDestinationDir
-        --minify --gc
-        --printI18nWarnings
-        --printPathWarnings
-        --printUnusedTemplates
-        --templateMetrics
-        --templateMetricsHints
-        --logFile=hugo.log
-
-    - name: Upload Hugo log
-      uses: actions/upload-artifact@v3
-      with:
-        name: hugo-log
-        path: hugo.log
-
-    - name: Make Pagefind index
-      run: pagefind --source public
-
+      run: .devcontainer/build.sh
     - name: Upload pages
       uses: actions/upload-pages-artifact@v1
       with:
@@ -80,7 +59,8 @@ jobs:
 
   deploy:
     if: github.ref_name == github.event.repository.default_branch
-    needs: build
+    needs:
+    - build
     runs-on: ubuntu-latest
     environment:
       name: github-pages

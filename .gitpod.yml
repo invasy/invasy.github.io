@@ -1,8 +1,7 @@
 # Gitpod configuration
 # https://www.gitpod.io/docs/references/gitpod-yml
 
-image:
-  file: .devcontainer/Dockerfile
+image: ghcr.io/invasy/hugo:latest
 tasks:
 - init: .devcontainer/init.sh
 ports:
@@ -13,6 +12,7 @@ ports:
 vscode:
   extensions:
   - 'asciidoctor.asciidoctor-vscode'
+  - 'Atlassian.atlascode'
   - 'bierner.github-markdown-preview'
   - 'bierner.markdown-checkbox'
   - 'bierner.markdown-emoji'
@@ -23,6 +23,7 @@ vscode:
   - 'budparr.language-hugo-vscode'
   - 'codezombiech.gitignore'
   - 'DavidAnson.vscode-markdownlint'
+  - 'dbaeumer.vscode-eslint'
   - 'ecmel.vscode-html-css'
   - 'EditorConfig.EditorConfig'
   - 'esbenp.prettier-vscode'
@@ -34,9 +35,8 @@ vscode:
   - 'James-Yu.latex-workshop'
   - 'lextudio.restructuredtext'
   - 'mads-hartmann.bash-ide-vscode'
+  - 'mikestead.dotenv'
   - 'ms-azuretools.vscode-docker'
-  - 'ms-python.python'
-  - 'ms-python.vscode-pylance'
   - 'ms-vscode.makefile-tools'
   - 'ms-vscode.vscode-typescript-next'
   - 'redhat.vscode-xml'

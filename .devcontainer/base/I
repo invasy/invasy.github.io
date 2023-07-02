@@ -1,0 +1,164 @@
+#!/usr/bin/env bash
+
+declare -ar CURL=(
+  curl
+  --fail
+  --location
+  --show-error
+  --silent
+)
+
+create_user() {
+  local username="${1:?missing username}"
+  local OPT OPTARG password comment="${username@u}"
+  local -i OPTIND OPTERR=0
+
+  while getopts ':c:p:' OPT; do
+    # shellcheck disable=SC2220
+    case $OPT in
+      p) password="$OPTARG" ;;
+      c) comment="$OPTARG" ;;
+    esac
+  done; shift $(( OPTIND - 1 ))
+
+  useradd --create-home --comment="$comment" --user-group "$username"
+  if [[ $password ]]; then
+    set_password "$username" "$password"
+  fi
+}
+
+set_password() {
+  local username="${1:?missing username}"
+  local password="${2:-$username}"
+
+  yes "$password" | passwd -q "$username" || :
+}
+
+add_apt_key() {
+  local filename="${1:?}" url="${2:?}"
+  local key="$APT_KEYRINGS/$filename.gpg"
+
+  sudo install -m 0755 -d "$APT_KEYRINGS"
+  "${CURL[@]}" "$url" | gpg --dearmor -o "$key"
+  sudo chmod a+r "$key"
+
+  echo "$key"
+}
+
+add_source_list() {
+  local filename="${1:?missing source list filename}"; shift
+  local OPT OPTARG key
+  local -i OPTIND=1 OPTERR=0
+  local -a options=("arch=$(dpkg --print-architecture)")
+
+  while getopts ':k:o:' OPT; do
+    # shellcheck disable=SC2220
+    case $OPT in
+      k) options+=("signed-by=$(add_apt_key "$filename" "$key")") ;;
+      o) options+=("$OPTARG") ;;
+    esac
+  done; shift $(( OPTIND - 1 ))
+
+  local url="${1:?}" distribution="${2:?}" line='deb '; shift 2
+  local -a components=("$@")
+
+  if (( ${#options[*]} > 0 )); then
+    line+="[${options[*]}] "
+  fi
+  line+="$url $distribution"
+  if (( ${#components[*]} > 0 )); then
+    line+=" ${components[*]}"
+  fi
+
+  echo "$line" > "/etc/apt/sources.list.d/$filename.list"
+}
+
+install_packages() {
+  local OPT OPTARG
+  local -i OPTIND OPTERR=0 update=1 upgrade=0
+  export DEBIAN_FRONTEND='noninteractive'
+
+  case ${1:-} in
+    updated) update=1; shift ;;
+    upgraded) update=1 upgrade=1; shift ;;
+  esac
+
+  # Update and upgrade if needed
+  if (( update )); then
+    apt-get -q update
+  fi
+  if (( upgrade )); then
+    apt-get -qy upgrade
+  fi
+  # Install packages
+  apt-get -qy install --no-install-recommends "$@"
+
+  # Clean up
+  rm -rf /var/lib/apt/lists/*
+}
+
+fetch() {
+  local url="${1:?missing URL}"; shift
+  local dir='' filename=''
+
+  while (( $# )); do
+    case $1 in
+      as) filename="${2:?missing filename}" ;;
+      to) dir="${2:?missing path}" ;;
+    esac; shift 2
+  done
+
+  local -a args=()
+  if [[ $filename ]]; then
+    args+=(--output "$filename")
+  elif [[ $dir ]]; then
+    args+=(--output-dir "$dir" --remote-name)
+  fi
+
+  "${CURL[@]}" "${args[@]}" "$url"
+}
+
+fetch_github_release() {
+  local repo="${1:?missing repository name}"
+  local version="${2:?missing version}"
+  local pattern="${3:?missing asset filename pattern}"
+  local tag_format="${4:-v%s}"
+
+  if [[ $version != 'latest' ]]; then
+    # shellcheck disable=SC2059
+    printf -v version "tags/$tag_format" "$version"
+  fi
+
+  "${CURL[@]}" "https://api.github.com/repos/$repo/releases/$version" \
+  | release.jq --arg pattern "$pattern"
+}
+
+extract() {
+  local pkg="${1:?missing package name}" dest="${3:-/opt}"
+  tar -xf "$pkg" -C "$dest"
+}
+
+main() {
+  local cmd="${1:-}"; shift || :
+  case $cmd in
+    add)
+      cmd="${1:-}"; shift || :
+      case $cmd in
+        user) create_user "$@" ;;
+        password|passwd|pass|pwd) set_password "$@" ;;
+        key) add_apt_key "$@" ;;
+        source[_-]list) add_source_list "$@" ;;
+        packages|package|pkgs|pkg) install_packages "$@" ;;
+      esac
+      ;;
+    download|fetch|get)
+      case ${1:?} in
+        release) shift; fetch_github_release "$@" ;;
+        *) fetch "$@"
+      esac ;;
+    extract) extract "$@" ;;
+    '') echo "love you"
+  esac
+}
+
+main "$@"

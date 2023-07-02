@@ -1,0 +1,26 @@
+{
+  "id": "python",
+  "name": "Python",
+  "version": "0.1.0",
+  "description": "high-level, general-purpose programming language",
+  "installsAfter": ["base"],
+  "options": {
+    "version":  {
+      "type": "string",
+      "description": "Python version",
+      "proposals": ["latest", "3.11", "3.10", "3.9"],
+      "default": "latest"
+    },
+    "pip_version": {
+      "type": "string",
+      "description": "Pip version",
+      "proposals": ["none", "latest"],
+      "default": "latest"
+    },
+    "packages":  {
+      "type": "string",
+      "description": "Python packages to install",
+      "default": ""
+    }
+  }
+}

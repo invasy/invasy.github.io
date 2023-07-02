@@ -1,0 +1,33 @@
+{
+  "id": "hugo",
+  "name": "Hugo",
+  "version": "0.1.0",
+  "description": "The world's fastest framework for building websites",
+  "installsAfter": ["base", "go"],
+  "options": {
+    "variant": {
+      "type": "string",
+      "description": "Hugo variant",
+      "enum": ["hugo_extended", "hugo"],
+      "default": "hugo_extended"
+    },
+    "version":  {
+      "type": "string",
+      "description": "Hugo version",
+      "proposals": ["latest", "0.114.1"],
+      "default": "latest"
+    },
+    "sass_version": {
+      "type": "string",
+      "description": "Dart Sass version",
+      "proposals": ["none", "latest", "1.63.6"],
+      "default": "latest"
+    },
+    "pagefind_version":  {
+      "type": "string",
+      "description": "Pagefind version",
+      "proposals": ["none", "latest", "0.12.0"],
+      "default": "latest"
+    }
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "id": "base",
+  "name": "base",
+  "version": "0.1.0",
+  "description": "Base setup",
+  "options": {
+    "packages": {
+      "type": "string",
+      "description": "Extra packages to install",
+      "default": ""
+    },
+    "root_password":  {
+      "type": "string",
+      "description": "Superuser (root) password",
+      "default": "root"
+    }
+  }
+}

@@ -2,29 +2,6 @@
   "version": "2.0.0",
   "tasks": [
     {
-      "label": "Make icons",
-      "detail": "Combine SVG icons to a partial template",
-      "group": {
-        "kind": "build"
-      },
-      "type": "shell",
-      "command": "scripts/make-icons.py",
-      "icon": {
-        "id": "wand",
-        "color": "terminal.ansiCyan"
-      },
-      "presentation": {
-        "panel": "shared",
-        "reveal": "silent",
-        "revealProblems": "onProblem",
-        "focus": false,
-        "clear": true,
-        "echo": true,
-        "showReuseMessage": false
-      },
-      "problemMatcher": []
-    },
-    {
       "label": "Build",
       "detail": "Build this site with Hugo",
       "group": {
@@ -42,8 +19,7 @@
         "--printPathWarnings",
         "--printUnusedTemplates",
         "--templateMetrics",
-        "--templateMetricsHints",
-        "--logFile=hugo.log"
+        "--templateMetricsHints"
       ],
       "icon": {
         "id": "server-process",
@@ -82,6 +58,29 @@
       },
       "presentation": {
         "panel": "dedicated",
+        "reveal": "silent",
+        "revealProblems": "onProblem",
+        "focus": false,
+        "clear": true,
+        "echo": true,
+        "showReuseMessage": false
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Lint Dockerfile",
+      "group": {
+        "kind": "build"
+      },
+      "type": "shell",
+      "command": "hadolint",
+      "args": [".devcontainer/Dockerfile"],
+      "icon": {
+        "id": "checklist",
+        "color": "terminal.ansiCyan"
+      },
+      "presentation": {
+        "panel": "shared",
         "reveal": "silent",
         "revealProblems": "onProblem",
         "focus": false,
