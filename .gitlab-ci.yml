@@ -26,15 +26,16 @@ devcontainer:
   before_script:
   - apk add --no-cache g++ make nodejs npm python3
   - npm install -g @devcontainers/cli
-  - echo "CI_REGISTRY_USER='$CI_REGISTRY_USER'"
-  - echo "CI_REGISTRY_IMAGE='$CI_REGISTRY_IMAGE'"
   - echo "$CI_REGISTRY_PASSWORD" | docker login --username "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
   script:
+  - devcontainer --version
+  - devcontainer --help
+  - devcontainer build --help
   - >
     devcontainer build
-    --workspace-folder . --push true
     --image-name "$CI_REGISTRY_IMAGE"
     --cache-from "$CI_REGISTRY_IMAGE"
+    --workspace-folder . --push true
 
 pages:
   stage: pages
