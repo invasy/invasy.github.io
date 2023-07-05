@@ -31,8 +31,8 @@ devcontainer:
   - echo "$CI_REGISTRY_PASSWORD" | docker login --username "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
   script:
   - >
-    devcontainer build --log-level debug
-    --workspace-folder . --push
+    devcontainer build
+    --workspace-folder . --push true
     --image-name "$CI_REGISTRY_IMAGE"
     --cache-from "$CI_REGISTRY_IMAGE"
 
