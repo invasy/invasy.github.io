@@ -3,7 +3,7 @@
   "name": "Python",
   "version": "0.1.0",
   "description": "high-level, general-purpose programming language",
-  "installsAfter": ["base"],
+  "installsAfter": ["./base"],
   "options": {
     "version":  {
       "type": "string",

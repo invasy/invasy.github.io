@@ -3,7 +3,7 @@
   "name": "Hugo",
   "version": "0.1.0",
   "description": "The world's fastest framework for building websites",
-  "installsAfter": ["base", "go"],
+  "installsAfter": ["./base", "./go"],
   "options": {
     "variant": {
       "type": "string",

@@ -3,7 +3,7 @@
   "name": "Hadolint",
   "version": "0.1.0",
   "description": "Haskell Dockerfile Linter",
-  "installsAfter": ["base"],
+  "installsAfter": ["./base"],
   "options": {
     "version":  {
       "type": "string",

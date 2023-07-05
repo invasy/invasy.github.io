@@ -3,7 +3,7 @@
   "name": "Node.js",
   "version": "0.1.0",
   "description": "Open-source, cross-platform JavaScript runtime environment",
-  "installsAfter": ["base", "python"],
+  "installsAfter": ["./base", "./python"],
   "containerEnv": {
     "PATH": "/opt/node/bin:$PATH"
   },

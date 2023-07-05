@@ -3,7 +3,7 @@
   "name": "User setup",
   "version": "0.1.0",
   "description": "User setup",
-  "installsAfter": ["base", "go"],
+  "installsAfter": ["./base", "./go"],
   "options": {
     "password": {
       "type": "string",

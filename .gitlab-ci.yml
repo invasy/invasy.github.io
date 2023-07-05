@@ -13,10 +13,10 @@ devcontainer:
   stage: devcontainer
   rules:
   - changes:
-    - .devcontainer/devcontainer.json
-    - .devcontainer/*/devcontainer-feature.json
-    - .devcontainer/*/install.sh
-    - .devcontainer/init.sh
+    - ".devcontainer/devcontainer.json"
+    - ".devcontainer/*/devcontainer-feature.json"
+    - ".devcontainer/*/install.sh"
+    - ".devcontainer/init.sh"
     - "$CI_CONFIG_PATH"
   image: docker:latest
   services:
@@ -31,7 +31,8 @@ devcontainer:
   - echo "$CI_REGISTRY_PASSWORD" | docker login --username "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
   script:
   - >
-    devcontainer build --workspace-folder . --push
+    devcontainer build --verbose
+    --workspace-folder . --push
     --image-name "$CI_REGISTRY_IMAGE"
     --cache-from "$CI_REGISTRY_IMAGE"
 

@@ -3,7 +3,7 @@
   "name": "Go",
   "version": "0.1.0",
   "description": "Go language",
-  "installsAfter": ["base"],
+  "installsAfter": ["./base"],
   "containerEnv": {
     "GOROOT": "/opt/go",
     "PATH": "$GOROOT/bin:$PATH"
