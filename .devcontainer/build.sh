@@ -17,5 +17,5 @@ if [[ ${CI:-} == 'true' ]]; then
   git config --global --add safe.directory "$PWD"
 fi
 
-hugo "${hugo_args[@]}"
+hugo "${hugo_args[@]}" "$@"
 pagefind --source public

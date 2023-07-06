@@ -16,6 +16,11 @@ on:
     - ".github/workflows/pages.yml"
     branches-ignore:
     - "dependabot/**"
+  workflow_run:
+    workflows:
+    - Build dev container image
+    types:
+    - completed
   workflow_dispatch:
 
 permissions:
@@ -32,12 +37,8 @@ defaults:
     shell: bash
 
 jobs:
-  devcontainer:
-    uses: ./.github/workflows/devcontainer.yml
-
   build:
-    needs:
-    - devcontainer
+    if: github.event.workflow_run.conclusion == 'success'
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/${{ github.repository }}:latest

@@ -1,3 +1,6 @@
+# GitHub Actions Workflow
+# https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions
+
 name: Build dev container image
 
 on:
@@ -10,12 +13,12 @@ on:
     - ".github/workflows/devcontainer.yml"
     branches-ignore:
     - "dependabot/**"
-  workflow_call:
   workflow_dispatch:
 
 permissions:
   id-token: write
   packages: write
+  pages: write
 
 concurrency:
   group: devcontainer

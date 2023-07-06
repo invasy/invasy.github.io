@@ -9,17 +9,9 @@
         "isDefault": true
       },
       "type": "shell",
-      "command": "hugo",
+      "command": "${workspaceFolder}/.devcontainer/build.sh",
       "args": [
-        "--environment=production",
-        "--cleanDestinationDir",
-        "--minify",
-        "--gc",
-        "--printI18nWarnings",
-        "--printPathWarnings",
-        "--printUnusedTemplates",
-        "--templateMetrics",
-        "--templateMetricsHints"
+        "--environment=production"
       ],
       "icon": {
         "id": "server-process",
@@ -58,29 +50,6 @@
       },
       "presentation": {
         "panel": "dedicated",
-        "reveal": "silent",
-        "revealProblems": "onProblem",
-        "focus": false,
-        "clear": true,
-        "echo": true,
-        "showReuseMessage": false
-      },
-      "problemMatcher": []
-    },
-    {
-      "label": "Lint Dockerfile",
-      "group": {
-        "kind": "build"
-      },
-      "type": "shell",
-      "command": "hadolint",
-      "args": [".devcontainer/Dockerfile"],
-      "icon": {
-        "id": "checklist",
-        "color": "terminal.ansiCyan"
-      },
-      "presentation": {
-        "panel": "shared",
         "reveal": "silent",
         "revealProblems": "onProblem",
         "focus": false,

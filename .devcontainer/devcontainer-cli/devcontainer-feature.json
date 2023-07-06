@@ -1,7 +1,0 @@
-{
-  "id": "devcontainer-cli",
-  "name": "Dev Container CLI",
-  "version": "0.1.0",
-  "description": "Build and manage development containers from command line",
-  "installsAfter": ["base", "node"]
-}
