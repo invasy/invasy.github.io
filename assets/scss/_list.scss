@@ -1,14 +1,18 @@
 .page-list {
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  max-height: calc(var(--page-list-item-height) * var(--pagination));
-
   @include media-breakpoint-up($collapse-breakpoint) {
-    max-height: calc(var(--page-list-item-height) * var(--pagination) / 2);
+    -moz-column-count: 2;
+    -moz-column-gap: 1em;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 1em;
+    column-count: 2;
+    column-gap: 1em;
   }
 }
 
 .page-list-item {
-  height: var(--page-list-item-height);
+  overflow-wrap: break-word;
+
+  &::marker {
+    color: $primary;
+  }
 }
