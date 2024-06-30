@@ -35,8 +35,10 @@ Install OpenSSH in Windows 10.
     # Install the OpenSSH Server
     Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
     ```
-4. [Set up SSH agent in WSL2](/notes/openssh_agent_wsl2) if needed.
+4. [Set up SSH agent in WSL2][agent] if needed.
 
 # See Also
 - [Install OpenSSH | Microsoft Docs](https://docs.microsoft.com/en-us/windows-server/administration/openssh/openssh_install_firstuse)
-- [How to setup OpenSSH agent in WSL2]({{< relref openssh-agent-wsl2 >}} "How to setup OpenSSH agent in WSL2")
+- [How to setup OpenSSH agent in WSL2][agent]
+
+[agent]: {{< relref openssh-agent-wsl2 >}} "How to setup OpenSSH agent in WSL2"
