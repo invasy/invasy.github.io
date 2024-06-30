@@ -28,7 +28,7 @@ devcontainer:
   - npm install -g @devcontainers/cli
   - echo "$CI_REGISTRY_PASSWORD" | docker login --username "$CI_REGISTRY_USER" --password-stdin "$CI_REGISTRY"
   script:
-  - >
+  - >-
     devcontainer build
     --workspace-folder .
     --image-name "$CI_REGISTRY_IMAGE"
