@@ -8,7 +8,8 @@ tags:
 - error
 - update
 ---
-# Error
+# Problem
+
 Cannot start a WSL distribution with the following message:
 ```
 Error: 0x80040326
@@ -17,6 +18,7 @@ Press any key to continue...
 ```
 
 # Solution
+
 Just update the WSL:
 ```powershell
 wsl --update

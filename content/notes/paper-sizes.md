@@ -27,5 +27,6 @@ Standard paper sizes in millimeters:
 |     10 |  26×37   |   31×44   |  28×40   |
 {{< /table >}}
 
-## See Also
+# See Also
+
 - [ISO 216:2007 Writing paper and certain classes of printed matter — Trimmed sizes — A and B series, and indication of machine direction](https://www.iso.org/standard/36631.html)

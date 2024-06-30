@@ -7,11 +7,13 @@ tags:
 - C++
 - string
 ---
-## Task
+## Problem
+
 Replace all space characters in a string with `%20`
 ([percent-encoding](https://en.wikipedia.org/wiki/URL_encoding "URL encoding — Wikipedia")).
 
 ## Solution
+
 ```cpp {title="encode_spaces.cpp"}
 #include <algorithm>
 #include <string>

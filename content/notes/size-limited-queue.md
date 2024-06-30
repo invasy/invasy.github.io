@@ -8,10 +8,12 @@ tags:
 - C++
 - queue
 ---
-## Task
+## Problem
+
 Implement size-limited queue.
 
 ### Requirements
+
 - Interface:
   - `push` — add an element to the queue.
   - `pop` — remove an elemtn from the queue and return it.
@@ -23,6 +25,7 @@ Implement size-limited queue.
 - Do not use standard containers except `std::vector`.
 
 ## Solution 1
+
 Two stacks:
 ```cpp {title="limited_queue.h"}
 #include <optional>
@@ -64,6 +67,7 @@ public:
 ```
 
 ## Solution 2
+
 Deque:
 ```cpp {title="limited_queue.h"}
 #include <deque>

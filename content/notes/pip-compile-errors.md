@@ -8,11 +8,15 @@ tags:
 - error
 ---
 # Problem
+
 When running `pip-compile`
+
 ```bash
 pip-compile pyproject.toml
 ```
+
 there's an error with the following message:
+
 ```
 Backend subprocess exited when trying to invoke prepare_metadata_for_build_wheel
 Failed to parse .../pyproject.toml
@@ -21,6 +25,7 @@ Failed to parse .../pyproject.toml
 And no other info is provided in the console.
 
 # Solution
+
 Change `runner` parameter for `ProjectBuilder` from `quiet_subprocess_runner` to `default_subprocess_runner`
 to show verbose log:
 

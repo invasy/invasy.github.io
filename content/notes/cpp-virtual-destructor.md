@@ -11,7 +11,9 @@ tags:
 Deleting a derived class object using a pointer of base class type that has a non-virtual destructor results in ***undefined behavior***.
 
 ## Non-virtual Destructor
+
 ### Code
+
 ```cpp
 #include <iostream>
 
@@ -36,7 +38,9 @@ int main() {
 }
 
 ```
+
 ### Result
+
 ```
 A::A()
 B::B()
@@ -44,7 +48,9 @@ A::~A()
 ```
 
 ## Virtual Destructor
+
 ### Code
+
 ```cpp
 #include <iostream>
 
@@ -69,7 +75,9 @@ int main() {
 }
 
 ```
+
 ### Result
+
 ```
 A::A()
 B::B()
@@ -78,5 +86,6 @@ virtual A::~A()
 ```
 
 # See Also
+
 - [Destructors — cppreference.com](https://en.cppreference.com/w/cpp/language/destructor "Destructors — cppreference.com")
 - [Virtual Destructor — GeeksforGeeks](https://www.geeksforgeeks.org/virtual-destructor/ "Virtual Destructor — GeeksforGeeks")

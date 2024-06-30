@@ -10,9 +10,11 @@ tags:
 draft: true
 ---
 # Balanced Brackets (HackerRank)
+
 [Balanced Brackets](https://www.hackerrank.com/challenges/balanced-brackets/problem "Balanced Brackets | HackerRank")
 
 ## Solution
+
 ```cpp {hl_lines=["8-20"]}
 #include <bits/stdc++.h>
 
@@ -81,9 +83,11 @@ string rtrim(const string &str) {
 ```
 
 # Valid Parentheses (LeetCode)
+
 [Valid Parentheses](https://leetcode.com/problems/valid-parentheses/ "Valid Parentheses - LeetCode")
 
 ## Solution
+
 ```cpp
 class Solution {
 public:

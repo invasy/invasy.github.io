@@ -7,6 +7,8 @@ tags:
 - startup
 - config
 ---
+# Bash Startup Files Parsing Order
+
 {{< table class="table table-bordered table-hover" >}}
 | File              | `-li` | `-l`  | `-i`  |   |
 |-------------------|:-----:|:-----:|:-----:|:-:|
@@ -20,10 +22,12 @@ tags:
 {{< /table >}}
 
 ## Options and modes
+
 - `-l` — login shell
 - `-i` — interactive shell
 
 ## Notes
+
 - Login Bash sources the first existing and readable file from the following list:
   - `~/.bash_profile`
   - `~/.bash_login`
@@ -37,5 +41,6 @@ tags:
     - arithmetic expansion;
     - command substitution.
 
-## See Also
+# See Also
+
 - [Bash Startup Files (Bash Reference Manual)](https://www.gnu.org/software/bash/manual/html_node/Bash-Startup-Files.html "Bash Startup Files (Bash Reference Manual)")

@@ -8,17 +8,21 @@ tags:
 - solution
 ---
 # Problem
+
 Given an integer number $n$ calculate sum of its digits recursively:
 repeatedly add all its digits until the result has only one digit.
 
 ## Complexity
+
 - **Time**: $O(1)$
 - **Space**: $O(1)$
 
 # Recursive Digit Sum (HackerRank)
+
 [Recursive Digit Sum | HackerRank](https://www.hackerrank.com/challenges/one-week-preparation-kit-recursive-digit-sum/problem "Recursive Digit Sum | HackerRank")
 
 ## Solution
+
 ```cpp
 #include <bits/stdc++.h>
 
@@ -42,9 +46,11 @@ int main() {
 ```
 
 # Add Digits (LeetCode)
+
 [Add Digits - LeetCode](https://leetcode.com/problems/add-digits/ "Add Digits - LeetCode")
 
 ## Solution
+
 ```cpp
 class Solution {
 public:

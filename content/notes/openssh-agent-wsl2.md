@@ -11,11 +11,13 @@ tags:
 - socat
 ---
 # Prerequisites
+
 - [OpenSSH in Windows 10]({{< relref "openssh-windows10" >}})
 - WSL2
 - Golang
 
-# Steps
+# Solution
+
 1. Run WSL2 container (e. g. Ubuntu):
     ```powershell
     ubuntu.exe

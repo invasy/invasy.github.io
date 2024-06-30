@@ -8,11 +8,13 @@ tags:
 - config
 ---
 # .gitattributes
+
 ```
 *  text=auto
 ```
 
 ## C / C++
+
 ```
 *.c     text diff=c
 *.cc    text diff=cpp
@@ -26,6 +28,7 @@ tags:
 ```
 
 ## Java
+
 ```
 *.java        text diff=java
 *.gradle      text diff=java
@@ -33,37 +36,44 @@ tags:
 ```
 
 ## Go
+
 ```
 *.go  text eol=lf diff=golang
 ```
 
 ## Haskell
+
 ```
 *.hs  text
 ```
 
 ## Python
+
 ```
 *.py  text diff=python
 ```
 
 ## Perl
+
 ```
 *.pl  text diff=perl
 *.pm  text diff=perl
 ```
 
 ## Ruby
+
 ```
 *.rb  text diff=ruby
 ```
 
 ## Lua
+
 ```
 *.lua  text
 ```
 
 ## Web
+
 ```
 *.html    text diff=html
 *.htm     text diff=html
@@ -79,16 +89,21 @@ tags:
 ```
 
 ## DB
+
 ```
 *.sql  text
 ```
 
-## Patches — preserve line endings
+## Patches
+
+_Preserve line endings_
+
 ```
 *.patch  -text
 ```
 
 ## Scripts
+
 ```
 *.sh    text eol=lf diff=bash
 *.bash  text eol=lf diff=bash
@@ -99,23 +114,27 @@ tags:
 ```
 
 ## Make
+
 ```
 Makefile  text eol=lf
 *.mk      text eol=lf
 ```
 
 ## Docker
+
 ```
 Dockerfile     text eol=lf
 .dockerignore  text
 ```
 
 ## Vagrant
+
 ```
 Vagrantfile  text diff=ruby
 ```
 
 ## Visual Studio
+
 ```
 *.sln        text eol=crlf
 *.csproj     text eol=crlf
@@ -124,6 +143,7 @@ Vagrantfile  text diff=ruby
 ```
 
 ## Mathematica
+
 ```
 *.nb   text diff=mathematica
 *.wls  text diff=mathematica
@@ -132,6 +152,7 @@ Vagrantfile  text diff=ruby
 ```
 
 ## Configs
+
 ```
 *.ini   text
 *.json  text
@@ -142,6 +163,7 @@ Vagrantfile  text diff=ruby
 ```
 
 ## Documentation
+
 ```
 *.md          text diff=markdown
 *.txt         text
@@ -162,11 +184,13 @@ TODO          text
 ```
 
 ## EditorConfig
+
 ```
 .editorconfig  text
 ```
 
 ## Git
+
 ```
 .gitattributes  text export-ignore
 .gitignore      text export-ignore
@@ -175,5 +199,6 @@ TODO          text
 ```
 
 # See Also
+
 - [gitattibutes Documentation — Git](https://git-scm.com/docs/gitattributes)
 - [alexkaratarakis/gitattributes — GitHub](https://github.com/alexkaratarakis/gitattributes "alexkaratarakis/gitattributes — GitHub")

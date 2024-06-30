@@ -10,6 +10,7 @@ tags:
 - graph
 ---
 # C++
+
 ```cpp
 #include <algorithm>
 #include <numeric>
@@ -51,4 +52,5 @@ public:
 ```
 
 # See also
+
 - [Disjoint-set data structure](https://en.wikipedia.org/wiki/Disjoint-set_data_structure "Disjoint-set data structure — Wikipedia")

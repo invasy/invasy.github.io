@@ -9,12 +9,14 @@ tags:
 - bug
 ---
 # Problem
+
 Some characters in the terminal at tmux start:
 ```
 0;10;1c
 ```
 
 # Solution
+
 Change [`escape-time`] option value to any non-zero value:
 ```tmux {title="tmux.conf"}
 set -s escape-time 10

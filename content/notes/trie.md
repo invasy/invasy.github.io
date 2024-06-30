@@ -8,12 +8,15 @@ tags:
 draft: true
 ---
 # Trie
+
 - [Trie](https://en.wikipedia.org/wiki/Trie "Trie — Wikipedia"), digital tree, prefix tree
 
 # No Prefix Set (HackerRank)
+
 [No Prefix Set](https://www.hackerrank.com/challenges/no-prefix-set/problem "No Prefix Set | HackerRank")
 
 ## Solution
+
 ```cpp
 #include <bits/stdc++.h>
 
@@ -117,9 +120,11 @@ string rtrim(const string &str) {
 ```
 
 # Implement Trie (Prefix Tree) (LeetCode)
+
 [Implement Trie (Prefix Tree)](https://leetcode.com/problems/implement-trie-prefix-tree/ "Implement Trie (Prefix Tree) - LeetCode")
 
 ## Solution
+
 ```cpp
 class Trie {
     struct Node {

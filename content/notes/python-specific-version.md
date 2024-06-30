@@ -13,6 +13,7 @@ tags:
 - getopt
 ---
 # Prerequisites
+
 - Bash
 - git
 - C compiler
@@ -23,12 +24,14 @@ tags:
 - checkinstall
 
 ## Ubuntu
+
 ```bash
 sudo apt-get -y build-dep python3
 sudo apt-get -y install checkinstall git pkg-config
 ```
 
 # Script
+
 ```bash
 install_python() {
   local -r repo_url='https://github.com/python/cpython.git'
@@ -75,6 +78,7 @@ install_python() {
 ```
 
 ## Usage
+
 ```bash
 name="$(git config --get user.name)"
 email="$(git config --get user.email)"

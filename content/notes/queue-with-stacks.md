@@ -14,9 +14,11 @@ tags:
 - solution
 ---
 # Queue using Two Stacks (HackerRank)
+
 [Queue using Two Stacks](https://www.hackerrank.com/challenges/queue-using-two-stacks/problem "Queue using Two Stacks | HackerRank")
 
 ## Problem
+
 A [queue] is an abstract data type that maintains the order in which elements were added to it,
 allowing the oldest elements to be removed from the front and new elements to be added to the rear.
 This is called a _First-In-First-Out_ ([FIFO]) data structure because the first element added to the queue
@@ -33,6 +35,7 @@ Then process $q$ queries, where each query is one of the following 3 types:
 - `3`: Print the element at the front of the queue.
 
 ### Input Format
+
 - The first line contains a single integer $q$, denoting the number of queries.
 - Each line $i$ of the $q$ subsequent lines contains a single query in the form described in the problem statement above.
 - All three queries start with an integer $type$ denoting the query type,
@@ -40,16 +43,20 @@ Then process $q$ queries, where each query is one of the following 3 types:
   denoting the value to be enqueued.
 
 ### Constraints
+
 - $1 \leq q \leq 10^5$
 - $1 \leq type \leq 3$
 - $1 \leq |x| \leq 10^9$
 - It is guaranteed that a valid answer always exists for each query of type 3.
 
 ### Output Format
+
 For each query of type 3, print the value of the element at the front of the queue on a new line.
 
 ## Sample Test Case
+
 ### Input
+
 ```
 STDIN   Function
 -----   --------
@@ -65,13 +72,16 @@ STDIN   Function
 2       dequeue front element
 2       dequeue front element
 ```
+
 ### Output
+
 ```
 14
 14
 ```
 
 ### Explanation
+
 Perform the following sequence of actions:
 1. Enqueue $42$; $queue = \{42\}$.
 2. Dequeue the value at the head of the queue, $42$; $queue = \{\}$.
@@ -85,6 +95,7 @@ Perform the following sequence of actions:
 10. Dequeue the value at the head of the queue, $28$; $queue = \{60,~78\}$.
 
 ## Solution
+
 ```cpp
 #include <iostream>
 #include <stack>
@@ -142,9 +153,11 @@ int main() {
 ---
 
 # Implement Queue using Stacks (LeetCode)
+
 [Implement Queue using Stacks](https://leetcode.com/problems/implement-queue-using-stacks/ "Implement Queue using Stacks - LeetCode")
 
 ## Problem
+
 Implement a first in first out ([FIFO]) [queue] using only two stacks.
 The implemented queue should support all the functions of a normal queue
 (`push`, `peek`, `pop`, and `empty`).
@@ -156,6 +169,7 @@ Implement the `MyQueue` class:
 - `boolean empty()` Returns true if the queue is empty, false otherwise.
 
 ### Notes
+
 You must use only standard operations of a stack, which means only the following operations are valid:
 - push to top,
 - peek/pop from top,
@@ -163,25 +177,33 @@ You must use only standard operations of a stack, which means only the following
 - is empty.
 
 ### Constraints
+
 - `1 <= x <= 9`
 - At most 100 calls will be made to `push`, `pop`, `peek`, and `empty`.
 - All the calls to `pop` and `peek` are valid.
 
 ### Follow-up
+
 Can you implement the queue such that each operation is amortized $O(1)$ time complexity?
 In other words, performing $n$ operations will take overall $O(n)$ time even if one of those operations may take longer.
 
 ## Example
+
 ### Input
+
 ```
 ["MyQueue", "push", "push", "peek", "pop", "empty"]
 [[], [1], [2], [], [], []]
 ```
+
 ### Output
+
 ```
 [null, null, null, 1, 1, false]
 ```
+
 ### Explanation
+
 ```cpp
 MyQueue myQueue = new MyQueue();
 myQueue.push(1); // queue is: [1]
@@ -192,6 +214,7 @@ myQueue.empty(); // return false
 ```
 
 ## Solution
+
 ```cpp
 class MyQueue {
     stack<int> a, b;

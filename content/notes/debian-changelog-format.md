@@ -12,11 +12,13 @@ tags:
 - RFC5322
 ---
 # Changelog
+
 `debian/changelog` — dpkg source packages' changelog file — list of entries in reversed chronological order.
 
 Must be encoded in UTF-8.
 
 ## Entry
+
 ```
 package (version) distributions; metadata
 
@@ -46,10 +48,12 @@ package (version) distributions; metadata
   - format see below.
 
 ## Date
+
 - Format: `day-of-week, dd month yyyy hh:mm:ss +zzzz`.
 - `strftime` format: `"%a, %d %b %Y %H:%M:%S %z"` (with `LC_TIME=C`).
 
 ### Perl
+
 ```perl
 #!/usr/bin/env perl
 use strict;
@@ -65,9 +69,11 @@ say($date);
 ```
 
 ### Shell
+
 ```bash
 LANG=C date -R
 ```
 
 # See Also
+
 - [deb-changelog(5)](https://manpages.debian.org/testing/dpkg-dev/deb-changelog.5.en.html)

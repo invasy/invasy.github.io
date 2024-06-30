@@ -10,9 +10,11 @@ tags:
 draft: true
 ---
 # Pairs (HackerRank)
+
 [Pairs](https://www.hackerrank.com/challenges/pairs/problem "Pairs | HackerRank")
 
 ## Solution
+
 ```cpp {hl_lines=["9-19"]}
 #include <bits/stdc++.h>
 
@@ -109,9 +111,11 @@ vector<string> split(const string &str) {
 ```
 
 # K-diff Pairs in an Array (LeetCode)
+
 [K-diff Pairs in an Array](https://leetcode.com/problems/k-diff-pairs-in-an-array/ "K-diff Pairs in an Array - LeetCode")
 
 ## Solution
+
 ```cpp
 class Solution {
 public:

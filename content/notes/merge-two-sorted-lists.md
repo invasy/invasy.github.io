@@ -12,26 +12,32 @@ tags:
 - C++
 ---
 # Merge two sorted linked lists (HackerRank)
+
 [Merge two sorted linked lists](https://www.hackerrank.com/challenges/merge-two-sorted-linked-lists/problem "Merge two sorted linked lists | HackerRank")
 
 ## Problem
+
 Given pointers to the heads of two sorted linked lists, merge them into a single, sorted linked list.
 Either head pointer may be null meaning that the corresponding list is empty.
 
 ### Example
+
 - $headA$ refers to $1 \rightarrow 3 \rightarrow 7 \rightarrow \text{NULL}$
 - $headB$ refers to $1 \rightarrow 2 \rightarrow \text{NULL}$
 - The new list is $1 \rightarrow 1 \rightarrow 2 \rightarrow 3 \rightarrow 7 \rightarrow \text{NULL}$
 
 ### Function Description
+
 `mergeLists` function has the following parameters:
 - `SinglyLinkedListNode` pointer `headA`: a reference to the head of the first list;
 - `SinglyLinkedListNode` pointer `headB`: a reference to the head of the second list.
 
 ### Returns
+
 - `SinglyLinkedListNode` pointer: a reference to the head of the merged list.
 
 ### Input Format
+
 The first line contains an integer $t$, the number of test cases.
 
 The format for each test case is as follows:
@@ -41,12 +47,15 @@ The format for each test case is as follows:
 - The next $m$ lines contain an integer each, the elements of the second linked list.
 
 ### Constraints
+
 - $1 \leq t \leq 10$
 - $1 \leq n,~m \leq 1000$
 - $1 \leq list[i] \leq 1000$, where $list[i]$ is the $i^{th}$ element of the list
 
 ## Sample Test Case
+
 ### Input
+
 ```
 1
 3
@@ -57,16 +66,21 @@ The format for each test case is as follows:
 3
 4
 ```
+
 ### Output
+
 ```
 1 2 3 3 4
 ```
+
 ### Explanation
+
 - The first linked list is: $1 \rightarrow 2 \rightarrow 3 \rightarrow \text{NULL}$
 - The second linked list is: $3 \rightarrow 4 \rightarrow \text{NULL}$
 - Hence, the merged linked list is:  $1 \rightarrow 2 \rightarrow 3 \rightarrow 3 \rightarrow 4 \rightarrow \text{NULL}$
 
 ## Solution
+
 ```cpp {hl_lines=["60-77"]}
 #include <bits/stdc++.h>
 
@@ -199,9 +213,11 @@ int main() {
 ---
 
 # Merge Two Sorted Lists (LeetCode)
+
 [Merge Two Sorted Lists](https://leetcode.com/problems/merge-two-sorted-lists/ "Merge Two Sorted Lists - LeetCode")
 
 ## Problem
+
 You are given the heads of two sorted linked lists `list1` and `list2`.
 
 Merge the two lists in a one **sorted** list. The list should be made by splicing together the nodes of the first two lists.
@@ -209,41 +225,55 @@ Merge the two lists in a one **sorted** list. The list should be made by splicin
 _Return the head of the merged linked list._
 
 ### Constraints
+
 - The number of nodes in both lists is in the range `[0, 50]`.
 - `-100 <= Node.val <= 100`.
 - Both `list1` and `list2` are sorted in non-decreasing order.
 
 ## Example 1
+
 ### Input
+
 ```
 list1 = [1,2,4], list2 = [1,3,4]
 ```
+
 ### Output
+
 ```
 [1,1,2,3,4,4]
 ```
 
 ## Example 2
+
 ### Input
+
 ```
 list1 = [], list2 = []
 ```
+
 ### Output
+
 ```
 []
 ```
 
 ## Example 3
+
 ### Input
+
 ```
 list1 = [], list2 = [0]
 ```
+
 ### Output
+
 ```
 [0]
 ```
 
 ## Solution
+
 ```cpp
 class Solution {
 public:

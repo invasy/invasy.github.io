@@ -15,7 +15,8 @@ tags:
 - update
 - package
 ---
-## Debian and Ubuntu
+# Debian and Ubuntu
+
 ```dockerfile {title="Dockerfile"}
 RUN set -eu;\
     export DEBIAN_FRONTEND='noninteractive';\
@@ -24,12 +25,14 @@ RUN set -eu;\
     rm -rf /var/cache/* /var/log/* /var/lib/apt/lists/* /tmp/*
 ```
 
-## Alpine
+# Alpine
+
 ```dockerfile {title="Dockerfile"}
 RUN apk add --no-cache $packages
 ```
 
-## Documentation
+# Documentation
+
 - [apt-get(8)](https://manpages.debian.org/bullseye/apt/apt-get.8.en.html "man 8 apt-get (Debian Bullseye)") — Debian Bullseye
 - [apt-get(8)](https://manpages.ubuntu.com/manpages/focal/en/man8/apt-get.8.html "man 8 apt-get (Ubuntu 20.04 LTS)") — Ubutnu 20.04 LTS (Focal Fossa)
 - [apt-get(8)](https://manpages.ubuntu.com/manpages/jammy/en/man8/apt-get.8.html "man 8 apt-get (Ubuntu 22.04 LTS)") — Ubutnu 22.04 LTS (Jammy Jellyfish)

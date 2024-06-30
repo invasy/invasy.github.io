@@ -8,6 +8,8 @@ tags:
 - push
 - remote
 ---
+# Solution
+
 Add `pushurl` to remote branches in `.git/config`:
 
 ```git {title=".git/config"}
@@ -36,6 +38,7 @@ Add `pushurl` to remote branches in `.git/config`:
 
 Change `$user` and `$project` accordinly.
 
-## See Also
+# See Also
+
 - [git push](https://git-scm.com/docs/git-push#_named_remote_in_configuration_file "git push")
 - [How to setup OpenSSH agent in WSL2](/notes/openssh_agent_wsl2 "How to setup OpenSSH agent in WSL2")

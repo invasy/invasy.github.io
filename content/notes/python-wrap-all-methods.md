@@ -9,12 +9,14 @@ tags:
 - exception
 ---
 # Problem
+
 Let there be an object with a lot of methods which can possibly raise some exception.
 
 Desired behavior of those methods when exception occurs:
 try to fix object and run method one more time.
 
 # Solution
+
 Wrap all the methods using a class decorator:
 
 ```python

@@ -12,9 +12,11 @@ tags:
 - greedy algorithm
 ---
 # Truck Tour (HackerRank)
+
 [Truck Tour | HackerRank](https://www.hackerrank.com/challenges/truck-tour/problem "Truck Tour | HackerRank")
 
 ## Problem
+
 Suppose there is a circle. There are $N$ petrol pumps on that circle.
 Petrol pumps are numbered $0$ to $N-1$ (both inclusive).
 
@@ -30,6 +32,7 @@ Consider that the truck will stop at each of the petrol pumps.
 The truck will move one kilometer for each litre of the petrol.
 
 ### Input Format
+
 The first line will contain the value of $N$.
 
 The next $N$ lines will contain a pair of integers each:
@@ -37,28 +40,37 @@ The next $N$ lines will contain a pair of integers each:
 - the distance between that petrol pump and the next petrol pump.
 
 ### Constraints
+
 - $1 \leq N \leq 10^5$
 - $1 \leq \text{amount of petrol},~\text{distance} \leq 10^9$
 
 ### Output Format
+
 An integer which will be the smallest index of the petrol pump from which we can start the tour.
 
 ## Sample test case
+
 ### Input
+
 ```
 3
 1 5
 10 3
 3 4
 ```
+
 ### Output
+
 ```
 1
 ```
+
 ### Explanation
+
 We can start the tour from the second petrol pump.
 
 ## Solution
+
 ```cpp
 #include <bits/stdc++.h>
 
@@ -158,9 +170,11 @@ vector<string> split(const string &str) {
 ```
 
 # Gas Station (LeetCode)
+
 [Gas Station - LeetCode](https://leetcode.com/problems/gas-station/ "Gas Station - LeetCode")
 
 ## Problem
+
 There are `n` gas stations along a circular route, where the amount of gas at the $i^{th}$ station is `gas[i]`.
 
 You have a car with an unlimited gas tank and it costs `cost[i]` of gas to travel from the $i^{th}$ station
@@ -171,15 +185,21 @@ if you can travel around the circuit once in the clockwise direction, otherwise 
 If there exists a solution, it is **guaranteed** to be **unique**.
 
 ## Example 1
+
 ### Input
+
 ```
 gas = [1,2,3,4,5], cost = [3,4,5,1,2]
 ```
+
 ### Output
+
 ```
 3
 ```
+
 ### Explanation
+
 1. Start at station 3 (index 3) and fill up with 4 unit of gas. Your $\text{tank} = 0 + 4 = 4$.
 2. Travel to station 4. Your $\text{tank} = 4 - 1 + 5 = 8$.
 3. Travel to station 0. Your $\text{tank} = 8 - 2 + 1 = 7$.
@@ -189,15 +209,21 @@ gas = [1,2,3,4,5], cost = [3,4,5,1,2]
 7. Therefore, return 3 as the starting index.
 
 ## Example 2
+
 ### Input
+
 ```
 gas = [2,3,4], cost = [3,4,3]
 ```
+
 ### Output
+
 ```
 -1
 ```
+
 ### Explanation
+
 1. You can't start at station 0 or 1, as there is not enough gas to travel to the next station.
 2. Let's start at station 2 and fill up with 4 unit of gas. Your $\text{tank} = 0 + 4 = 4$.
 3. Travel to station 0. Your $\text{tank} = 4 - 3 + 2 = 3$.
@@ -206,6 +232,7 @@ gas = [2,3,4], cost = [3,4,3]
 6. Therefore, you can't travel around the circuit once no matter where you start.
 
 ## Solution
+
 ```cpp
 class Solution {
 public:
@@ -226,4 +253,5 @@ public:
 ```
 
 # Method
+
 [Greedy algorithm](https://en.wikipedia.org/wiki/Greedy_algorithm "Greedy algorithm — Wikipedia").

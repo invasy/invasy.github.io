@@ -9,6 +9,7 @@ tags:
 - getopt
 ---
 # Overview
+
 |                | `getopts`       | `getopt`             |
 |----------------|:---------------:|:--------------------:|
 | Implementation | builtin (POSIX) | `util-linux` package |
@@ -18,9 +19,11 @@ tags:
 | Quiet mode     | `OPTERR=0`      | `-q \| --quiet`      |
 
 # `getopts`
+
 [`getopts`][getopts] — Bash builtin command.
 
 ## Example
+
 ```bash
 parse_args() {
   local OPT OPTARG
@@ -41,6 +44,7 @@ parse_args() {
 ```
 
 ## Error handling
+
 - by `getopts` itself:
   - no setup needed
   - prints error message
@@ -53,9 +57,11 @@ parse_args() {
   - `OPT == ':'` — missing argument
 
 # `getopt`
+
 [`getopt`][getopt] — parse command options (enhanced), part of the [`util-linux`][util-linux] package.
 
 ## Example
+
 ```bash
 declare -ir VERBOSE_MIN=0 VERBOSE_MAX=3
 declare -r opt='a:bqvVh'

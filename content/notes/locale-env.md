@@ -15,6 +15,7 @@ locale
 ```
 
 ## Variables
+
 - `LANG='ru_RU.UTF-8'` — language/locale to use
 - `LANGUAGE='ru_RU:en_US'` — `:`-separated list of languages
 - `LC_*` — override `LANG`:
