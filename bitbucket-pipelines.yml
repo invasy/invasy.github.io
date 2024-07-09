@@ -2,7 +2,7 @@
 # https://support.atlassian.com/bitbucket-cloud/docs/bitbucket-pipelines-configuration-reference/
 
 image:
-  name: ghcr.io/invasy.github.io
+  name: ghcr.io/invasy/invasy.github.io:latest
   username: $GITHUB_USERNAME
   password: $GITHUB_TOKEN
 
@@ -13,4 +13,4 @@ pipelines:
         name: Build and publish
         deployment: production
         script:
-        - bitbucket-pages.sh
+        - ./bitbucket-pages.sh

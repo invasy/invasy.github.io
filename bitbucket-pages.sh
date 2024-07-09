@@ -2,10 +2,17 @@
 set -euo pipefail
 shopt -qs lastpipe
 
-if [[ "${CI:-}" != 'true' ]]; then
+if [[ "${CI:-}" == 'true' ]]; then
+  export GOPATH='/home/hugo/go'
+  export GOBIN='/home/hugo/go/bin'
+  export PATH="/home/hugo/bin:/home/hugo/.local/bin:/home/hugo/go/bin:$PATH"
+  .devcontainer/init.sh
+  git config --global user.name "Bitbucket Pipeline"
+  git config --global user.email "bitbucket@invasy.dev"
+else
   BITBUCKET_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
   BITBUCKET_COMMIT="$(git rev-parse HEAD)"
-  PAGES_REPO_URL='git@bitbucket.org:invasy/invasy.bitbucket.io.git'
+  PAGES_REPO_URL='https://invasy@bitbucket.org/invasy/invasy.bitbucket.io.git'
   export HUGO_BASEURL="https://invasy.bitbucket.io"
   export HUGO_ENVIRONMENT='production'
 fi
@@ -21,7 +28,8 @@ git clone --branch=public "$PAGES_REPO_URL" public
 
 # Publish
 pushd public
-git status
+git status --short --branch
 git add .
 git commit --message="built from commit ${BITBUCKET_COMMIT:0:8} ($BITBUCKET_BRANCH)"
+git push
 popd

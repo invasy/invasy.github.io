@@ -31,13 +31,6 @@ defaults:
     shell: bash
 
 jobs:
-  echo:
-    runs-on: ubuntu-latest
-    env:
-      JSON: "${{ toJSON(github) }}"
-    steps:
-    - run: "echo $JSON"
-
   build:
     name: Build pages
     runs-on: ubuntu-latest
