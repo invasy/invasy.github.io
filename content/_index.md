@@ -9,9 +9,11 @@ outputs:
 - html
 #- json  # Index for searching with Fuse
 ---
-{{< img
+{{< img src="/images/why.png" alt="Why?" title="Why?" width="400px" >}}
+
+<!-- {{< img
     src="https://imgs.xkcd.com/comics/compiling.png"
     title="'Are you stealing those LCDs?' 'Yeah, but I'm doing it while my code compiles.'"
     alt="Compiling"
     link="https://xkcd.com/303"
->}}
+>}} -->

@@ -29,18 +29,24 @@ body {
   padding: 1rem;
 }
 
-.home {
-  img {
-    max-width: 100%;
-  }
-}
-
 .home,
 .not-found {
   .content {
+    display: flex;
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
+  }
+}
+
+.home {
+  .content {
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
+
+  img {
+    max-width: 100%;
   }
 }
 
