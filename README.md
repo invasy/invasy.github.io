@@ -49,6 +49,36 @@
 [gitpod-badge]: https://img.shields.io/badge/Gitpod-open-blue?logo=gitpod "Open in Gitpod"
 
 ## Powered By
+
+### Versions
+
+| Software       | Version      |
+|:---------------|:-------------|
+| `bootstrap`    | `5.3.3`      |
+| `curl`         | `7.88.1`     |
+| `eslint`       | `9.6.0`      |
+| `git`          | `2.39.2`     |
+| `go`           | `1.22.5`     |
+| `gopls`        | `0.16.1`     |
+| `gpg`          | `2.2.40`     |
+| `hadolint`     | `2.12.0`     |
+| `hugo`         | `0.128.2`    |
+| `jq`           | `1.6`        |
+| `less`         | `590`        |
+| `markdownlint` | `0.41.0`     |
+| `node`         | `20.15.1`    |
+| `npm`          | `10.8.1`     |
+| `pandoc`       | `2.17.1.1`   |
+| `pip`          | `23.0.1`     |
+| `python`       | `3.11.2`     |
+| `remark`       | `15.0.1`     |
+| `rfs`          | `10.0.0`     |
+| `typescript`   | `5.5.3`      |
+| `xz`           | `5.4.1`      |
+| `yamllint`     | `1.35.1`     |
+
+### Markup
+
 - [Markdown] — lightweight markup language
 - [Hugo](https://gohugo.io/ "Hugo") — static site generator from Markdown files
 - [Bootstrap](https://getbootstrap.com/ "Bootstrap") — CSS and JavaScript framework

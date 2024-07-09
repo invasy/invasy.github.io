@@ -2,7 +2,7 @@
 set -euo pipefail
 shopt -qs lastpipe
 
-declare -ar VERSION_NAMES=(
+declare -ar VERSION_NAME=(
   bootstrap
   curl
   eslint
@@ -21,6 +21,7 @@ declare -ar VERSION_NAMES=(
   pip
   python
   remark
+  rfs
   typescript
   xz
   yamllint
@@ -32,6 +33,7 @@ declare -Ar VERSION_COMMAND=(
   [gopls]='gopls version'
   [hugo]='hugo version'
   [python]='python3 --version'
+  [rfs]='grep -F rfs go.mod'
   [typescript]='tsc --version'
 )
 
@@ -52,6 +54,7 @@ declare -Ar VERSION_RE=(
   [pip]='pip ([0-9.]+) .*'
   [python]='Python ([0-9.]+)'
   [remark]='remark: ([0-9.]+).*'
+  [rfs]='.* v([0-9.]+).*'
   [typescript]='Version ([0-9.]+)'
   [xz]='.* ([0-9.]+)'
   [yamllint]='yamllint ([0-9.]+)'
@@ -62,7 +65,7 @@ msg() {
   if [[ ${1:-} == '-n' ]]; then n='\n'; shift; fi
   local fmt="${1:?missing message format}"; shift
   # shellcheck disable=SC2059
-  printf "$n=> $fmt\n" "$@"
+  printf "$n\e[1;34m=>\e[m \e[1;37m$fmt\e[m\n" "$@"
 }
 
 version() {
@@ -73,8 +76,13 @@ version() {
 
 versions() {
   msg -n 'Installed software:'
-  for name in "${VERSION_NAMES[@]}"; do
+
+  echo '| Software       | Version      |' >| ~/versions.md
+  echo '|:---------------|:-------------|' >> ~/versions.md
+
+  for name in "${VERSION_NAME[@]}"; do
     printf '%-12s  %s\n' "$name" "$(version "$name")"
+    printf '| %-14s | %-12s |\n' "\`$name\`" "\`$(version "$name")\`" >> ~/versions.md
   done
 }
 
