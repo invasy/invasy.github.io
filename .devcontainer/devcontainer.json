@@ -44,7 +44,7 @@
         "typescript"
       ]
     },
-    "./go": {"version": "1.20.5"},
+    "./go": {"version": "1.22.5"},
     "./user": {
       "password": "1",
       "comment": "Hugo",
@@ -55,7 +55,7 @@
       ]
     },
     "./hugo": {
-      "version": "0.114.1",
+      "version": "0.128.2",
       "sass_version": "latest",
       "pagefind_version": "latest"
     }
