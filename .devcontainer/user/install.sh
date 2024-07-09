@@ -2,7 +2,7 @@
 set -euo pipefail
 shopt -qs lastpipe
 
-if (( EUID == 0 )); then
+if (( EUID == 0 )); then  # Run as root
   if [[ $_CONTAINER_USER == 'root' ]]; then exit 0; fi
 
   I add user "$_CONTAINER_USER"${PASSWORD:+ -p "$PASSWORD"}${COMMENT:+ -c "$COMMENT"}
@@ -16,6 +16,7 @@ if (( EUID == 0 )); then
     PYTHON_PACKAGES
   )
   IFS=','; whitelist="${vars[*]}"; unset IFS
+  # Run this script (the rest of it) as a target user
   exec su -lw "$whitelist" -c "$(realpath -e "$0")" "$_CONTAINER_USER"
 fi
 

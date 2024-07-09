@@ -2,6 +2,11 @@
 set -euo pipefail
 shopt -qs lastpipe
 
+declare -ar scripts=(
+  I
+  release.jq
+)
+
 declare -a pkgs=(
   apt-transport-https
   bash-completion
@@ -17,7 +22,7 @@ declare -a pkgs=(
 # shellcheck disable=SC2206
 pkgs+=(${PACKAGES//,/ })
 
-for script in I release.jq; do
+for script in "${scripts[@]}"; do
   install "$script" /usr/local/bin/
 done
 
