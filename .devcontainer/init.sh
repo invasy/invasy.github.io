@@ -17,6 +17,7 @@ declare -ar VERSION_NAME=(
   markdownlint
   node
   npm
+  pagefind
   pandoc
   pip
   python
@@ -50,6 +51,7 @@ declare -Ar VERSION_RE=(
   [jq]='jq-([0-9.]+)'
   [less]='less ([0-9]+) .*'
   [node]='v([0-9.]+)'
+  [pagefind]='pagefind ([0-9.]+)'
   [pandoc]='pandoc ([0-9.]+)'
   [pip]='pip ([0-9.]+) .*'
   [python]='Python ([0-9.]+)'
