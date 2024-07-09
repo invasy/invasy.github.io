@@ -11,16 +11,16 @@ outputs:
 #- pdf
 
 # Build options
-_build:
+build:
   render: always
-  list: never
+  list: always
 
 # Navbar
 menu:
   navbar:
     weight: 3
     params:
-      show: false
+      show: true
 search: false
 sidebar: false
 toc: true
