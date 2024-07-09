@@ -142,7 +142,7 @@
     - [Markdown Guide](https://www.markdownguide.org/ "Markdown Guide") — comprehensive Markdown reference
     - [CommonMark](https://commonmark.org/ "CommonMark") — strongly defined, highly compatible specification of Markdown
     - [GFM](https://github.github.com/gfm/ "GitHub Flavored Markdown") — GitHub Flavored Markdown (CommonMark superset)
-    - [goldmark](https://github.com/yuin/goldmark/ "goldmark") — Markdown parser written in Go (compliant with CommonMark 0.30)
+    - [goldmark] — Markdown parser written in Go (compliant with CommonMark 0.30)
     - [Hugo Markdown](https://www.markdownguide.org/tools/hugo/ "Hugo Markdown") — Markdown syntax in Hugo
 - Hugo and Go:
     - [Hugo Documentation](https://gohugo.io/documentation/ "Hugo Documentation")
@@ -179,5 +179,6 @@
 
 [devc]: https://containers.dev/ "Development Containers"
 [Markdown]: https://daringfireball.net/projects/markdown/syntax "Markdown"
+[goldmark]: https://github.com/yuin/goldmark/ "goldmark"
 [moderncv]: https://github.com/xdanaux/moderncv "xdanaux/moderncv — GitHub"
 [cache]: https://github.com/actions/cache "actions/cache — GitHub"
