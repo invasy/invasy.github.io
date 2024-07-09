@@ -89,17 +89,17 @@
 ### Development
 
 - [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code")
-  - [`tasks.json`](.vscode/tasks.json) — VSCode tasks for icons and Hugo
+    - [`tasks.json`](.vscode/tasks.json) — VSCode tasks for icons and Hugo
 - [Development Containers][devc] — Docker containers with fully featured development environment
-  - [`.devcontainer`](.devcontainer)
+    - [`.devcontainer`](.devcontainer)
 - [Gitpod](https://www.gitpod.io/ "Gitpod") — cloud development environment
-  - [`.gitpod.yml`](.gitpod.yml)
+    - [`.gitpod.yml`](.gitpod.yml)
 
 ### GitHub
 
 - [GitHub](https://github.com/ "GitHub") — git repository
 - [GitHub Actions](https://github.com/features/actions "GitHub Actions") — CI/CD pipelines
-  - [`pages.yml`](.github/workflows/pages.yml "GitHub Pages Workflow") — GitHub Pages workflow
+    - [`pages.yml`](.github/workflows/pages.yml "GitHub Pages Workflow") — GitHub Pages workflow
 - [GitHub Pages](https://pages.github.com/ "GitHub Pages") — static site hosting
 - [GitHub Codespaces](https://github.com/features/codespaces "GitHub Codespaces") — cloud devcontainer and VSCode in browser
 
@@ -107,7 +107,7 @@
 
 - [GitLab](https://gitlab.com/ "GitLab") — git repository
 - [GitLab CI](https://docs.gitlab.com/ee/ci/ "GitLab CI/CD") — CI/CD pipelines
-  - [`.gitlab-ci.yml`](.gitlab-ci.yml "GitLab CI") — GitLab CI pipeline
+    - [`.gitlab-ci.yml`](.gitlab-ci.yml "GitLab CI") — GitLab CI pipeline
 - [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/ "GitLab Pages") — static site hosting
 
 ### Search
@@ -139,42 +139,42 @@
 ## Documentation
 
 - [Markdown]:
-  - [Markdown Guide](https://www.markdownguide.org/ "Markdown Guide") — comprehensive Markdown reference
-  - [CommonMark](https://commonmark.org/ "CommonMark") — strongly defined, highly compatible specification of Markdown
-  - [GFM](https://github.github.com/gfm/ "GitHub Flavored Markdown") — GitHub Flavored Markdown (CommonMark superset)
-  - [goldmark](https://github.com/yuin/goldmark/ "goldmark") — Markdown parser written in Go (compliant with CommonMark 0.30)
-  - [Hugo Markdown](https://www.markdownguide.org/tools/hugo/ "Hugo Markdown") — Markdown syntax in Hugo
+    - [Markdown Guide](https://www.markdownguide.org/ "Markdown Guide") — comprehensive Markdown reference
+    - [CommonMark](https://commonmark.org/ "CommonMark") — strongly defined, highly compatible specification of Markdown
+    - [GFM](https://github.github.com/gfm/ "GitHub Flavored Markdown") — GitHub Flavored Markdown (CommonMark superset)
+    - [goldmark](https://github.com/yuin/goldmark/ "goldmark") — Markdown parser written in Go (compliant with CommonMark 0.30)
+    - [Hugo Markdown](https://www.markdownguide.org/tools/hugo/ "Hugo Markdown") — Markdown syntax in Hugo
 - Hugo and Go:
-  - [Hugo Documentation](https://gohugo.io/documentation/ "Hugo Documentation")
-  - [Hugo Discourse](https://discourse.gohugo.io/ "Hugo Discourse")
-  - [Go `fmt` package](https://pkg.go.dev/fmt "Go fmt package")
+    - [Hugo Documentation](https://gohugo.io/documentation/ "Hugo Documentation")
+    - [Hugo Discourse](https://discourse.gohugo.io/ "Hugo Discourse")
+    - [Go `fmt` package](https://pkg.go.dev/fmt "Go fmt package")
 - Bootstrap:
-  - [Bootstrap Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/ "Bootstrap Documentation")
-  - [twbs/bootstrap](https://github.com/twbs/bootstrap "twbs/bootstrap — GitHub") — Bootstrap source code
+    - [Bootstrap Documentation](https://getbootstrap.com/docs/5.3/getting-started/introduction/ "Bootstrap Documentation")
+    - [twbs/bootstrap](https://github.com/twbs/bootstrap "twbs/bootstrap — GitHub") — Bootstrap source code
 - HTML, CSS, JS:
-  - [HTML Reference](https://developer.mozilla.org/en-US/docs/Web/HTML "HTML Reference — MDN")
-  - [CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS "CSS Reference — MDN")
-  - [CSS Selectors](https://www.w3schools.com/cssref/css_selectors.php "CSS Selectors")
-  - [JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JavaScript Reference — MDN")
-  - [MathML Reference](https://developer.mozilla.org/en-US/docs/Web/MathML "MathML Reference — MDN")
+    - [HTML Reference](https://developer.mozilla.org/en-US/docs/Web/HTML "HTML Reference — MDN")
+    - [CSS Reference](https://developer.mozilla.org/en-US/docs/Web/CSS "CSS Reference — MDN")
+    - [CSS Selectors](https://www.w3schools.com/cssref/css_selectors.php "CSS Selectors")
+    - [JavaScript Reference](https://developer.mozilla.org/en-US/docs/Web/JavaScript "JavaScript Reference — MDN")
+    - [MathML Reference](https://developer.mozilla.org/en-US/docs/Web/MathML "MathML Reference — MDN")
 - GitHub:
-  - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions "Workflow syntax for GitHub Actions")
-  - [actions/cache][cache]: Cache dependencies and build outputs in GitHub Actions
+    - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions "Workflow syntax for GitHub Actions")
+    - [actions/cache][cache]: Cache dependencies and build outputs in GitHub Actions
 - GitLab:
-  - [`.gitlab-ci.yml` keyword reference](https://docs.gitlab.com/ee/ci/yaml/ ".gitlab-ci.yml keyword reference")
-  - [Predefined variables reference](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html "Predefined variables reference")
-  - [Caching in GitLab CI/CD](https://docs.gitlab.com/ee/ci/caching/ "Caching in GitLab CI/CD")
+    - [`.gitlab-ci.yml` keyword reference](https://docs.gitlab.com/ee/ci/yaml/ ".gitlab-ci.yml keyword reference")
+    - [Predefined variables reference](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html "Predefined variables reference")
+    - [Caching in GitLab CI/CD](https://docs.gitlab.com/ee/ci/caching/ "Caching in GitLab CI/CD")
 - Bitbucket:
-  - [Bitbucket Pipelines configuration reference](https://support.atlassian.com/bitbucket-cloud/docs/bitbucket-pipelines-configuration-reference/ "Bitbucket Pipelines configuration reference")
-  - [Variables and secrets](https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/)
-  - [Publishing a Website on Bitbucket Cloud](https://support.atlassian.com/bitbucket-cloud/docs/publishing-a-website-on-bitbucket-cloud/ "Publishing a Website on Bitbucket Cloud")
+    - [Bitbucket Pipelines configuration reference](https://support.atlassian.com/bitbucket-cloud/docs/bitbucket-pipelines-configuration-reference/ "Bitbucket Pipelines configuration reference")
+    - [Variables and secrets](https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/)
+    - [Publishing a Website on Bitbucket Cloud](https://support.atlassian.com/bitbucket-cloud/docs/publishing-a-website-on-bitbucket-cloud/ "Publishing a Website on Bitbucket Cloud")
 - Gitpod:
-  - [`.gitpod.yml`](https://www.gitpod.io/docs/references/gitpod-yml ".gitpod.yml") Reference
+    - [`.gitpod.yml`](https://www.gitpod.io/docs/references/gitpod-yml ".gitpod.yml") Reference
 - Dev Containers:
-  - [Dev Container metadata reference](https://containers.dev/implementors/json_reference/ "Dev Container metadata reference")
+    - [Dev Container metadata reference](https://containers.dev/implementors/json_reference/ "Dev Container metadata reference")
 - VSCode:
-  - [Integrate with External Tools via Tasks](https://code.visualstudio.com/docs/editor/tasks "Integrate with External Tools via Tasks")
-  - [codicon | The icon font for Visual Studio Code](https://microsoft.github.io/vscode-codicons/dist/codicon.html "codicon | The icon font for Visual Studio Code")
+    - [Integrate with External Tools via Tasks](https://code.visualstudio.com/docs/editor/tasks "Integrate with External Tools via Tasks")
+    - [codicon | The icon font for Visual Studio Code](https://microsoft.github.io/vscode-codicons/dist/codicon.html "codicon | The icon font for Visual Studio Code")
 - [YAML Multiline](https://yaml-multiline.info/ "YAML Multiline")
 
 [devc]: https://containers.dev/ "Development Containers"
