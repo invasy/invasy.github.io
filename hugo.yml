@@ -16,6 +16,21 @@ enableRobotsTXT: false
 googleAnalytics: 'G-J7ENYFHF93'
 
 markup:
+  goldmark:
+    extensions:
+      passthrough:
+        enable: true
+        delimiters:
+          inline:
+          - - $
+            - $
+          - - \(
+            - \)
+          block:
+          - - $$
+            - $$
+          - - \[
+            - \]
   highlight:
     noClasses: false
     codeFences: true
