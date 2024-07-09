@@ -86,14 +86,16 @@
 - [Typescript](https://www.typescriptlang.org/ "Typescript") — JavaScript superset with statical typing
 
 ### Development
+
 - [Visual Studio Code](https://code.visualstudio.com/ "Visual Studio Code")
   - [`tasks.json`](.vscode/tasks.json) — VSCode tasks for icons and Hugo
-- [Development Containers](https://containers.dev/ "Development Containers") — Docker containers with fully featured development environment
+- [Development Containers][devc] — Docker containers with fully featured development environment
   - [`.devcontainer`](.devcontainer)
 - [Gitpod](https://www.gitpod.io/ "Gitpod") — cloud development environment
   - [`.gitpod.yml`](.gitpod.yml)
 
 ### GitHub
+
 - [GitHub](https://github.com/ "GitHub") — git repository
 - [GitHub Actions](https://github.com/features/actions "GitHub Actions") — CI/CD pipelines
   - [`pages.yml`](.github/workflows/pages.yml "GitHub Pages Workflow") — GitHub Pages workflow
@@ -101,27 +103,32 @@
 - [GitHub Codespaces](https://github.com/features/codespaces "GitHub Codespaces") — cloud devcontainer and VSCode in browser
 
 ### GitLab
+
 - [GitLab](https://gitlab.com/ "GitLab") — git repository
 - [GitLab CI](https://docs.gitlab.com/ee/ci/ "GitLab CI/CD") — CI/CD pipelines
   - [`.gitlab-ci.yml`](.gitlab-ci.yml "GitLab CI") — GitLab CI pipeline
 - [GitLab Pages](https://docs.gitlab.com/ee/user/project/pages/ "GitLab Pages") — static site hosting
 
 ### Search
+
 - [Pagefind](https://pagefind.app/ "Pagefind") — static search library
 - [Google Custom Search](https://programmablesearchengine.google.com/ "Programmable Search Engine") — search engine
 
 ### Icons and badges
+
 - [Iconify](https://icon-sets.iconify.design/ "Iconify") — [SVG] icons
 - [RealFaviconGenerator](https://realfavicongenerator.net/ "RealFaviconGenerator") — [favicon] generator
 - [Shields.io](https://shields.io/ "Shields.io") — metadata badges
 
 ### Résumé
+
 - [`resume.yml`](data/resume.yml "resume.yml") — my résumé data
 - [JSON Resume](https://jsonresume.org/) — community driven open source JSON based standard for résumés
-- [xdanaux/moderncv](https://github.com/xdanaux/moderncv "xdanaux/moderncv — GitHub") — $\LaTeX$ documentclass for typesetting curricula vitae
+- [xdanaux/moderncv][moderncv] — $\LaTeX$ documentclass for typesetting curricula vitae
 - [LaTeX] — document preparation system
 
 ### Analytics
+
 - [Google Analytics](https://analytics.google.com/analytics/web/)
 
 [SVG]: https://en.wikipedia.org/wiki/SVG "SVG — Wikipedia"
@@ -129,6 +136,7 @@
 [LaTeX]: https://www.latex-project.org/ "LaTeX"
 
 ## Documentation
+
 - [Markdown]:
   - [Markdown Guide](https://www.markdownguide.org/ "Markdown Guide") — comprehensive Markdown reference
   - [CommonMark](https://commonmark.org/ "CommonMark") — strongly defined, highly compatible specification of Markdown
@@ -150,7 +158,7 @@
   - [MathML Reference](https://developer.mozilla.org/en-US/docs/Web/MathML "MathML Reference — MDN")
 - GitHub:
   - [Workflow syntax for GitHub Actions](https://docs.github.com/en/actions/using-workflows/workflow-syntax-for-github-actions "Workflow syntax for GitHub Actions")
-  - [actions/cache](https://github.com/actions/cache "actions/cache — GitHub"): Cache dependencies and build outputs in GitHub Actions
+  - [actions/cache][cache]: Cache dependencies and build outputs in GitHub Actions
 - GitLab:
   - [`.gitlab-ci.yml` keyword reference](https://docs.gitlab.com/ee/ci/yaml/ ".gitlab-ci.yml keyword reference")
   - [Predefined variables reference](https://docs.gitlab.com/ee/ci/variables/predefined_variables.html "Predefined variables reference")
@@ -168,4 +176,7 @@
   - [codicon | The icon font for Visual Studio Code](https://microsoft.github.io/vscode-codicons/dist/codicon.html "codicon | The icon font for Visual Studio Code")
 - [YAML Multiline](https://yaml-multiline.info/ "YAML Multiline")
 
+[devc]: https://containers.dev/ "Development Containers"
 [Markdown]: https://daringfireball.net/projects/markdown/syntax "Markdown"
+[moderncv]: https://github.com/xdanaux/moderncv "xdanaux/moderncv — GitHub"
+[cache]: https://github.com/actions/cache "actions/cache — GitHub"
