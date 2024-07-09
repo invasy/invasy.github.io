@@ -18,4 +18,4 @@ if [[ ${CI:-} == 'true' ]]; then
 fi
 
 hugo "${hugo_args[@]}" "$@"
-pagefind --source public
+pagefind --site public
