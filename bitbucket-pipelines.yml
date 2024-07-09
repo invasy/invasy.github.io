@@ -1,37 +1,16 @@
 # Bitbucket Pipeline
 # https://support.atlassian.com/bitbucket-cloud/docs/bitbucket-pipelines-configuration-reference/
 
-image: atlassian/default-image:4
+image:
+  name: ghcr.io/invasy.github.io
+  username: $GITHUB_USERNAME
+  password: $GITHUB_TOKEN
 
 pipelines:
   branches:
     master:
-      - step:
-          name: Setup workspace
-          script:
-          - .devcontainer/install.sh
-          - .devcontainer/init.sh
-      - step:
-          name: Clone published site
-          script:
-          - git clone -b public "$BITBUCKET_GIT_SSH_ORIGIN" public
-      - step:
-          name: Build
-          script:
-          - >-
-            hugo
-            --baseUrl='https://invasy.bitbucket.io'
-            --environment=production
-            --minify --gc
-            --printI18nWarnings
-            --printPathWarnings
-            --printUnusedTemplates
-            --templateMetrics
-            --templateMetricsHints
-          - pagefind --source public
-      - step:
-          name: Publish
-          script:
-          - git config --local user.name 'Bitbucket Pipeline'
-          - git config --local user.email 'bitbucket@invasy.dev'
-          - cd public && git status && git add . && git commit -m "built from $BITBUCKET_COMMIT" && git push
+    - step:
+        name: Build and publish
+        deployment: production
+        script:
+        - bitbucket-pages.sh

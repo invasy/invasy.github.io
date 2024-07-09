@@ -2,32 +2,26 @@
 set -euo pipefail
 shopt -qs lastpipe
 
-declare -r repo_name='invasy.bitbucket.io'
-declare -r branch="$(git rev-parse --abbrev-ref HEAD)"
-declare -r commit="$(git rev-parse --short=8 HEAD)"
+if [[ "${CI:-}" != 'true' ]]; then
+  BITBUCKET_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+  BITBUCKET_COMMIT="$(git rev-parse HEAD)"
+  PAGES_REPO_URL='git@bitbucket.org:invasy/invasy.bitbucket.io.git'
+  export HUGO_BASEURL="https://invasy.bitbucket.io"
+  export HUGO_ENVIRONMENT='production'
+fi
 
 # Clean
 rm -rf public resources
 
 # Clone
-git clone -b public "https://invasy@bitbucket.org/invasy/$repo_name.git" public
+git clone --branch=public "$PAGES_REPO_URL" public
 
 # Build
-hugo \
-  --baseUrl="https://$repo_name" \
-  --environment=production \
-  --minify --gc \
-  --printI18nWarnings \
-  --printPathWarnings \
-  --printUnusedTemplates \
-  --templateMetrics \
-  --templateMetricsHints
-pagefind --source public
+.devcontainer/build.sh
 
 # Publish
 pushd public
 git status
 git add .
-git commit -m "built from commit $commit ($branch)"
-git push
+git commit --message="built from commit ${BITBUCKET_COMMIT:0:8} ($BITBUCKET_BRANCH)"
 popd

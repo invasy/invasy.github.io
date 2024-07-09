@@ -1,17 +1,17 @@
 # invasy.dev
 
 [![invasy/invasy.github.io @ GitHub][github-repo-badge]][github-repo]
-[![GitHub Pages Workflow Status][github-wf-badge]][github-wf]
+[![GitHub Workflow Status][github-wf-badge]][github-wf]
 [![devcontainer][github-devcontainer-badge]][github-devcontainer]
 [![invasy.dev][github-pages-badge]][github-pages]
 
 [![invasy/invasy.gitlab.io @ GitLab][gitlab-repo-badge]][gitlab-repo]
-[![GitLab CI Pages Pipeline Status][gitlab-ci-badge]][gitlab-ci]
+[![GitLab CI Pipeline Status][gitlab-ci-badge]][gitlab-ci]
 [![devcontainer][gitlab-devcontainer-badge]][gitlab-devcontainer]
 [![invasy.gitlab.io][gitlab-pages-badge]][gitlab-pages]
 
-[![invasy/invasy.bitbucket.io @ Bitbucket][bitbucket-repo-badge]][bitbucket-repo]
-[![Bitbucket Pipelines Status][bitbucket-pipelines-badge]][bitbucket-pipelines]
+[![invasy/invasy.dev @ Bitbucket][bitbucket-repo-badge]][bitbucket-repo]
+[![Bitbucket Pipeline Status][bitbucket-pipelines-badge]][bitbucket-pipelines]
 [![invasy.bitbucket.io][bitbucket-pages-badge]][bitbucket-pages]
 
 [![Open in Dev Containers][devcontainers-badge]][devcontainers]
@@ -19,8 +19,8 @@
 
 [github-repo]: https://github.com/invasy/invasy.github.io "invasy/invasy.github.io @ GitHub"
 [github-repo-badge]: https://img.shields.io/badge/GitHub-invasy/invasy.github.io-blue?logo=github
-[github-wf]: https://github.com/invasy/invasy.github.io/actions "GitHub Pages Workflow Status"
-[github-wf-badge]: https://img.shields.io/github/actions/workflow/status/invasy/invasy.github.io/pages.yml?branch=master&logo=github&label=Build%20Pages "GitHub Pages Workflow Status"
+[github-wf]: https://github.com/invasy/invasy.github.io/actions "GitHub Workflow Status"
+[github-wf-badge]: https://img.shields.io/github/actions/workflow/status/invasy/invasy.github.io/pages.yml?branch=master&logo=github&label=Build%20Pages "GitHub Workflow Status"
 [github-devcontainer]: https://github.com/invasy/invasy.github.io/pkgs/container/invasy.github.io "devcontainer"
 [github-devcontainer-badge]: https://img.shields.io/badge/ghcr.io-Devcontainer-darkmagenta?logo=github
 [github-pages]: https://invasy.dev/ "invasy.dev"
@@ -28,17 +28,17 @@
 
 [gitlab-repo]: https://gitlab.com/invasy/invasy.gitlab.io "invasy/invasy.gitlab.io @ GitLab"
 [gitlab-repo-badge]: https://img.shields.io/badge/GitLab-invasy/invasy.gitlab.io-blue?logo=gitlab
-[gitlab-ci]: https://gitlab.com/invasy/invasy.gitlab.io/-/pipelines/latest "GitLab CI Pages Pipeline Status"
-[gitlab-ci-badge]: https://img.shields.io/gitlab/pipeline-status/invasy/invasy.gitlab.io?branch=master&logo=gitlab&label=Build%20Pages "GitLab CI Pages Pipeline Status"
+[gitlab-ci]: https://gitlab.com/invasy/invasy.gitlab.io/-/pipelines/latest "GitLab CI Pipeline Status"
+[gitlab-ci-badge]: https://img.shields.io/gitlab/pipeline-status/invasy/invasy.gitlab.io?branch=master&logo=gitlab&label=Build%20Pages "GitLab CI Pipeline Status"
 [gitlab-devcontainer]: https://gitlab.com/invasy/invasy.gitlab.io/container_registry "devcontainer"
 [gitlab-devcontainer-badge]: https://img.shields.io/badge/registry-Devcontainer-darkmagenta?logo=gitlab
 [gitlab-pages]: https://invasy.gitlab.io/ "invasy.gitlab.io"
 [gitlab-pages-badge]: https://img.shields.io/badge/Visit-invasy.gitlab.io-800020
 
-[bitbucket-repo]: https://bitbucket.org/invasy/invasy.bitbucket.io/ "invasy/invasy.dev @ Bitbucket"
-[bitbucket-repo-badge]: https://img.shields.io/badge/Bitbucket-invasy/invasy.bitbucket.io-blue?logo=bitbucket
-[bitbucket-pipelines]: https://bitbucket.org/invasy/invasy.bitbucket.io/pipelines "Bitbucket Pipelines Status"
-[bitbucket-pipelines-badge]: https://img.shields.io/bitbucket/pipelines/invasy/invasy.bitbucket.io/master?logo=bitbucket&label=Build%20Pages "Bitbucket Pipelines Status"
+[bitbucket-repo]: https://bitbucket.org/invasy/invasy.dev/ "invasy/invasy.dev @ Bitbucket"
+[bitbucket-repo-badge]: https://img.shields.io/badge/Bitbucket-invasy/invasy.dev-blue?logo=bitbucket
+[bitbucket-pipelines]: https://bitbucket.org/invasy/invasy.dev/pipelines "Bitbucket Pipeline Status"
+[bitbucket-pipelines-badge]: https://img.shields.io/bitbucket/pipelines/invasy/invasy.dev/master?logo=bitbucket&label=Build%20Pages "Bitbucket Pipeline Status"
 [bitbucket-pages]: https://invasy.bitbucket.io/ "invasy.bitbucket.io"
 [bitbucket-pages-badge]: https://img.shields.io/badge/Visit-invasy.bitbucket.io-800020
 
