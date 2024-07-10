@@ -1,7 +1,8 @@
 {{ define "content" }}
 {{ .Content }}
 <ul class="page-list">
-{{- range .Paginator.Pages }}
+{{- $paginator := .Paginate .Pages.ByTitle }}
+{{- range $paginator.Pages }}
   {{ .Render "list-item" }}
 {{- end }}
 </ul>
