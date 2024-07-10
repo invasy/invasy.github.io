@@ -1,5 +1,8 @@
 # Bitbucket Pipeline
-# https://support.atlassian.com/bitbucket-cloud/docs/bitbucket-pipelines-configuration-reference/
+#
+# Documntation:
+# - https://support.atlassian.com/bitbucket-cloud/docs/bitbucket-pipelines-configuration-reference/
+# - https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/
 
 image:
   name: ghcr.io/invasy/invasy.github.io:latest

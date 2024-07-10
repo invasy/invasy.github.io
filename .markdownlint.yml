@@ -1,3 +1,9 @@
+# Markdownlint configuration
+#
+# Documentation:
+# - https://github.com/igorshubovych/markdownlint-cli
+# - https://github.com/DavidAnson/markdownlint?tab=readme-ov-file#rules--aliases
+
 default: true
 ul-indent:
   indent: 4

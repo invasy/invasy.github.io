@@ -144,6 +144,8 @@
     - [GFM](https://github.github.com/gfm/ "GitHub Flavored Markdown") — GitHub Flavored Markdown (CommonMark superset)
     - [goldmark] — Markdown parser written in Go (compliant with CommonMark 0.30)
     - [Hugo Markdown](https://www.markdownguide.org/tools/hugo/ "Hugo Markdown") — Markdown syntax in Hugo
+    - [markdownlint](https://github.com/igorshubovych/markdownlint-cli "igorshubovych/markdownlint-cli @ GitHub")
+    - [Markdownlint rules](https://github.com/DavidAnson/markdownlint?tab=readme-ov-file#rules--aliases "Markdownlint rules")
 - Hugo and Go:
     - [Hugo Documentation](https://gohugo.io/documentation/ "Hugo Documentation")
     - [Hugo Discourse](https://discourse.gohugo.io/ "Hugo Discourse")
@@ -167,6 +169,7 @@
 - Bitbucket:
     - [Bitbucket Pipelines configuration reference](https://support.atlassian.com/bitbucket-cloud/docs/bitbucket-pipelines-configuration-reference/ "Bitbucket Pipelines configuration reference")
     - [Variables and secrets](https://support.atlassian.com/bitbucket-cloud/docs/variables-and-secrets/)
+    - [Push to another repository in Pipelines](https://confluence.atlassian.com/bbkb/push-to-another-repository-in-pipelines-1277624367.html "Push to another repository in Pipelines")
     - [Publishing a Website on Bitbucket Cloud](https://support.atlassian.com/bitbucket-cloud/docs/publishing-a-website-on-bitbucket-cloud/ "Publishing a Website on Bitbucket Cloud")
 - Gitpod:
     - [`.gitpod.yml`](https://www.gitpod.io/docs/references/gitpod-yml ".gitpod.yml") Reference
