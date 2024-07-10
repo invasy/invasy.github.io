@@ -5,9 +5,6 @@
 
 title: invasy.dev
 baseUrl: 'https://invasy.dev'
-author:
-  name: Vasiliy Polyakov
-  email: site@invasy.dev
 
 languageCode: en-us
 paginate: 50
@@ -96,7 +93,9 @@ module:
       target: assets/scss/bootstrap/vendor/_rfs.scss
 
 params:
-  collapse_breakpoint: md
+  author:
+    name: Vasiliy Polyakov
+    email: site@invasy.dev
   copyright:
     year: 2016
     subject: Mail me about this site
@@ -104,6 +103,7 @@ params:
     safary_icon_color: '#800020'
     msapp_tile_color: '#b91d47'
     theme_color: '#ffffff'
+  collapse_breakpoint: md
   search:
     fuse:
       enabled: false
