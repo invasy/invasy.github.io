@@ -12,8 +12,8 @@ if [[ "${CI:-}" == 'true' ]]; then
 else
   BITBUCKET_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
   BITBUCKET_COMMIT="$(git rev-parse HEAD)"
+  PAGES_REPO_URL='https://invasy@bitbucket.org/invasy/invasy.bitbucket.io.git'
 fi
-PAGES_REPO_URL='https://invasy@bitbucket.org/invasy/invasy.bitbucket.io.git'
 COMMIT_URL='https://bitbucket.org/invasy/invasy.dev/commits/'
 export HUGO_BASEURL="https://invasy.bitbucket.io"
 export HUGO_ENVIRONMENT='production'
