@@ -12,10 +12,11 @@ if [[ "${CI:-}" == 'true' ]]; then
 else
   BITBUCKET_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
   BITBUCKET_COMMIT="$(git rev-parse HEAD)"
-  PAGES_REPO_URL='https://invasy@bitbucket.org/invasy/invasy.bitbucket.io.git'
-  export HUGO_BASEURL="https://invasy.bitbucket.io"
-  export HUGO_ENVIRONMENT='production'
 fi
+PAGES_REPO_URL='https://invasy@bitbucket.org/invasy/invasy.bitbucket.io.git'
+COMMIT_URL='https://bitbucket.org/invasy/invasy.dev/commits/'
+export HUGO_BASEURL="https://invasy.bitbucket.io"
+export HUGO_ENVIRONMENT='production'
 
 # Clean
 rm -rf public resources
@@ -30,6 +31,10 @@ git clone --branch=public "$PAGES_REPO_URL" public
 pushd public
 git status --short --branch
 git add .
-git commit --message="built from commit ${BITBUCKET_COMMIT:0:8} ($BITBUCKET_BRANCH)"
+git commit --file=- <<MSG
+built from commit ${BITBUCKET_COMMIT:0:8} ($BITBUCKET_BRANCH)
+
+Commit: ${COMMIT_URL}${BITBUCKET_COMMIT}
+MSG
 git push
 popd
