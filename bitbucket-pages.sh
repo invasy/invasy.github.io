@@ -8,7 +8,7 @@ if [[ "${CI:-}" == 'true' ]]; then
   export PATH="/home/hugo/bin:/home/hugo/.local/bin:/home/hugo/go/bin:$PATH"
   .devcontainer/init.sh
   git config --global user.name "Bitbucket Pipeline"
-  git config --global user.email "bitbucket@invasy.dev"
+  git config --global user.email "$EMAIL"
 else
   BITBUCKET_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
   BITBUCKET_COMMIT="$(git rev-parse HEAD)"

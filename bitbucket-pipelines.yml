@@ -3,7 +3,7 @@
 
 image:
   name: ghcr.io/invasy/invasy.github.io:latest
-  username: $GITHUB_USERNAME
+  username: invasy
   password: $GITHUB_TOKEN
 
 pipelines:
