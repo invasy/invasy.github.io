@@ -31,6 +31,19 @@ basics:
     username: invasy
     url: https://leetcode.com/invasy/
 work:
+- startDate: 2023-06-19
+  position: Senior Software Engineer (Python)
+  name: NGENIX
+  url: https://ngenix.net/
+  localtion: Moscow, Russia (remote)
+  description: >-
+    NGENIX mission is to make the Internet a safe and predictable environment for online business.
+    Our goal is to help IT and cybersecurity teams of web resources effectively develop their business
+    in an environment of heightened cyber threats. We provide comprehensive cloud solutions and expert
+    support so that web projects can invest in business growth without increasing the load on their
+    own teams and infrastructure.
+  summary: |-
+    **Tech stack**: Python, FastAPI, Lua, PostgreSQL, ClickHouse, nginx, GitLab CI, Kubernetes.
 - startDate: 2021-12-01
   endDate: 2022-09-30
   position: Lead Software Engineer (Scala)
